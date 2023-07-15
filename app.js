@@ -5,7 +5,7 @@ const path = require("path");
 app.use(express.static("./public"));
 
 app.listen(3050, () => {
-  console.log("el servidor anda bien");
+  console.log("El servidor esta corriendo en el puerto 3050");
 });
 
 app.get("/login", (req, res) => {
