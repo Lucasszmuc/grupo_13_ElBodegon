@@ -83,10 +83,29 @@ body {
 }
 
 .signup h2,
-.login h2 {
+.login h2  {
   margin: 0;
   color: #333;
+  text-decoration: none;
 }
+
+.login a{
+    text-decoration: none;
+    color: black;
+}
+
+.signup a{
+    text-decoration: none;
+    color: black;
+}
+
+.input-group label {
+    width: 150px; /* Ancho deseado para las etiquetas */
+  }
+  
+  .input-group input[type="password"] {
+    width: calc(100% - 150px); /* Resta el ancho de la etiqueta al 100% del ancho del contenedor */
+  }
 
 .bodegon {
   margin: 10px 0;
