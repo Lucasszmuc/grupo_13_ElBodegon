@@ -12,27 +12,19 @@ html {
 
 body {
   margin: 0;
-  padding: 96px;
-  font-size: 21px;
+  padding: 0px;
   color: #000;
   font-family: sans-serif;
 }
 section.card {
-  background: rgb(42, 29, 16);
-  background: linear-gradient(
-    142deg,
-    rgba(42, 29, 16, 1) 11%,
-    rgba(191, 167, 138, 0.9396984924623115) 47%,
-    rgba(89, 46, 21, 1) 89%
-  );
-  border-radius: 24px 24px 24px 48px;
-  padding: 48px 48px 48px 308px;
-  margin: 84px 0;
-  min-width: 640px;
-  display: flex;
-  flex-direction: row;
-  align-self: flex-start;
-  position: relative;
+  background: linear-gradient( 142deg, rgba(42, 29, 16, 1) 11%, rgba(191, 167, 138, 0.9396984924623115) 47%, rgba(89, 46, 21, 1) 89% );
+    border-radius: 24px 24px 24px 48px;
+    padding: 48px 48px 48px 308px;
+    margin: 304px 0px;
+    min-width: 640px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
 }
 section.card .text-content {
   display: flex;
@@ -82,26 +74,22 @@ article {
   min-width: calc(640px + 248px);
 }
 @media (max-width: 1100px) {
-  body {
-    padding: 96px 48px 24px;
-  }
   article {
     width: 100%;
     min-width: 100%;
   }
   section.card {
-    min-width: 100%;
+    min-width: 80%;
+    width: 80%;
+    margin-left: 70px;
   }
   section.card .text-content {
     width: 100%;
   }
 }
 @media all and (max-width: 720px) {
-  body {
-    padding: 48px 24px 0;
-  }
+
   section.card {
-    margin: 64px 0;
     padding: 88px 36px 36px;
     flex-direction: column;
     border-radius: 24px;
