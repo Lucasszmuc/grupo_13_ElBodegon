@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/styles.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inicio de Sesión</title>
@@ -11,6 +13,26 @@
 </head>
 
 <body>
+  <header>
+    <nav class="nav-var">
+      <div class="logo">
+        <a href="/"><img src="img/logo_elbodegon.png" alt="lgo" width="10%" id="logo"></a>
+      </div>
+      <div class="lista">
+        <ul>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Recetas</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a></li>
+          <li><a href="/login">Login</a></li>
+        </ul>
+      </div>
+      <a href="#" class="burger-menu">
+        <i class="fas fa-bars"></i>
+    </a>
+    </nav>
+  </header>
+  <main>
     <div class="contenedor-fuera">
       <a href="/"><button class="botonX">X</button></a>
     <div class="contenedor">
@@ -19,10 +41,10 @@
         <div class="header">
           <div class="signup-login-box">
             <div class="login">
-              <a href="/views/login"><h2>Login</h2></a>
+              <a href="/login"><h2>Login</h2></a>
             </div>
             <div class="signup">
-              <a href="/views/register"><h2>Sign Up</h2></a>
+              <a href="/register"><h2>Sign Up</h2></a>
             </div>
           </div>
           <h3 class="bodegon">El Bodegon</h3>
@@ -54,6 +76,16 @@
       </form>
     </div>
    </div>
+  </main>
+   <footer>
+    <p>El Bodegon, Argentina</p>
+    <p>Copyright © 2023 Todos los derechos reservados.</p>
+    <div class="redes">
+      <i class="fa-brands fa-instagram red"></i>
+      <i class="fa-brands fa-facebook red"></i>
+      <i class="fa-brands fa-twitter red"></i>
+    </div>
+  </footer>
   </body>
   
 </html>
