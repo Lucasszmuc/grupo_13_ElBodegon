@@ -10,6 +10,7 @@ Continuar Haciendo:
 -Hacer un discord semanal
 
 Hacer Menos:
+-Tareas solo(Juan)
 
 Dejar de hacer:
 -No contestar mensajes sobre avances
