@@ -7,7 +7,8 @@
 }
 
 body {
-  background-color: rgb(230, 185, 130);
+  /* background-color: rgb(230, 185, 130); */
+  background-color: #d9cdb7fe;
 }
 
 /*Nav Bar*/
@@ -110,4 +111,8 @@ input {
     justify-content: flex-end;
     margin-right: 50px;
   }
+
+ .copy{
+  display: none;
+ }
 }

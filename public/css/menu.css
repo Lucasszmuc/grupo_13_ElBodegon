@@ -1,0 +1,187 @@
+main {
+  margin-top: 130px;
+}
+
+h3 {
+  margin: 15px 0;
+  font-size: 25px;
+}
+
+ul {
+  list-style: none;
+  list-style-type: disc;
+}
+
+li {
+  font-size: 23px;
+  line-height: 2;
+  display: block;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+}
+
+.contenedor-lista {
+  width: 40%;
+  border: 2px solid black;
+  background-color: #fff;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  margin: 49px 128px;
+}
+
+ul.product-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul.product-list li {
+  text-decoration: none;
+  padding-right: 1px;
+  border-bottom: 1px solid black; /* Agrega una línea de separación entre los ítems */
+}
+
+ul.product-list li a {
+  text-decoration: none;
+}
+
+/*Productos*/
+
+.sec-produ {
+  width: 100%;
+  padding: 10px;
+  background-color: #94774cb3;
+}
+div h2 {
+  font-size: x-large;
+  font-weight: bolder;
+  margin-left: 50px;
+  margin-top: 35px;
+}
+
+
+.productos {
+  border: solid rgba(65, 65, 65, 0.5) 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  width: 250px;
+  margin: 10px 1px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9e8da;
+}
+.productos img {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+}
+
+.info-produ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h5 {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.precio-boton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-produ p {
+  /* align-items: center;
+    display: flex;
+    justify-content: flex-start; */
+  margin: 5px 22px;
+  font-size: 20px;
+}
+
+.agregar-al-carrito {
+  margin: 0 16px;
+  background-color: #94774c;
+  color: #fff;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.8s ease;
+}
+
+.agregar-al-carrito:hover {
+  background-color: #ffffff;
+  color: #94774c;
+}
+
+div #precio,
+div button {
+  display: inline;
+}
+
+button {
+  padding: 10px;
+  outline: none;
+  border: 0;
+  margin-left: 100px;
+  background-color: #94774c00;
+}
+
+button .fa-cart-shopping {
+  font-size: 20px;
+}
+
+@media screen and (min-width:600px) {
+    
+    main{
+        display: flex;
+        margin-top: 220px;
+    }
+
+    .contenedor-productos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    section#bebidas{
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+
+}
+
+@media screen and (min-width: 1755px) {
+
+    section#postres article.productos{
+        flex-direction: row;
+        max-width: 560px;
+        width: auto;
+    }
+
+    section#postres article.productos img{
+        width: 100%;
+    }
+
+    section#postres article.productos .precio-boton {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+}
