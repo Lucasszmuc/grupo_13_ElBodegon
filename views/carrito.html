@@ -3,9 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="css/carrito.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <title>Document</title>
@@ -14,24 +18,31 @@
     <header>
       <nav class="nav-var">
         <div class="logo">
-          <a href="/"><img src="img/logo_elbodegon.png" alt="lgo" width="10%" id="logo"></a>
+          <a href="/"
+            ><img src="img/logo_elbodegon.png" alt="lgo" width="10%" id="logo"
+          /></a>
         </div>
         <div class="lista">
           <ul>
-            <li><a href="#">Menu</a></li>
+            <li><a href="/">Menu</a></li>
             <li><a href="#">Recetas</a></li>
             <li><a href="#">Nosotros</a></li>
-            <li><a href="#"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a></li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i
+              ></a>
+            </li>
             <li><a href="/login">Login</a></li>
           </ul>
         </div>
         <a href="#" class="burger-menu">
           <i class="fas fa-bars"></i>
-      </a>
+        </a>
       </nav>
+    </header>
     <main>
       <h1 class="titulo">Carrito de Compras</h1>
-      <hr class="linea"></hr>
+      <hr class="linea" />
       <section class="padre-titulares">
         <h3 class="titulares">Producto</h3>
         <h3 class="titulares">Precio</h3>
@@ -39,46 +50,64 @@
       </section>
       <section class="productos">
         <article class="productoUno">
-            <img class="foto" src="/img/corte-carne.jpg" alt="" width="200">
-            <p class="nombre-producto">producto 1</p>
+          <img class="foto" src="/img/corte-carne.jpg" alt="" width="200" />
+          <p class="nombre-producto">producto</p>
         </article>
         <article class="producto2">
-            <p class="texto-precio">$400</p>
+          <p class="texto-precio">$400</p>
         </article>
         <article class="producto3">
-            <label class="texto-cantidad" cantidad="1">Cantidad : </label>
-            <input type="number" name="cantidad">
-            <button class="delete-button">X</button>
+          <form action="" class="cantidad">
+            <input
+              class="cuanto-producto"
+              type="number"
+              min="1"
+              name="cantidad3"
+            />
+            <input type="reset" value="X" class="delete-button" />
+          </form>
         </article>
       </section>
-      
+
       <section class="productos">
         <article class="productoUno">
-            <img class="foto" src="/img/corte-carne.jpg" alt="" width="200">
-            <p class="nombre-producto">producto 1</p>
+          <img class="foto" src="/img/corte-carne.jpg" alt="" width="200" />
+          <p class="nombre-producto">producto</p>
         </article>
         <article class="producto2">
-            <p class="texto-precio">$400</p>
+          <p class="texto-precio">$400</p>
         </article>
         <article class="producto3">
-            <label class="texto-cantidad" cantidad="1">Cantidad : </label>
-            <input type="number" name="cantidad">
-            <button class="delete-button">X</button>
+          <form action="" class="cantidad">
+            <input
+              class="cuanto-producto"
+              type="number"
+              min="1"
+              name="cantidad3"
+            />
+            <input type="reset" value="X" class="delete-button" />
+          </form>
         </article>
       </section>
-    
+
       <section class="productos">
         <article class="productoUno">
-            <img class="foto" src="/img/corte-carne.jpg" alt="" width="200">
-            <p class="nombre-producto">producto 1</p>
+          <img class="foto" src="/img/corte-carne.jpg" alt="" width="200" />
+          <p class="nombre-producto">producto</p>
         </article>
         <article class="producto2">
-            <p class="texto-precio">$400</p>
+          <p class="texto-precio">$400</p>
         </article>
         <article class="producto3">
-            <label class="texto-cantidad" cantidad="1">Cantidad : </label>
-            <input type="number" name="cantidad">
-            <button class="delete-button">X</button>
+          <form action="" class="cantidad">
+            <input
+              class="cuanto-producto"
+              type="number"
+              min="1"
+              name="cantidad3"
+            />
+            <input type="reset" value="X" class="delete-button" />
+          </form>
         </article>
       </section>
       <div class="but">
