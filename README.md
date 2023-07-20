@@ -25,3 +25,8 @@ Paginas modelo:
 - https://www.locosxelasado.com/
 - https://www.cucinaparadiso.com/
 - https://airescriollos.com.ar/ 
+
+
+Trello: 
+
+https://trello.com/b/NRReApsz/dh-g13
