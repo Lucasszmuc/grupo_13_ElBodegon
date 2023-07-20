@@ -54,7 +54,9 @@ section article {
   display: flex;
   flex-direction: column;
 }
-
+.detalle-producto{
+  color: black;
+}
 .precio-boton {
   display: flex;
   flex-direction: row;

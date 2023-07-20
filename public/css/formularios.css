@@ -19,6 +19,7 @@ body {
 .contenedor-fuera {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .botonX {
@@ -59,19 +60,20 @@ body {
 .login-form {
   max-width: 90%;
   width: 85vw;
+  max-height: 90%;
   padding: 3vw;
+  padding-top: 1vw;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin-bottom: 40px;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 3vh;
+  margin-bottom: 1vh;
 }
 
 .signup-login-box {
@@ -127,10 +129,6 @@ body {
   color: #333;
 }
 
-.form-contenido {
-  margin-top: 30px;
-}
-
 .login-form label {
   display: block;
   color: #333;
@@ -156,6 +154,7 @@ body {
   border: none;
   width: 100%;
   padding: 12px 24px;
+  margin-bottom: 5px ;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -194,7 +193,7 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin: 10px;
+  margin: 5px;
   width: 100%;
 }
 
