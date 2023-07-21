@@ -75,6 +75,57 @@ footer {
   margin: 2px 8px;
 }
 
+.redes {
+  display: flex;
+  font-size: 24px;
+}
+
+.redes a {
+  color: #000;
+  background-color: #f0f0f0; 
+  margin: 10px;
+  padding: 10px;
+  border-radius: 50%; 
+  transition: background-color 0.5s ease; 
+}
+
+.redes a.insta:hover {
+  background-color: #7a21b6; 
+}
+
+.redes a.insta:hover i{
+  color: #fff; 
+}
+
+
+.redes a.face:hover {
+  background-color: #1877F2; 
+}
+
+.redes a.face:hover i{
+  color: #fff; 
+}
+
+.redes a.twi:hover {
+  background-color: #1877F2; 
+}
+
+.redes a.twi:hover i{
+  color: #fff; 
+}
+
+.instagram{
+  color: #7a21b6;
+}
+
+.facebook{
+  color: #1877F2;
+}
+
+.twitter{
+  color: #1877F2;
+}
+
 .red {
   height: 20px;
   width: 20px;

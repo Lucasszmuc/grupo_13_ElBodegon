@@ -28,6 +28,8 @@ section article {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   padding: 10px;
   width: 300px;
+  min-width: 300px;
+  max-width: 350px;
   margin: 10px 1px;
   border-radius: 12px;
   display: flex;
@@ -38,11 +40,16 @@ section article {
   width: 100%;
   height: 250px;
   border-radius: 8px;
+  box-shadow: 1px 4px 20px 1px rgba(0, 0, 0, 0.2);
 }
 
 .info-produ {
   display: flex;
   flex-direction: column;
+}
+
+.info-produ a {
+  text-decoration: none;
 }
 
 h5 {
@@ -107,14 +114,22 @@ button .fa-cart-shopping {
   padding: 60px;
 }
 #pedi-h2 {
-  margin: 0;
+  margin: 30px 0;
   text-align: center;
   padding: 10px;
 }
 #boton-pedi {
   border: 1px solid rgb(83, 83, 83);
-  display: flex;
+  border-radius: 5px;
   margin: auto;
+  display: block;
+  transition: background-color 0.8s ease;
+}
+#boton-pedi:hover {
+  border: 1px solid rgb(83, 83, 83);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  background-color: #94774cb3;
 }
 /* ------------------------contacto-------------------------------- */
 .contacto-container {
@@ -222,5 +237,7 @@ div.contact-left p {
 @media (min-width: 1120px) {
   .productos {
     width: 21%;
+    height: 450px;
+    justify-content: space-evenly;
   }
 }
