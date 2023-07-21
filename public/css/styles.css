@@ -1,11 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-  background-color: rgb(230, 185, 130);
+  /* background-color: rgb(230, 185, 130); */
+  background-color: #d9cdb7fe;
 }
 
 /*Nav Bar*/
@@ -108,4 +111,8 @@ input {
     justify-content: flex-end;
     margin-right: 50px;
   }
+
+ .copy{
+  display: none;
+ }
 }

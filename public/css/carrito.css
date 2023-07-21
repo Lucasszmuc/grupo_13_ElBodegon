@@ -3,9 +3,9 @@ body {
   margin: 0;
 }
 
-main {
+main{
   margin-top: 60px;
-  padding: 100px 100px 20px;
+    padding: 100px 100px 20px;
 }
 
 .titulo {
@@ -42,8 +42,8 @@ main {
 
 .productoUno img {
   border: 2px solid black;
-  width: 6vw;
-  height: 10vh;
+  width: 5vw;
+  height: 85px;
   margin: 0.5vw 1vw 0.5vw;
 }
 
@@ -52,7 +52,6 @@ main {
   border-radius: 8px;
   display: flex;
   width: 15vw;
-  height: 15vh;
   justify-content: space-evenly;
   align-items: center;
   background-color: #f9e8da;
@@ -64,7 +63,6 @@ main {
   border: solid black 1px;
   border-radius: 8px;
   width: 15vw;
-  height: 15vh;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -75,10 +73,10 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+
 .producto3 {
   border-radius: 8px;
   width: 15vw;
-  height: 15vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -88,18 +86,14 @@ main {
   border: solid rgba(65, 65, 65, 0.5) 1px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.producto3 .cuanto-producto {
-  width: 5vw;
+.producto3 input {
+  width: 2vw;
   margin-left: 2%;
   height: 30px;
 }
 
 .texto-precio {
   justify-content: space-around;
-}
-
-.cantidad {
-  display: flex;
 }
 
 .delete-button {
@@ -112,8 +106,6 @@ main {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.5s ease;
-  flex-direction: row;
-  margin-left: 15px;
 }
 
 .delete-button:hover {
@@ -121,14 +113,14 @@ main {
   color: black;
 }
 
-.but {
+.but{
   display: flex;
   justify-content: center;
   margin-top: 5vh;
 }
 
 .submit-button {
-  background-color: #4caf50;
+  background-color: #4CAF50;
   color: white;
   border: 1px solid black;
   padding: 12px 24px;
@@ -145,8 +137,9 @@ main {
   background-color: #45a049;
 }
 
+
 @media (max-width: 800px) {
-  .productos {
+  .productos{
     justify-content: space-evenly;
   }
   .foto {
@@ -170,37 +163,12 @@ main {
   .producto3 label {
     display: none;
   }
-  .producto3 .cuanto-producto {
+  .producto3 input {
     width: 50%;
   }
 }
 
-@media (max-width: 610px) {
-  .productos {
-    padding-bottom: 10vh;
-    margin-bottom: 0;
-    height: 30px;
-  }
-  .productoUno {
-    width: 98.13px;
-    height: 10vh;
-  }
-  .producto2 {
-    width: 20vw;
-    height: 10vh;
-    margin-left: 5px;
-  }
-  .producto3 {
-    width: 74px;
-    height: 10vh;
-    margin-left: 5px;
-  }
 
-  .cuanto-producto {
-    padding: 0px;
-    margin-left: 2px;
-  }
-  .delete-button {
-    margin: 0;
-  }
+@media (max-width: 800px) {
+
 }

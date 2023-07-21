@@ -25,6 +25,18 @@ app.get("/register", (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/register.html'));
 });
 
+app.get("/nosotros", (req, res) => {
+  res.sendFile(path.resolve(__dirname, './views/nosotros.html'));
+});
+
+app.get("/menu", (req, res) => {
+  res.sendFile(path.resolve(__dirname, './views/menu.html'));
+});
+
+app.get("/recetas", (req, res) => {
+  res.sendFile(path.resolve(__dirname, './views/recetas.html'));
+});
+
 app.listen(3003, () => {
   console.log('Servidor funcionando en el puerto 3003');
 });
