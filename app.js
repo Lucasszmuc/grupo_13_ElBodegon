@@ -4,39 +4,46 @@ const path = require('path');
 const ruta = path.resolve(__dirname, './public');
 
 app.use(express.static(ruta));
+app.set('view engine','ejs');
 
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/index.html'));
-});
+const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
+// const adminRoutes = require('./routes/adminRoutes');
+const aboutUsRoutes = require('./routes/aboutUsRoutes');
+const mainRoutes = require('./routes/mainRoutes')
 
-app.get('/vista-producto', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/productoDetail.html'));
-});
 
-app.get("/carrito", (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/carrito.html'));
-});
+app.use('/', mainRoutes);
+app.use('/user', userRoutes);
+app.use('/', aboutUsRoutes);
+app.use('/producto', productRoutes);
+// app.use('/admin', adminRoutes);
 
-app.get("/login", (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/login.html'));
-});
-
-app.get("/register", (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/register.html'));
-});
-
-app.get("/nosotros", (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/nosotros.html'));
-});
-
-app.get("/menu", (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/menu.html'));
-});
-
-app.get("/recetas", (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/recetas.html'));
-});
 
 app.listen(3003, () => {
   console.log('Servidor funcionando en el puerto 3003');
 });
+
+/*
+userController:
+login.ejs: Vista para el inicio de sesión.
+register.ejs: Vista para el registro de nuevos usuarios.
+
+
+productController:
+index.ejs: Vista para mostrar la página de inicio con el listado de productos o alguna sección principal relacionada con los productos.
+productoDetail.ejs: Vista para mostrar el detalle de un producto específico.
+menu.ejs: Vista para mostrar la lista de productos disponibles en el menú.
+recetas.ejs: Vista para mostrar la lista de recetas de cocina.
+
+
+cartController:
+carrito.ejs: Vista para mostrar el contenido del carrito de compras.
+
+
+adminController:
+dashboard.ejs: Vista para mostrar un panel de administración con las herramientas para gestionar productos, usuarios, etc.
+
+
+aboutUsController:
+nosotros.ejs: Vista para mostrar información sobre la empresa o el equipo. */
