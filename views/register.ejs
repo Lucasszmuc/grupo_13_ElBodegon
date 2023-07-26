@@ -2,6 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -9,9 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="css/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/formularios.css" />
   </head>
 
@@ -24,10 +24,10 @@
             <div class="header">
               <div class="signup-login-box">
                 <div class="login">
-                  <a href="/login"><h2>Login</h2></a>
+                  <a href="/user/login"><h2>Login</h2></a>
                 </div>
                 <div class="signup">
-                  <a href="/register"><h2>Sign Up</h2></a>
+                  <a href="/user/register"><h2>Sign Up</h2></a>
                 </div>
               </div>
               <a href="/"><h3 class="bodegon">El Bodegon</h3></a>
@@ -42,12 +42,17 @@
                 <input type="email" id="email" name="email" required />
               </div>
               <div class="input-group">
-                <label for="password">Password:</label>
+                <label for="password">Create Password:</label>
                 <input type="password" id="password" name="password" required />
               </div>
-              <div class="input-group" style="display: flex">
-                <label for="keep-session">Mantener sesión</label>
-                <input type="checkbox" id="keep-session" name="keep-session" />
+              <div class="input-group">
+                <label for="confirm-password">Repeat Password:</label>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  name="confirm-password"
+                  required
+                />
               </div>
               <p class="olvidar-password">
                 <a href="#">Olvidé mi contraseña</a>
@@ -68,3 +73,4 @@
     </main>
   </body>
 </html>
+
