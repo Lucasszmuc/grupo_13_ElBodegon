@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/carrousel.css" />
+    <title>El Bodegon</title>
+  </head>
+
+  <body>
+    <header>
+      <!--carrusel-->
+      <div class="slide">
+        <div class="slide-inner">
+          <input
+            class="slide-open"
+            type="radio"
+            id="slide-1"
+            name="slide"
+            aria-hidden="true"
+            hidden=""
+            checked="checked"
+          />
+          <div class="slide-item">
+            <img src="/img/parrilla3.jpg" alt="Slide 1" />
+          </div>
+          <input
+            class="slide-open"
+            type="radio"
+            id="slide-2"
+            name="slide"
+            aria-hidden="true"
+            hidden=""
+          />
+          <div class="slide-item">
+            <img src="/img/corte2.jpg" alt="Slide 2" />
+          </div>
+          <input
+            class="slide-open"
+            type="radio"
+            id="slide-3"
+            name="slide"
+            aria-hidden="true"
+            hidden=""
+          />
+          <div class="slide-item">
+            <img src="/img/corte1.jpeg" alt="Slide 3" />
+          </div>
+          <label for="slide-3" class="slide-control prev control-1">‹</label>
+          <label for="slide-2" class="slide-control next control-1">›</label>
+          <label for="slide-1" class="slide-control prev control-2">‹</label>
+          <label for="slide-3" class="slide-control next control-2">›</label>
+          <label for="slide-2" class="slide-control prev control-3">‹</label>
+          <label for="slide-1" class="slide-control next control-3">›</label>
+          <ol class="slide-indicator">
+            <li>
+              <label for="slide-1" class="slide-circle">•</label>
+            </li>
+            <li>
+              <label for="slide-2" class="slide-circle">•</label>
+            </li>
+            <li>
+              <label for="slide-3" class="slide-circle">•</label>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <!-- ------------------------------------fin carrusel-------------------------------------- -->
+
+      <nav class="nav-var">
+        <div class="logo">
+          <a href="/"
+            ><img src="img/logo_elbodegon.png" alt="lgo" width="10%" id="logo"
+          /></a>
+        </div>
+        <div class="lista">
+          <ul>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/recetas">Recetas</a></li>
+            <li><a href="/nosotros">Nosotros</a></li>
+            <li>
+              <a href="/carrito"
+                ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i
+              ></a>
+            </li>
+            <li><a href="/login">Login</a></li>
+          </ul>
+        </div>
+        <a href="#" class="burger-menu">
+          <i class="fas fa-bars"></i>
+        </a>
+      </nav>
+    </header>
+    <main>
+      <!-- ------------------Nuestras Especialidades--------------------------- -->
+      <div class="sec-produ">
+        <h2>Nuestras Especialidades</h2>
+        <section>
+          <article class="productos">
+            <img src="/img/toma.jpg" alt="imagen-del-producto" />
+            <div class="info-produ">
+              <a href="/vista-producto"><h5>Tomahawk</h5></a>
+              <div class="precio-boton">
+                <p id="precio">$2.000</p>
+                <button class="agregar-al-carrito">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="productos">
+            <img src="/img/bola-de.jpg" alt="imagen-del-producto" />
+            <div class="info-produ">
+              <a href="/vista-producto"><h5>Bola de Lomo</h5></a>
+              <div class="precio-boton">
+                <p id="precio">$1.500</p>
+                <button class="agregar-al-carrito">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="productos">
+            <img src="/img/new-york.jpg" alt="imagen-del-producto" />
+            <div class="info-produ">
+              <a href="/vista-producto"><h5>New York Steak</h5></a>
+              <div class="precio-boton">
+                <p id="precio">$2.300</p>
+                <button class="agregar-al-carrito">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="productos">
+            <img src="/img/rib-eye-1.jpg" alt="imagen-del-producto" />
+            <div class="info-produ">
+              <a href="/vista-producto"><h5>Rib Eye</h5></a>
+              <div class="precio-boton">
+                <p id="precio">$2.100</p>
+                <button class="agregar-al-carrito">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+        </section>
+        <!-- --------------------------Comidas----------------------- -->
+        <h2>Comidas</h2>
+        <section>
+          <article class="productos">
+            <img src="/img/picana.jpg" alt="imagen-del-producto" />
+            <div class="info-produ">
+              <a href="/vista-producto"><h5>Picaña</h5></a>
+              <div class="precio-boton">
+                <p id="precio">$1.700</p>
+                <button class="agregar-al-carrito">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="productos">
+            <img src="/img/churrasco.jpg" alt="imagen-del-producto" />
+            <div class="info-produ">
+              <a href="/vista-producto"><h5>Churrasco</h5></a>
+              <div class="precio-boton">
+                <p id="precio">$1.800</p>
+                <button class="agregar-al-carrito">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="productos">
+            <img src="/img/entrana.jpg" alt="imagen-del-producto" />
+            <div class="info-produ">
+              <a href="/vista-producto"
+                ><h5 style="font-size: 20px; margin: 20px 5px">Entraña</h5></a
+              >
+              <div class="precio-boton">
+                <p id="precio">$2.700</p>
+                <button class="agregar-al-carrito">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="productos">
+            <img src="/img/vacio.jpg" alt="imagen-del-producto" />
+            <div class="info-produ">
+              <a href="/vista-producto"><h5>Vacío</h5></a>
+              <div class="precio-boton">
+                <p id="precio">$2.800</p>
+                <button class="agregar-al-carrito">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+      <!-- ------------------------pedi aca------------------------------ -->
+      <div id="pedi-aca">
+        <h2 id="pedi-h2">El Bodegon</h2>
+        <a href="/menu" style="text-decoration: none">
+          <button id="boton-pedi">Pedi aca</button>
+        </a>
+      </div>
+      <!-- ------------------------contacto------------------------------ -->
+      <div class="contacto-container">
+        <div class="contact-left">
+          <h3>Abierto Todos Los Dias</h3>
+          <p>11:30 - 16:00 hs. | 19:00 - 1:00 hs.</p>
+        </div>
+        <div class="contact-right">
+          <div class="direccion">
+            <h4>Dirección:</h4>
+            <i class="fa-solid fa-location-dot" style="color: #000000"></i>
+            <p>Palermo, Buenos Aires. Argentina</p>
+          </div>
+          <div class="telefono">
+            <h4>Teléfono:</h4>
+            <i class="fa-solid fa-phone" style="color: #000000"></i>
+            <p>(+54) 2667823502</p>
+          </div>
+          <div class="email">
+            <h4>Email:</h4>
+            <i class="fa-solid fa-envelope" style="color: #000000"></i>
+            <p>elbodegon@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>El Bodegon, Argentina</p>
+      <p class="copy">Copyright © 2023 Todos los derechos reservados.</p>
+      <div class="redes">
+        <a href="https://www.instagram.com/" class="insta"
+          ><i class="fab fa-instagram instagram"></i
+        ></a>
+        <a href="https://www.facebook.com/" class="face"
+          ><i class="fab fa-facebook facebook"></i
+        ></a>
+        <a href="https://twitter.com/" class="twi"
+          ><i class="fab fa-twitter twitter"></i
+        ></a>
+      </div>
+    </footer>
+  </body>
+</html>
