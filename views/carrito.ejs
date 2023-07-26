@@ -10,29 +10,29 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="css/carrito.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>El Bodegon</title>
+    <link rel="stylesheet" href="../css/carrito.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Carrito de compras</title>
   </head>
   <body>
     <header>
       <nav class="nav-var">
         <div class="logo">
           <a href="/"
-            ><img src="img/logo_elbodegon.png" alt="lgo" width="10%" id="logo"
+            ><img src="/img/logo_elbodegon.png" alt="lgo" width="10%" id="logo"
           /></a>
         </div>
         <div class="lista">
           <ul>
-            <li><a href="/">Menu</a></li>
-            <li><a href="#">Recetas</a></li>
-            <li><a href="#">Nosotros</a></li>
+            <li><a href="/producto/menu">Menu</a></li>
+            <li><a href="/producto/recetas">Recetas</a></li>
+            <li><a href="/nosotros">Nosotros</a></li>
             <li>
-              <a href="#"
+              <a href="/producto/carrito"
                 ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i
               ></a>
             </li>
-            <li><a href="/login">Login</a></li>
+            <li><a href="/user/login">Login</a></li>
           </ul>
         </div>
         <a href="#" class="burger-menu">
@@ -51,20 +51,16 @@
       <section class="productos">
         <article class="productoUno">
           <img class="foto" src="/img/corte-carne.jpg" alt="" width="200" />
-          <p class="nombre-producto">producto</p>
+          <p class="nombre-producto">producto 1</p>
         </article>
         <article class="producto2">
           <p class="texto-precio">$400</p>
         </article>
         <article class="producto3">
-          <form action="" class="cantidad">
-            <input
-              class="cuanto-producto"
-              type="number"
-              min="1"
-              name="cantidad3"
-            />
-            <input type="reset" value="X" class="delete-button" />
+          <form class="formulario-cantidad" action="">
+            <label class="texto-cantidad" cantidad="1"></label>
+            <input type="number" min="1" name="cantidad" />
+            <input type="reset" class="delete-button" value="X" />
           </form>
         </article>
       </section>
@@ -72,20 +68,16 @@
       <section class="productos">
         <article class="productoUno">
           <img class="foto" src="/img/corte-carne.jpg" alt="" width="200" />
-          <p class="nombre-producto">producto</p>
+          <p class="nombre-producto">producto 1</p>
         </article>
         <article class="producto2">
           <p class="texto-precio">$400</p>
         </article>
         <article class="producto3">
-          <form action="" class="cantidad">
-            <input
-              class="cuanto-producto"
-              type="number"
-              min="1"
-              name="cantidad3"
-            />
-            <input type="reset" value="X" class="delete-button" />
+          <form class="formulario-cantidad" action="">
+            <label class="texto-cantidad" cantidad="1"></label>
+            <input type="number" min="1" name="cantidad" />
+            <input type="reset" class="delete-button" value="X" />
           </form>
         </article>
       </section>
@@ -93,20 +85,16 @@
       <section class="productos">
         <article class="productoUno">
           <img class="foto" src="/img/corte-carne.jpg" alt="" width="200" />
-          <p class="nombre-producto">producto</p>
+          <p class="nombre-producto">producto 1</p>
         </article>
         <article class="producto2">
           <p class="texto-precio">$400</p>
         </article>
         <article class="producto3">
-          <form action="" class="cantidad">
-            <input
-              class="cuanto-producto"
-              type="number"
-              min="1"
-              name="cantidad3"
-            />
-            <input type="reset" value="X" class="delete-button" />
+          <form class="formulario-cantidad" action="">
+            <label class="texto-cantidad" cantidad="1"></label>
+            <input type="number" min="1" name="cantidad" />
+            <input type="reset" class="delete-button" value="X" />
           </form>
         </article>
       </section>
@@ -116,11 +104,17 @@
     </main>
     <footer>
       <p>El Bodegon, Argentina</p>
-      <p>Copyright © 2023 Todos los derechos reservados.</p>
+      <p class="copy">Copyright © 2023 Todos los derechos reservados.</p>
       <div class="redes">
-        <i class="fa-brands fa-instagram red"></i>
-        <i class="fa-brands fa-facebook red"></i>
-        <i class="fa-brands fa-twitter red"></i>
+        <a href="https://www.instagram.com/" class="insta"
+          ><i class="fab fa-instagram instagram"></i
+        ></a>
+        <a href="https://www.facebook.com/" class="face"
+          ><i class="fab fa-facebook facebook"></i
+        ></a>
+        <a href="https://twitter.com/" class="twi"
+          ><i class="fab fa-twitter twitter"></i
+        ></a>
       </div>
     </footer>
   </body>

@@ -1,11 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-  background-color: rgb(230, 185, 130);
+  /* background-color: rgb(230, 185, 130); */
+  background-color: #d9cdb7fe;
 }
 
 /*Nav Bar*/
@@ -72,6 +75,57 @@ footer {
   margin: 2px 8px;
 }
 
+.redes {
+  display: flex;
+  font-size: 24px;
+}
+
+.redes a {
+  color: #000;
+  background-color: #f0f0f0; 
+  margin: 10px;
+  padding: 10px;
+  border-radius: 50%; 
+  transition: background-color 0.5s ease; 
+}
+
+.redes a.insta:hover {
+  background-color: #7a21b6; 
+}
+
+.redes a.insta:hover i{
+  color: #fff; 
+}
+
+
+.redes a.face:hover {
+  background-color: #1877F2; 
+}
+
+.redes a.face:hover i{
+  color: #fff; 
+}
+
+.redes a.twi:hover {
+  background-color: #1877F2; 
+}
+
+.redes a.twi:hover i{
+  color: #fff; 
+}
+
+.instagram{
+  color: #7a21b6;
+}
+
+.facebook{
+  color: #1877F2;
+}
+
+.twitter{
+  color: #1877F2;
+}
+
 .red {
   height: 20px;
   width: 20px;
@@ -108,4 +162,8 @@ input {
     justify-content: flex-end;
     margin-right: 50px;
   }
+
+ .copy{
+  display: none;
+ }
 }

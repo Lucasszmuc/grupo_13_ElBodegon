@@ -31,7 +31,7 @@
             checked="checked"
           />
           <div class="slide-item">
-            <img src="/img/parrilla3.jpg" />
+            <img src="/img/parrilla3.jpg" alt="Slide 1" />
           </div>
           <input
             class="slide-open"
@@ -42,7 +42,7 @@
             hidden=""
           />
           <div class="slide-item">
-            <img src="/img/corte2.jpeg" />
+            <img src="/img/corte2.jpg" alt="Slide 2" />
           </div>
           <input
             class="slide-open"
@@ -53,7 +53,7 @@
             hidden=""
           />
           <div class="slide-item">
-            <img src="/img/corte1.jpeg" />
+            <img src="/img/corte1.jpeg" alt="Slide 3" />
           </div>
           <label for="slide-3" class="slide-control prev control-1">‹</label>
           <label for="slide-2" class="slide-control next control-1">›</label>
@@ -61,15 +61,15 @@
           <label for="slide-3" class="slide-control next control-2">›</label>
           <label for="slide-2" class="slide-control prev control-3">‹</label>
           <label for="slide-1" class="slide-control next control-3">›</label>
-          <ol class="slide-indicador">
+          <ol class="slide-indicator">
             <li>
-              <label for="slide-1" class="slide-circulo">•</label>
+              <label for="slide-1" class="slide-circle">•</label>
             </li>
             <li>
-              <label for="slide-2" class="slide-circulo">•</label>
+              <label for="slide-2" class="slide-circle">•</label>
             </li>
             <li>
-              <label for="slide-3" class="slide-circulo">•</label>
+              <label for="slide-3" class="slide-circle">•</label>
             </li>
           </ol>
         </div>
@@ -84,15 +84,15 @@
         </div>
         <div class="lista">
           <ul>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Recetas</a></li>
-            <li><a href="#">Nosotros</a></li>
+            <li><a href="/producto/menu">Menu</a></li>
+            <li><a href="/producto/recetas">Recetas</a></li>
+            <li><a href="/nosotros">Nosotros</a></li>
             <li>
-              <a href="/carrito"
+              <a href="/producto/carrito"
                 ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i
               ></a>
             </li>
-            <li><a href="/login">Login</a></li>
+            <li><a href="/user/login">Login</a></li>
           </ul>
         </div>
         <a href="#" class="burger-menu">
@@ -106,52 +106,44 @@
         <h2>Nuestras Especialidades</h2>
         <section>
           <article class="productos">
-            <img src="/img/corte-carne.jpg" alt="imagen-del-producto" />
+            <img src="/img/toma.jpg" alt="imagen-del-producto" />
             <div class="info-produ">
-              <a href="/vista-producto"  class= "detalle-producto"
-                ><h5 style="font-size: 20px; margin: 20px 5px">Productos</h5></a
-              >
+              <a href="/producto/id"><h5>Tomahawk</h5></a>
               <div class="precio-boton">
-                <p id="precio">$Precio</p>
+                <p id="precio">$2.000</p>
                 <button class="agregar-al-carrito">Agregar al carrito</button>
               </div>
             </div>
           </article>
 
           <article class="productos">
-            <img src="/img/corte-carne.jpg" alt="imagen-del-producto" />
+            <img src="/img/bola-de.jpg" alt="imagen-del-producto" />
             <div class="info-produ">
-              <a href="/vista-producto" class= "detalle-producto"
-                ><h5 style="font-size: 20px; margin: 20px 5px">Productos</h5></a
-              >
+              <a href="/producto/id"><h5>Bola de Lomo</h5></a>
               <div class="precio-boton">
-                <p id="precio">$Precio</p>
+                <p id="precio">$1.500</p>
                 <button class="agregar-al-carrito">Agregar al carrito</button>
               </div>
             </div>
           </article>
 
           <article class="productos">
-            <img src="/img/corte-carne.jpg" alt="imagen-del-producto" />
+            <img src="/img/new-york.jpg" alt="imagen-del-producto" />
             <div class="info-produ">
-              <a href="/vista-producto" class= "detalle-producto"
-                ><h5 style="font-size: 20px; margin: 20px 5px">Productos</h5></a
-              >
+              <a href="/producto/id"><h5>New York Steak</h5></a>
               <div class="precio-boton">
-                <p id="precio">$Precio</p>
+                <p id="precio">$2.300</p>
                 <button class="agregar-al-carrito">Agregar al carrito</button>
               </div>
             </div>
           </article>
 
           <article class="productos">
-            <img src="/img/corte-carne.jpg" alt="imagen-del-producto" />
+            <img src="/img/rib-eye-1.jpg" alt="imagen-del-producto" />
             <div class="info-produ">
-              <a href="/vista-producto" class= "detalle-producto"
-                ><h5 style="font-size: 20px; margin: 20px 5px">Productos</h5></a
-              >
+              <a href="/producto/id"><h5>Rib Eye</h5></a>
               <div class="precio-boton">
-                <p id="precio">$Precio</p>
+                <p id="precio">$2.100</p>
                 <button class="agregar-al-carrito">Agregar al carrito</button>
               </div>
             </div>
@@ -161,52 +153,46 @@
         <h2>Comidas</h2>
         <section>
           <article class="productos">
-            <img src="/img/corte-carne.jpg" alt="imagen-del-producto" />
+            <img src="/img/picana.jpg" alt="imagen-del-producto" />
             <div class="info-produ">
-              <a href="/vista-producto" class= "detalle-producto"
-                ><h5 style="font-size: 20px; margin: 20px 5px">Productos</h5></a
-              >
+              <a href="/producto/id"><h5>Picaña</h5></a>
               <div class="precio-boton">
-                <p id="precio">$Precio</p>
+                <p id="precio">$1.700</p>
                 <button class="agregar-al-carrito">Agregar al carrito</button>
               </div>
             </div>
           </article>
 
           <article class="productos">
-            <img src="/img/corte-carne.jpg" alt="imagen-del-producto" />
+            <img src="/img/churrasco.jpg" alt="imagen-del-producto" />
             <div class="info-produ">
-              <a href="/vista-producto" class= "detalle-producto"
-                ><h5 style="font-size: 20px; margin: 20px 5px">Productos</h5></a
-              >
+              <a href="/producto/id"><h5>Churrasco</h5></a>
               <div class="precio-boton">
-                <p id="precio">$Precio</p>
+                <p id="precio">$1.800</p>
                 <button class="agregar-al-carrito">Agregar al carrito</button>
               </div>
             </div>
           </article>
 
           <article class="productos">
-            <img src="/img/corte-carne.jpg" alt="imagen-del-producto" />
+            <img src="/img/entrana.jpg" alt="imagen-del-producto" />
             <div class="info-produ">
-              <a href="/vista-producto" class= "detalle-producto"
-                ><h5 style="font-size: 20px; margin: 20px 5px">Productos</h5></a
+              <a href="/producto/id"
+                ><h5 style="font-size: 20px; margin: 20px 5px">Entraña</h5></a
               >
               <div class="precio-boton">
-                <p id="precio">$Precio</p>
+                <p id="precio">$2.700</p>
                 <button class="agregar-al-carrito">Agregar al carrito</button>
               </div>
             </div>
           </article>
 
           <article class="productos">
-            <img src="/img/corte-carne.jpg" alt="imagen-del-producto" />
+            <img src="/img/vacio.jpg" alt="imagen-del-producto" />
             <div class="info-produ">
-              <a href="/vista-producto" class= "detalle-producto"
-                ><h5 style="font-size: 20px; margin: 20px 5px">Productos</h5></a
-              >
+              <a href="/producto/id"><h5>Vacío</h5></a>
               <div class="precio-boton">
-                <p id="precio">$Precio</p>
+                <p id="precio">$2.800</p>
                 <button class="agregar-al-carrito">Agregar al carrito</button>
               </div>
             </div>
@@ -216,7 +202,9 @@
       <!-- ------------------------pedi aca------------------------------ -->
       <div id="pedi-aca">
         <h2 id="pedi-h2">El Bodegon</h2>
-        <button id="boton-pedi">Pedi aca</button>
+        <a href="/producto/menu" style="text-decoration: none">
+          <button id="boton-pedi">Pedi aca</button>
+        </a>
       </div>
       <!-- ------------------------contacto------------------------------ -->
       <div class="contacto-container">
@@ -245,11 +233,17 @@
     </main>
     <footer>
       <p>El Bodegon, Argentina</p>
-      <p>Copyright © 2023 Todos los derechos reservados.</p>
+      <p class="copy">Copyright © 2023 Todos los derechos reservados.</p>
       <div class="redes">
-        <i class="fa-brands fa-instagram red"></i>
-        <i class="fa-brands fa-facebook red"></i>
-        <i class="fa-brands fa-twitter red"></i>
+        <a href="https://www.instagram.com/" class="insta"
+          ><i class="fab fa-instagram instagram"></i
+        ></a>
+        <a href="https://www.facebook.com/" class="face"
+          ><i class="fab fa-facebook facebook"></i
+        ></a>
+        <a href="https://twitter.com/" class="twi"
+          ><i class="fab fa-twitter twitter"></i
+        ></a>
       </div>
     </footer>
   </body>
