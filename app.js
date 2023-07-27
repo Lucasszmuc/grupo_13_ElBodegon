@@ -1,28 +1,26 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const path = require('path');
+const path = require("path");
 
-const ruta = path.resolve(__dirname, './public');
+const ruta = path.resolve(__dirname, "./public");
 
 app.use(express.static(ruta));
-app.set('view engine','ejs');
+app.set("view engine", "ejs");
 
-const userRoutes = require('./routes/userRoutes');
-const productRoutes = require('./routes/productRoutes');
-// const adminRoutes = require('./routes/adminRoutes');
-const aboutUsRoutes = require('./routes/aboutUsRoutes');
-const mainRoutes = require('./routes/mainRoutes')
+const userRoutes = require("./routes/userRoutes");
+const productRoutes = require("./routes/productRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+const aboutUsRoutes = require("./routes/aboutUsRoutes");
+const mainRoutes = require("./routes/mainRoutes");
 
-
-app.use('/', mainRoutes);
-app.use('/user', userRoutes);
-app.use('/', aboutUsRoutes);
-app.use('/producto', productRoutes);
-// app.use('/admin', adminRoutes);
-
+app.use("/", mainRoutes);
+app.use("/user", userRoutes);
+app.use("/", aboutUsRoutes);
+app.use("/producto", productRoutes);
+app.use("/adminRouters", adminRoutes);
 
 app.listen(3003, () => {
-  console.log('Servidor funcionando en el puerto 3003');
+  console.log("Servidor funcionando en el puerto 3003");
 });
 
 /*
