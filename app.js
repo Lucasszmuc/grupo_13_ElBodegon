@@ -17,7 +17,7 @@ app.use("/", mainRoutes);
 app.use("/user", userRoutes);
 app.use("/", aboutUsRoutes);
 app.use("/producto", productRoutes);
-app.use("/adminRouters", adminRoutes);
+app.use("/admin", adminRoutes);
 
 app.listen(3003, () => {
   console.log("Servidor funcionando en el puerto 3003");
