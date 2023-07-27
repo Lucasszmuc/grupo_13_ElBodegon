@@ -1,16 +1,16 @@
 
 const productController = {
     getProductDetail: (req, res) => {
-        res.render('productoDetail')
+        res.render('./products/productoDetail')
     },
     showMenu: (req, res) => {
-        res.render('menu');
+        res.render('./products/menu');
     },
     showRecetas: (req, res) => {
-        res.render('recetas');
+        res.render('./products/recetas');
     },
     showCarrito: (req, res) => {
-        res.render('carrito');
+        res.render('./products/carrito');
     }
 }
 

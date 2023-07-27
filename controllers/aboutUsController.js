@@ -1,7 +1,7 @@
 
 const usController = {
     showAboutUs: (req, res) => {
-        res.render('nosotros');
+        res.render('./main/nosotros');
     },
 }
 

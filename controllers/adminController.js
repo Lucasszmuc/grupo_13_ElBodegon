@@ -1,9 +1,9 @@
 const adminController = {
   editProduct: (req, res) => {
-    res.render("editProduct");
+    res.render("./products/editProduct");
   },
   createProduct: (req, res) => {
-    res.render("createProduct");
+    res.render("./products/createProduct");
   },
 };
 
