@@ -123,9 +123,17 @@ main {
   .foto {
     display: none;
   }
+
+  .productoUno {
+    width: 17vw;
+  }
+
+  .formulario-cantidad {
+    margin: 0 5px;
+  }
   .productoUno p {
     font-size: 20px;
-    margin-left: 10px;
+   margin: 0 5px;
   }
   .productoUno label {
     display: none;
@@ -135,5 +143,22 @@ main {
   }
   .texto-precio {
     justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .titulares {
+    font-size: 20px;
+  }
+
+  .productoUno p {
+    font-size: 15px;
+    margin: 0 5px;
+  }
+}
+@media (max-width: 600px) {
+  .productoUno p {
+    font-size: 13px;
+    margin: 0 5px;
   }
 }
