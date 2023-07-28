@@ -1,11 +1,12 @@
-/*Paleta de Cololes:
+/*Paleta de Colores:
 
 #2A1D10
 #BF6B04
 #BFA78A
 #592E15 Marron
 #F2F2F2
-
+#94774c
+rgba(0, 0, 0, 0.7)
 
 
 */
@@ -154,7 +155,7 @@ body {
   border: none;
   width: 100%;
   padding: 12px 24px;
-  margin-bottom: 5px ;
+  margin-bottom: 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;

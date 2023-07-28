@@ -1,0 +1,99 @@
+main {
+  margin-top: 130px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid rgba(65, 65, 65, 0.5);
+  border-radius: 12px;
+  background-color: #f9e8da;
+  font-weight: bold;
+}
+
+button {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.boton-enviar {
+  background-color: #94774c;
+}
+
+.boton-borrar {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: #94774c;
+}
+
+textarea {
+  resize: none;
+}
+
+.botones {
+  display: flex;
+  width: 500px;
+  justify-content: space-evenly;
+}
+
+.formulario-editar {
+  margin-bottom: 5vh;
+}
+
+@media (max-width: 565px) {
+  .formulario-editar {
+    margin: 5px;
+  }
+  .title {
+    font-size: 35px;
+  }
+  .botones {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 7px;
+  }
+  .boton-borrar {
+    margin-bottom: 5px;
+    font-size: 14px;
+    width: 165.46px;
+  }
+  .boton-enviar {
+    width: 165.46px;
+    font-size: 14px;
+  }
+}
