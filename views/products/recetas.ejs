@@ -13,7 +13,8 @@
 
 <body>
     <header>
-        <nav class="nav-var">
+      <%- include("../partials/navbar")  %>  
+      <!-- <nav class="nav-var">
             <div class="logo">
               <a href="/"
                 ><img src="/img/logo_elbodegon.png" alt="lgo" width="10%" id="logo"
@@ -35,7 +36,7 @@
             <a href="#" class="burger-menu">
               <i class="fas fa-bars"></i>
             </a>
-          </nav>
+          </nav> -->
     </header>
     <main>
         <h2>Recetas</h1>
@@ -82,7 +83,8 @@
             
             </section>
     </main>
-    <footer>
+    <%- include("../partials/footer")  %>
+    <!-- <footer>
         <p>El Bodegon, Argentina</p>
         <p class="copy">Copyright © 2023 Todos los derechos reservados.</p>
         <div class="redes">
@@ -96,7 +98,7 @@
             ><i class="fab fa-twitter twitter"></i
           ></a>
         </div>
-      </footer>
+      </footer> -->
 </body>
 
 </html>
