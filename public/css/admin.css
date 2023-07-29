@@ -1,11 +1,9 @@
 main {
-  margin-top: 130px;
+  margin: 130px 0 100px;
 }
 
-h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+.body{
+  background-color: #fefefe;
 }
 
 form {
@@ -14,10 +12,35 @@ form {
   align-items: center;
 }
 
+.section-container {
+  display: flex;
+  flex-direction: row;
+  border-radius: 15px;
+  border: 1px solid black;
+  width: 90%;
+  justify-content: space-evenly;
+  margin: 10px;
+  background-color: #d9cdb7fe;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.des {
+max-width: 600px;
+margin-bottom: 37px;
+}
+
+.title{
+  text-align: left;
+  margin: 0 0 22px 70px;
+  font-size: 36px; 
+  font-weight: bold;
+}
+
 .form-group {
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 500px;
+  width: 50%;
+  max-width: 485px;
+  padding: 10px;
+  margin: 5px 25px;
 }
 
 label {
@@ -33,8 +56,8 @@ select {
   font-size: 1rem;
   border: 1px solid rgba(65, 65, 65, 0.5);
   border-radius: 12px;
-  background-color: #f9e8da;
   font-weight: bold;
+  margin: 20px;
 }
 
 button {
@@ -71,7 +94,7 @@ textarea {
 }
 
 .formulario-editar {
-  margin-bottom: 5vh;
+  padding: 0 40px;
 }
 
 @media (max-width: 565px) {
