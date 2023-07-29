@@ -7,8 +7,14 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/recetas.css">
+    <% for (let i=0; i < cssFiles.length; i++) { %>
+        <% if (i===0) { %>
+          <link rel="stylesheet" href="<%= cssFiles[i] %>" />
+          <% } %>
+            <% if (i===8) { %>
+              <link rel="stylesheet" href="<%= cssFiles[i] %>" />
+              <% } %>
+                <% } %>
 </head>
 
 <body>

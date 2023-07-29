@@ -10,8 +10,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/css/productoDetail.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
+    <% for (let i=0; i < cssFiles.length; i++) { %>
+      <% if (i===0) { %>
+        <link rel="stylesheet" href="<%= cssFiles[i] %>" />
+        <% } %>
+          <% if (i===7) { %>
+            <link rel="stylesheet" href="<%= cssFiles[i] %>" />
+            <% } %>
+              <% } %>
     <title>El Bodegon</title>
   </head>
 

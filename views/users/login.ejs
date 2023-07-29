@@ -9,10 +9,17 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/css/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="/css/formularios.css" />
+    
+    <% for (let i=0; i < cssFiles.length; i++) { %>
+      <% if (i===0) { %>
+        <link rel="stylesheet" href="<%= cssFiles[i] %>" />
+        <% } %>
+          <% if (i===1) { %>
+            <link rel="stylesheet" href="<%= cssFiles[i] %>" />
+            <% } %>
+              <% } %>
   </head>
 
   <body>
