@@ -1,11 +1,16 @@
-const cssFiles = require('../controllers/cssController');
+const cssFiles = require('./cssController');
+const pageCssMapping = require('./pageCssMapping');
 
 const userController = {
     login: (req, res) => {
-        res.render('./users/login', { cssFiles });
+        const currentPage = 'login'; 
+        const cssIndex = pageCssMapping[currentPage]; 
+        res.render('./users/login', { cssFiles, cssIndex });
     },
     register: (req, res) => {
-        res.render('./users/register', { cssFiles });
+        const currentPage = 'register'; 
+        const cssIndex = pageCssMapping[currentPage]; 
+        res.render('./users/register', { cssFiles, cssIndex });
     }
 };
 

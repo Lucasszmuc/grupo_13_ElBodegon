@@ -1,23 +1,36 @@
 const cssFiles = require('../controllers/cssController');
+const pageCssMapping = require('./pageCssMapping');
 
 const productController = {
   getProductDetail: (req, res) => {
-    res.render("./products/productDetail", {cssFiles});
+    const currentPage = 'productDetail';
+    const cssIndex = pageCssMapping[currentPage];
+    res.render("./products/productDetail", { cssFiles, cssIndex });
   },
   showMenu: (req, res) => {
-    res.render("./products/menu", {cssFiles});
+    const currentPage = 'menu';
+    const cssIndex = pageCssMapping[currentPage];
+    res.render("./products/menu", { cssFiles, cssIndex });
   },
   showRecetas: (req, res) => {
-    res.render("./products/recetas", {cssFiles});
+    const currentPage = 'recetas';
+    const cssIndex = pageCssMapping[currentPage];
+    res.render("./products/recetas", { cssFiles, cssIndex });
   },
   showCarrito: (req, res) => {
-    res.render("./products/carrito", {cssFiles});
+    const currentPage = 'carrito';
+    const cssIndex = pageCssMapping[currentPage];
+    res.render("./products/carrito", { cssFiles, cssIndex });
   },
   getEditProduct: (req, res) => {
-    res.render("./products/editProduct", {cssFiles});
+    const currentPage = 'editProduct';
+    const cssIndex = pageCssMapping[currentPage];
+    res.render("./products/editProduct", { cssFile, cssIndex });
   },
   getcreateProduct: (req, res) => {
-    res.render("./products/createProduct", {cssFiles});
+    const currentPage = 'cerateProduct';
+    const cssIndex = pageCssMapping[currentPage];
+    res.render("./products/createProduct", { cssFile, cssIndex });
   },
 };
 

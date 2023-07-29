@@ -1,11 +1,16 @@
 const cssFiles = require('../controllers/cssController');
+const pageCssMapping = require('./pageCssMapping');
 
 const adminController = {
   editProduct: (req, res) => {
-    res.render("./products/editProduct", {cssFiles});
+    const currentPage = 'editProduct'; 
+    const cssIndex = pageCssMapping[currentPage];
+    res.render("./products/editProduct", {cssFiles , cssIndex});
   },
   createProduct: (req, res) => {
-    res.render("./products/createProduct", {cssFiles});
+    const currentPage = 'createProduct'; 
+    const cssIndex = pageCssMapping[currentPage];
+    res.render("./products/createProduct", {cssFiles , cssIndex});
   },
 };
 

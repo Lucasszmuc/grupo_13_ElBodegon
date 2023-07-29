@@ -1,8 +1,11 @@
 const cssFiles = require('../controllers/cssController');
+const pageCssMapping = require('./pageCssMapping');
 
 const mainController = {
   index: (req, res) => {
-    res.render("./main/index", {cssFiles});
+    const currentPage = 'index'; 
+    const cssIndex = pageCssMapping[currentPage];
+    res.render("./main/index", {cssFiles , cssIndex});
   },
 };
 
