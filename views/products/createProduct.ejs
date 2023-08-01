@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("../partials/head")  %>
+  <%- include("../partials/head") %>
   <body class="body">
     <header><%- include("../partials/navbar") %></header>
     <main>
       <h1 class="title">Crear Producto</h1>
       <form action="/product" class="formulario-editar" method="post">
         <div class="section-container">
-        <div class="form-group">
-          <label for="productName">Nombre del Producto:</label>
-          <input type="text" id="productName" name="productName" required />
+          <div class="form-group">
+            <label for="productName">Nombre del Producto:</label>
+            <input type="text" id="productName" name="productName" required />
+          </div>
+          <div class="form-group">
+            <label for="comida">Categoria:</label>
+            <select id="comida" name="comida" required>
+              <option value="">Seleccione una opción</option>
+              <option value="Bebidas">Bebidas</option>
+              <option value="Carnes">Carnes</option>
+              <option value="Ensaladas">Ensaladas</option>
+              <option value="Milanesas">Milanesas</option>
+              <option value="Pescados">Pescados</option>
+              <option value="Postre">Postre</option>
+            </select>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="comida">Categoria:</label>
-          <select id="comida" name="comida" required>
-            <option value="">Seleccione una opción</option>
-            <option value="Bebidas">Bebidas</option>
-            <option value="Carnes">Carnes</option>
-            <option value="Ensaladas">Ensaladas</option>
-            <option value="Milanesas">Milanesas</option>
-            <option value="Pescados">Pescados</option>
-            <option value="Postre">Postre</option>
-          </select>
-        </div>
-      </div>
-      <div class="section-container">
-        <div class="form-group">
-          <label for="productPrice">Precio:</label>
-          <input type="text" id="productPrice" name="productPrice" required />
-        </div>
-        <div class="form-group">
-          <label for="imagen">Cargar imagen:</label>
-          <input type="file" id="imagen" name="imagen" required />
-        </div>
+        <div class="section-container">
+          <div class="form-group">
+            <label for="productPrice">Precio:</label>
+            <input type="text" id="productPrice" name="productPrice" required />
+          </div>
+          <div class="form-group">
+            <label for="imagen">Cargar imagen:</label>
+            <input type="file" id="imagen" name="imagen" required />
+          </div>
         </div>
         <div class="section-container des">
-        <div class="form-group">
-          <label for="productDescription">Descripcion:</label>
-          <textarea
-            class="Descripcion"
-            id="productDescription"
-            name="productDescription"
-            required
-          ></textarea>
+          <div class="form-group">
+            <label for="productDescription">Descripcion:</label>
+            <textarea
+              class="Descripcion"
+              id="productDescription"
+              name="productDescription"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="productDescuento">Aplicar descuento?</label>
+            <div class="descuento">
+              <div class="si">
+                <label for="si">Sí</label>
+                <input type="radio" id="si" name="descuento" value="si" />
+                <div class="cual-descuento">
+                  <input type="text" id="cual-si" name="cual-descuento" placeholder= "Escriba su código aquí"  required/>
+                </div>
+              </div>
+              <div class="no">
+                <label for="no">No</label>
+                <input type="radio" id="no" name="descuento" value="no" />
+              </div>
+            </div>                  
+          </div>
         </div>
-      </div>
         <div class="botones">
           <button class="boton-enviar" type="submit">Crear producto</button>
         </div>
