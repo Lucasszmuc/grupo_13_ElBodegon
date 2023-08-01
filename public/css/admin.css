@@ -25,8 +25,20 @@ form {
 }
 
 .des {
-max-width: 600px;
 margin-bottom: 37px;
+}
+.cual-descuento{
+  display: none
+}
+.si input[type="radio"]:checked ~ .cual-descuento {
+  display: block;
+}
+.si, .no {
+display: flex;
+align-items: center;
+}
+.descuento input[type="radio"] {
+  width: 20px;
 }
 
 .title{
