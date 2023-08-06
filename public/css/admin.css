@@ -2,8 +2,8 @@ main {
   margin: 130px 0 100px;
 }
 
-.body{
-  background-color: #fefefe;
+.body {
+  background-color: #f9e8da;
 }
 
 form {
@@ -25,26 +25,27 @@ form {
 }
 
 .des {
-margin-bottom: 37px;
+  margin-bottom: 37px;
 }
-.cual-descuento{
-  display: none
+.cual-descuento {
+  display: none;
 }
 .si input[type="radio"]:checked ~ .cual-descuento {
   display: block;
 }
-.si, .no {
-display: flex;
-align-items: center;
+.si,
+.no {
+  display: flex;
+  align-items: center;
 }
 .descuento input[type="radio"] {
   width: 20px;
 }
 
-.title{
+.title {
   text-align: left;
   margin: 0 0 22px 70px;
-  font-size: 36px; 
+  font-size: 36px;
   font-weight: bold;
 }
 
@@ -91,7 +92,7 @@ button {
 }
 
 button:hover {
-  background-color: #ffffff;
+  background-color: #e2d9d9;
   color: #94774c;
 }
 
