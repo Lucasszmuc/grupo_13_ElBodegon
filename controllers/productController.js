@@ -6,7 +6,10 @@ const productController = {
   getProductDetail: (req, res) => {
     const currentPage = "productDetail";
     const cssIndex = pageCssMapping[currentPage];
-    res.render("./products/productDetail", { cssFiles, cssIndex });
+    const productId = req.params.id;
+    const selectedProduct = productModel.findById(productId);
+
+    res.render("./products/productDetail", { cssFiles, cssIndex,  product: selectedProduct });
   },
   showMenu: (req, res) => {
     const currentPage = "menu";

@@ -18,6 +18,7 @@ app.use("/user", userRoutes);
 app.use("/", aboutUsRoutes);
 app.use("/producto", productRoutes);
 app.use("/admin", adminRoutes);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

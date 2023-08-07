@@ -1,5 +1,6 @@
 const cssFiles = require('../controllers/cssController');
 const pageCssMapping = require('./pageCssMapping');
+const productModel = require("../models/productModels");
 
 const mainController = {
   index: (req, res) => {

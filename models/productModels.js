@@ -3,7 +3,6 @@ const path = require("path");
 
 const modelo = {
   fileRoute: path.join(__dirname, "../data/products.json"),
-
   findAll: () => {
     // Buscamos el contenido del archivo JSON
     const jsonData = fs.readFileSync(modelo.fileRoute, "utf-8");

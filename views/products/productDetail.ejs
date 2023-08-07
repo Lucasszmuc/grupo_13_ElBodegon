@@ -8,17 +8,17 @@
     <article>
       <section class="card">
         <div class="text-content">
-          <h3>Producto #</h3>
+          <h3><%= product.name %></h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+           <%= product.description %>
+          </p>
+          <p>
+            <%= product.price %>
           </p>
           <button href="">Agregar al Carrito</button>
         </div>
         <div class="visual">
-          <img src="/img/corte-carne.jpg" alt="" />
+          <img src="/img/<%= product.image %>" alt="" />
         </div>
       </section>
     </article>
