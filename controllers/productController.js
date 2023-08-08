@@ -25,22 +25,7 @@ const productController = {
     const currentPage = "carrito";
     const cssIndex = pageCssMapping[currentPage];
     res.render("./products/carrito", { cssFiles, cssIndex });
-  },
-  getEditProduct: (req, res) => {
-    const currentPage = "editProduct";
-    const cssIndex = pageCssMapping[currentPage];
-    res.render("./products/editProduct", { cssFile, cssIndex });
-  },
-  getcreateProduct: (req, res) => {
-    const currentPage = "createProduct";
-    const cssIndex = pageCssMapping[currentPage];
-    res.render("./products/createProduct", { cssFile, cssIndex });
-  },
-  getList: (req, res) => {
-    const products = productModel.findAll();
-
-    res.render("./producto/menu", { products }); // Es un atajo, hacerlo así es lo mismo que poner {products: products}
-  },
+  }
 };
 
 module.exports = productController;

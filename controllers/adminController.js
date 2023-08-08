@@ -6,7 +6,10 @@ const adminController = {
   getEditProduct: (req, res) => {
     const currentPage = "editProduct";
     const cssIndex = pageCssMapping[currentPage];
-    res.render("./products/editProduct", { cssFiles, cssIndex });
+    const productId = req.params.id;
+    const selectedProduct = productModel.findById(productId);
+
+    res.render("./products/editProduct", { cssFiles, cssIndex, product : selectedProduct });
   },
   getCreateProduct: (req, res) => {
     const currentPage = "createProduct";
@@ -27,8 +30,8 @@ const adminController = {
 
   res.redirect('/producto/' + createdProduct.id);
   },
-  
-  updateProduct: (req, res) => {
+
+  editProduct: (req, res) => {
     let updatedProduct = {
         id: Number(req.params.id)
     };
@@ -40,7 +43,7 @@ const adminController = {
 
     productModel.updateProduct(updatedProduct);
 
-    res.redirect('/products/' + updatedProduct.id + '/detail')
+    res.redirect('/')
 }
 };
 

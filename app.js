@@ -9,47 +9,31 @@ const aboutUsRoutes = require("./routes/aboutUsRoutes");
 const mainRoutes = require("./routes/mainRoutes");
 const methodOverride = require('method-override');
 
-app.use("/", mainRoutes);
+
+//Rutas
 app.use("/user", userRoutes);
-app.use("/", aboutUsRoutes);
 app.use("/producto", productRoutes);
 app.use("/admin", adminRoutes);
+app.use("/", aboutUsRoutes);
+app.use("/", mainRoutes);
 
+
+//seteamos para que procese el PUT y el DELETE
 app.use(methodOverride('_method'))
+
+//seteamos para que use Json
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//seteamos en ejs
 app.use(express.static(ruta));
 app.set("view engine", "ejs");
 
 // Error 404
-app.use((req.res,next =>{
-res.status(404).render('notFound')
-}));
+app.use((req,res,next) =>{
+res.status(404).render('notFound')});
 
 app.listen(3003, () => {
   console.log("Servidor funcionando en el puerto 3003");
 });
 
-/*
-userController:
-login.ejs: Vista para el inicio de sesión.
-register.ejs: Vista para el registro de nuevos usuarios.
-
-
-productController:
-index.ejs: Vista para mostrar la página de inicio con el listado de productos o alguna sección principal relacionada con los productos.
-productoDetail.ejs: Vista para mostrar el detalle de un producto específico.
-menu.ejs: Vista para mostrar la lista de productos disponibles en el menú.
-recetas.ejs: Vista para mostrar la lista de recetas de cocina.
-
-
-cartController:
-carrito.ejs: Vista para mostrar el contenido del carrito de compras.
-
-
-adminController:
-dashboard.ejs: Vista para mostrar un panel de administración con las herramientas para gestionar productos, usuarios, etc.
-
-
-aboutUsController:
-nosotros.ejs: Vista para mostrar información sobre la empresa o el equipo. */

@@ -24,6 +24,6 @@ router.get("/createProduct", adminController.getCreateProduct);
 router.post("/createProduct", upload.single('imagen'),adminController.createProduct);
 
 //PUT
-
+router.put('/editProduct', adminController.editProduct)
 
 module.exports = router;
