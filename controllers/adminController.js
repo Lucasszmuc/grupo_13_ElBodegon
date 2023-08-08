@@ -26,7 +26,22 @@ const adminController = {
   const createdProduct = productModel.createProduct(newProduct);
 
   res.redirect('/producto/' + createdProduct.id);
-  }
+  },
+  
+  updateProduct: (req, res) => {
+    let updatedProduct = {
+        id: Number(req.params.id)
+    };
+
+    updatedProduct = {
+        ...updatedProduct,
+        ...req.body
+    };
+
+    productModel.updateProduct(updatedProduct);
+
+    res.redirect('/products/' + updatedProduct.id + '/detail')
+}
 };
 
 module.exports = adminController;
