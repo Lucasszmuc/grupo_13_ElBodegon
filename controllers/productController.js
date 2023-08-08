@@ -14,7 +14,9 @@ const productController = {
   showMenu: (req, res) => {
     const currentPage = "menu";
     const cssIndex = pageCssMapping[currentPage];
-    res.render("./products/menu", { cssFiles, cssIndex });
+    const products = productModel.findAll();
+
+    res.render("./products/menu", { cssFiles, cssIndex, products : products});
   },
   showRecetas: (req, res) => {
     const currentPage = "recetas";

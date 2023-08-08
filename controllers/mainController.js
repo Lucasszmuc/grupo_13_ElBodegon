@@ -8,6 +8,11 @@ const mainController = {
     const cssIndex = pageCssMapping[currentPage];
     res.render("./main/index", {cssFiles , cssIndex});
   },
+  showAboutUs: (req, res) => {
+    const currentPage = 'nosotros'; 
+    const cssIndex = pageCssMapping[currentPage];
+    res.render('./main/nosotros', {cssFiles, cssIndex});
+},
 };
 
 module.exports = mainController;

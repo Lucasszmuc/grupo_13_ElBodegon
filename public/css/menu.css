@@ -58,10 +58,11 @@ ul.product-list li a {
   background-color: #94774cb3;
 }
 div h2 {
-  font-size: x-large;
-  font-weight: bolder;
-  margin-left: 50px;
-  margin-top: 35px;
+  font-size: 2em;
+  margin: 20px 30px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .productos {
@@ -108,9 +109,6 @@ h5 {
 }
 
 .info-produ p {
-  /* align-items: center;
-    display: flex;
-    justify-content: flex-start; */
   margin: 5px 22px;
   font-size: 20px;
 }
@@ -147,6 +145,12 @@ button .fa-cart-shopping {
   font-size: 20px;
 }
 
+@media screen and (max-width: 600px) {
+  .productos{
+    margin: 10px 1px 10px 80px;
+  }
+}
+
 @media screen and (min-width: 600px) {
   main {
     display: flex;
@@ -156,6 +160,7 @@ button .fa-cart-shopping {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 
   section#bebidas {
