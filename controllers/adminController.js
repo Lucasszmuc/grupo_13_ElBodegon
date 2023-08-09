@@ -17,13 +17,11 @@ const adminController = {
     res.render("./products/createProduct", { cssFiles, cssIndex });
   },
   createProduct: (req,res) =>{
-    
-    const filenames = req.files.map(file => file.filename);
 
     const newProduct = {
       name: req.body.name,
       price: req.body.price,
-      imagen: filenames
+      imagen: req.file.filename
   }
 
   const createdProduct = productModel.createProduct(newProduct);

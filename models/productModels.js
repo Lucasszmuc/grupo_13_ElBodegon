@@ -23,6 +23,7 @@ const modelo = {
   },
 
   createProduct: (bodyData) => {
+    
     let products = modelo.findAll();
 
     const lastProdId = products[products.length - 1].id;

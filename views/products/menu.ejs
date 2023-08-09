@@ -11,7 +11,6 @@
 <% } %>
 <% productsByCategory[category].push(producto); %>
 <% }) %>
-
                   <body>
                     <header><%- include("../partials/navbar") %></header>
                     <main>
@@ -28,7 +27,9 @@
                           </ul>
                         </div>
                       </section>
+                     <div class="men">
                       <% for (const category in productsByCategory) { %>
+                        <section>
                         <div class="contenedor-productos">
                           <h2>
                             <%= category %>
@@ -50,8 +51,10 @@
                               </div>
                             </article>
                             <% }) %>
+                          </div>
+                        </section>
                               <% } %>
-                        </div>
+                            </div>
                     </main>
                     <%- include("../partials/footer") %>
                   </body>
