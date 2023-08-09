@@ -26,7 +26,7 @@ router.get("/createProduct", adminController.getCreateProduct);
 router.post("/createProduct",upload.single("image"),adminController.createProduct);
 
 //PUT
-router.put("/editProduct", adminController.editProduct);
+router.put("/editProduct/:id", adminController.editProduct);
 
 //DELETE
 router.delete("/producto/:id", adminController.deleteProduct);
