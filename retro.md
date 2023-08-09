@@ -1,23 +1,11 @@
-Comenzar a hacer:
--Dividirnos las tareas, con fechas claras
--Todos hacer una parte
--Tener fechas claras para entregar nuestras partes y mostrarlas con el equipo, intentar hacer esta reunion una semana antes de la entrega final
 
-- Mas activos en el grupo de wpp
+Weekly:
+seguir trabajando juntos, buscar horarios para trabajar en conjunto que es donde todos podemos ayudarnos e ir trabajando a la par. al mismo tiempo nos sacamos las dudas y nos ayudamos entre los 4.
+A mantener: 
+- seguir dividiendonos las tareas
+- seguir mejorando la comunicacion
+- mantener fechas claras
+- llegamos bien con las tareas
 
-Hacer Mas:
--Ir hablando entre nosotros si necesitamos ayuda
-
-- comunicacion de que va a estar haciendo cada uno para no pisarnos
-- apoyarnos entre nosotros
-
-Continuar Haciendo:
--Hacer un discord semanal
-
-Hacer Menos:
--Tareas solo(Juan)
-
-Dejar de hacer:
--No contestar mensajes sobre avances
--No poder estar en las daylies
--No comunicar en caso de hacer o no poder hacer algo
+a mejorar:
+- Intentar concordar horarios para poder trabajar todos juntos en algun momento

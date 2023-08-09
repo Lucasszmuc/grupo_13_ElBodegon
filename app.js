@@ -9,11 +9,7 @@ const mainRoutes = require("./routes/mainRoutes");
 const methodOverride = require('method-override');
 
 
-//Rutas
-app.use("/user", userRoutes);
-app.use("/producto", productRoutes);
-app.use("/admin", adminRoutes);
-app.use("/", mainRoutes);
+
 
 
 //seteamos para que procese el PUT y el DELETE
@@ -26,6 +22,12 @@ app.use(express.json());
 //seteamos en ejs
 app.use(express.static(ruta));
 app.set("view engine", "ejs");
+
+//Rutas
+app.use("/user", userRoutes);
+app.use("/producto", productRoutes);
+app.use("/admin", adminRoutes);
+app.use("/", mainRoutes);
 
 // Error 404
 // app.use((req,res,next) =>{

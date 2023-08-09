@@ -23,11 +23,7 @@ router.get("/editProduct/:id", adminController.getEditProduct);
 router.get("/createProduct", adminController.getCreateProduct);
 
 //POST
-router.post(
-  "/createProduct",
-  upload.single("image"),
-  adminController.createProduct
-);
+router.post("/createProduct",upload.single("image"),adminController.createProduct);
 
 //PUT
 router.put("/editProduct", adminController.editProduct);

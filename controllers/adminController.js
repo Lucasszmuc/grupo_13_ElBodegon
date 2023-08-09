@@ -28,11 +28,12 @@ const adminController = {
     };
 
     const createdProduct = productModel.createProduct(newProduct);
-
+    console.log(createdProduct);
     res.redirect("/producto/" + createdProduct.id);
   },
 
   editProduct: (req, res) => {
+    console.log(req.body)
     let updatedProduct = {
       id: Number(req.params.id),
     };
@@ -47,7 +48,8 @@ const adminController = {
     res.redirect("/");
   },
   deleteProduct: (req, res) => {
-    productModel.destroy(Number(req.params.id));
+
+    productModel.deleteProduct(Number(req.params.id));
 
     res.redirect("/");
   },
