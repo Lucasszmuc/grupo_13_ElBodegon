@@ -23,7 +23,6 @@ const modelo = {
   },
 
   createProduct: (bodyData) => {
-    
     let products = modelo.findAll();
 
     const lastProdId = products[products.length - 1].id;
@@ -36,14 +35,14 @@ const modelo = {
     products.push(newProduct);
 
     // Convertimos el Javascript en JSON
-    const jsonData = JSON.stringify(products);
+    let jsonData = JSON.stringify(products);
 
     fs.writeFileSync(modelo.fileRoute, jsonData, "utf-8");
 
     return newProduct;
   },
 
-  destroy: (id) => {
+  deleteProduct: (id) => {
     let products = modelo.findAll();
 
     products = products.filter((productoActual) => productoActual.id !== id);
