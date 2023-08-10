@@ -8,10 +8,6 @@ const adminRoutes = require("./routes/adminRoutes");
 const mainRoutes = require("./routes/mainRoutes");
 const methodOverride = require('method-override');
 
-
-
-
-
 //seteamos para que procese el PUT y el DELETE
 app.use(methodOverride('_method'))
 
@@ -20,7 +16,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //seteamos en ejs
-app.use(express.static(ruta));
+
+app.use(express.static('./public'));
 app.set("view engine", "ejs");
 
 //Rutas

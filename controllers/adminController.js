@@ -21,11 +21,14 @@ const adminController = {
     res.render("./products/createProduct", { cssFiles, cssIndex });
   },
   createProduct: (req, res) => {
+
     const newProduct = {
       name: req.body.name,
       price: req.body.price,
       imagen: req.file.filename,
     };
+
+    console.log(newProduct)
 
     const createdProduct = productModel.createProduct(newProduct);
     console.log(createdProduct);
