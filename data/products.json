@@ -15,7 +15,7 @@
     "image": "bola-de.jpg",
     "description": "justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus",
     "category": "Carnes",
-    "price": 1.500,
+    "price": 1.5,
     "discount": false,
     "code": "r0<"
   },
@@ -25,7 +25,7 @@
     "image": "new-york.jpg",
     "description": "integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est",
     "category": "Carnes",
-    "price": 2.300,
+    "price": 2.3,
     "discount": true,
     "code": "v7%"
   },
@@ -35,7 +35,7 @@
     "image": "rib-eye-1.jpg",
     "description": "at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat",
     "category": "Carnes",
-    "price": 2.100,
+    "price": 2.1,
     "discount": true,
     "code": "l4\""
   },
@@ -45,7 +45,7 @@
     "image": "picana.jpg",
     "description": "quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut",
     "category": "Carnes",
-    "price": 1.700,
+    "price": 1.7,
     "discount": true,
     "code": "d4!"
   },
@@ -55,7 +55,7 @@
     "image": "churrasco.jpg",
     "description": "vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam",
     "category": "Carnes",
-    "price": 1.800,
+    "price": 1.8,
     "discount": false,
     "code": "p2,"
   },
@@ -65,7 +65,7 @@
     "image": "entrana.jpg",
     "description": "pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam",
     "category": "Carnes",
-    "price": 2.700,
+    "price": 2.7,
     "discount": true,
     "code": "e5/"
   },
@@ -75,7 +75,7 @@
     "image": "vacio.jpg",
     "description": "luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse",
     "category": "Carnes",
-    "price": 2.800,
+    "price": 2.8,
     "discount": true,
     "code": "h2,"
   },
@@ -119,5 +119,4 @@
     "discount": false,
     "code": "q2*"
   }
-  
 ]

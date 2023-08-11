@@ -50,18 +50,19 @@ const productController = {
     const newProduct = {
       name: req.body.name,
       price: req.body.price,
-      imagen: req.file.filename,
+      image: req.file.filename,
+      category: req.body.category,
+      description: req.body.description || "",
+      discount: req.body.discount
     };
 
-    console.log(newProduct)
-
     const createdProduct = productModel.createProduct(newProduct);
-    console.log(createdProduct);
+   
     res.redirect("/producto/" + createdProduct.id);
   },
 
   editProduct: (req, res) => {
-    console.log(req.body)
+    console.log('hice un edit')
     let updatedProduct = {
       id: Number(req.params.id),
     };
@@ -76,6 +77,8 @@ const productController = {
     res.redirect("/");
   },
   deleteProduct: (req, res) => {
+
+    console.log('hice un delete')
 
     productModel.deleteProduct(Number(req.params.id));
 

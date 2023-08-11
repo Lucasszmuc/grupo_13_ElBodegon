@@ -30,7 +30,7 @@ router.post("/createProduct",upload.single("image"),productController.createProd
 router.put("/editProduct/:id", productController.editProduct);
 
 //DELETE
-router.delete("/:id", productController.deleteProduct);
+router.delete("/editProduct/:id", productController.deleteProduct);
 
 router.get("/menu", productController.showMenu);
 router.get("/recetas", productController.showRecetas);

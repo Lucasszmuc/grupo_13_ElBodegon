@@ -8,11 +8,11 @@
       <form action="/producto/editProduct/<%= product.id %>?_method=PUT" class="formulario-editar" method="POST" enctype="multipart/form-data">
         <div class="section-container">
         <div class="form-group">
-          <label for="productName">Nombre del Producto:</label>
+          <label for="name">Nombre del Producto:</label>
           <input type="text" id="productName" value="<%= product.name %>" name="name" required />
         </div>
         <div class="form-group">
-          <label for="comida">Categoria:</label>
+          <label for="category">Categoria:</label>
           <select id="comida" name="category" required>
             <option value="">Seleccione una opción</option>
             <option value="Bebidas" <% if (product.category === 'Bebidas') { %>selected<% } %>>Bebidas</option>
@@ -28,11 +28,11 @@
       <div class="section-container">
         <div class="form-group">
           <label for="productPrice">Precio:</label>
-          <input type="text" id="productPrice" value="<%= product.price %>" name="price" required />
+          <input type="text"  value="<%= product.price %>" name="price" required />
         </div>
         <div class="form-group">
           <label for="imagen">Cambiar imagen:</label>
-          <input type="file" id="imagen" name="image" value="<%= product.imagen %>"  />
+          <input type="file"  name="image" value=""  />
         </div>
       </div>
       <div class="section-container des">
@@ -40,9 +40,8 @@
           <label for="productDescription">Descripcion:</label>
           <textarea
             class="Descripcion"
-            id="productDescription"
             name="description"
-            required
+            
           ><%= product.description %></textarea>
         </div>
         <div class="form-group">
@@ -50,21 +49,20 @@
           <div class="descuento">
             <div class="si">
               <label for="si">Sí</label>
-              <input type="radio" id="si" name="descuento" value="si" <% if (product.descuento === 'si') { %>checked<% } %> />
+              <input type="radio" id="si" name="discount" value="si" <% if (product.discount === 'si') { %>checked<% } %>  />
               <div class="cual-descuento">
-                <input type="text" id="cual-si" name="discount" placeholder="Escriba su código aquí" required value="<%= product.cual_descuento %>" />
+                <input type="text" id="cual-si" name="code" placeholder="Escriba su código aquí"  value="<%= product.code %>" />
               </div>
             </div>
             <div class="no">
               <label for="no">No</label>
-              <input type="radio" id="no" name="discount" value="no" <% if (product.descuento === 'no') { %>checked<% } %> />
+              <input type="radio" id="no" name="discount" value="no" <% if (product.discount === 'no') { %>checked<% } %> />
             </div>
           </div>
         </div>
       </div>
       
         <div class="botones">
-          <input type="hidden" name="_method" value="PUT">
           <button class="boton-borrar" type="delete">Borrar producto</button>
           <button class="boton-enviar" type="submit">Guardar cambios</button>
         </div>
