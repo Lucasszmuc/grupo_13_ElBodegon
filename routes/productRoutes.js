@@ -4,6 +4,7 @@ const productController = require("../controllers/productController");
 const multer = require("multer");
 const path = require("path");
 
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
       cb(null, path.join(__dirname, "../public/img"));
@@ -16,7 +17,6 @@ const storage = multer.diskStorage({
     },
   });
 
-  
 const upload = multer({ storage });
 
 //GET
@@ -27,7 +27,7 @@ router.get("/createProduct", productController.getCreateProduct);
 router.post("/createProduct",upload.single("image"),productController.createProduct);
 
 //PUT
-router.put("/editProduct/:id", productController.editProduct);
+router.put("/editProduct/:id",upload.single("image"), productController.editProduct);
 
 //DELETE
 router.delete("/editProduct/:id", productController.deleteProduct);

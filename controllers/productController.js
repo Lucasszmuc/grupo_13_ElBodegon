@@ -62,19 +62,30 @@ const productController = {
   },
 
   editProduct: (req, res) => {
-    console.log('hice un edit')
+
     let updatedProduct = {
       id: Number(req.params.id),
+      image: ''
     };
+
 
     updatedProduct = {
       ...updatedProduct,
       ...req.body,
     };
 
+    if (req.file) {
+      updatedProduct.image = req.file.filename;
+    }
+
+    if(updatedProduct.image === ''){
+      let imagen = productModel.findById(updatedProduct.id);
+      updatedProduct.image = imagen.image;
+    }
+
     productModel.updateProduct(updatedProduct);
 
-    res.redirect("/");
+    res.redirect("/producto/" + updatedProduct.id);
   },
   deleteProduct: (req, res) => {
 

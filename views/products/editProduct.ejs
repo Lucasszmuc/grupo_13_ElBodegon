@@ -5,11 +5,11 @@
     <header><%- include("../partials/navbar") %></header>
     <main>
       <h1 class="title">Editar Producto</h1>
-      <form action="/producto/editProduct/<%= product.id %>?_method=PUT" class="formulario-editar" method="POST" enctype="multipart/form-data">
+      <form action="/producto/editProduct/<%= product.id %>?_method=PUT" class="formulario-editar"  method="POST"  enctype="multipart/form-data">
         <div class="section-container">
         <div class="form-group">
-          <label for="name">Nombre del Producto:</label>
-          <input type="text" id="productName" value="<%= product.name %>" name="name" required />
+           <label for="">Nombre del Producto:</label>
+        <input type="text" name="name" value="<%= product.name %>">
         </div>
         <div class="form-group">
           <label for="category">Categoria:</label>
@@ -23,21 +23,21 @@
             <option value="Postre" <% if (product.category === 'Postre') { %>selected<% } %>>Postre</option>
           </select>
         </div>
-        
+
       </div>
       <div class="section-container">
         <div class="form-group">
-          <label for="productPrice">Precio:</label>
+          <label for="">Precio:</label>
           <input type="text"  value="<%= product.price %>" name="price" required />
         </div>
         <div class="form-group">
-          <label for="imagen">Cambiar imagen:</label>
-          <input type="file"  name="image" value=""  />
+          <label for="">Cambiar imagen:</label>
+          <input type="file"  name="image" value="<%= product.image %>"  />
         </div>
       </div>
       <div class="section-container des">
         <div class="form-group">
-          <label for="productDescription">Descripcion:</label>
+          <label for="">Descripcion:</label>
           <textarea
             class="Descripcion"
             name="description"
@@ -45,28 +45,28 @@
           ><%= product.description %></textarea>
         </div>
         <div class="form-group">
-          <label for="productDescuento">Aplicar descuento?</label>
+          <label for="">Aplicar descuento?</label>
           <div class="descuento">
-            <div class="si">
-              <label for="si">Sí</label>
-              <input type="radio" id="si" name="discount" value="si" <% if (product.discount === 'si') { %>checked<% } %>  />
-              <div class="cual-descuento">
-                <input type="text" id="cual-si" name="code" placeholder="Escriba su código aquí"  value="<%= product.code %>" />
+            <div>
+              <label for="">Sí</label>
+              <input type="radio"  name="discount" value="si" <% if (product.discount === 'si') { %>checked<% } %>  />
+              <div >
+                <input type="text"  name="code" placeholder="Escriba su código aquí"  value="<%= product.code %>" />
               </div>
             </div>
-            <div class="no">
-              <label for="no">No</label>
-              <input type="radio" id="no" name="discount" value="no" <% if (product.discount === 'no') { %>checked<% } %> />
+            <div >
+              <label for="">No</label>
+              <input type="radio"  name="discount" value="no" <% if (product.discount === 'no') { %>checked<% } %> />
             </div>
           </div>
         </div>
       </div>
       
         <div class="botones">
-          <button class="boton-borrar" type="delete">Borrar producto</button>
-          <button class="boton-enviar" type="submit">Guardar cambios</button>
+          <button class="boton-borrar" type="delete" >Borrar producto</button>
+          <input class="boton-enviar" type="submit" value="Guardar cambios">
         </div>
-      </form>
+      </form> 
     </main>
     <footer><%- include("../partials/footer") %></footer>
   </body>
