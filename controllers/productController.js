@@ -89,8 +89,6 @@ const productController = {
   },
   deleteProduct: (req, res) => {
 
-    console.log('hice un delete')
-
     productModel.deleteProduct(Number(req.params.id));
 
     res.redirect("/");

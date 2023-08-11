@@ -47,13 +47,13 @@
         <div class="form-group">
           <label for="">Aplicar descuento?</label>
           <div class="descuento">
-            <div>
-              <label for="">Sí</label>
-              <input type="radio"  name="discount" value="si" <% if (product.discount === 'si') { %>checked<% } %>  />
-              <div >
-                <input type="text"  name="code" placeholder="Escriba su código aquí"  value="<%= product.code %>" />
+            <div class="si">
+              <label for="si">Sí</label>
+              <input type="radio" id="si" name="descuento" value="si" <% if (product.descuento === 'si') { %>checked<% } %> />
+              <div class="cual-descuento">
+                <input type="text" id="cual-si" name="discount" placeholder="Escriba su código aquí" value="<%= product.cual_descuento %>" />
               </div>
-            </div>
+            </div>               
             <div >
               <label for="">No</label>
               <input type="radio"  name="discount" value="no" <% if (product.discount === 'no') { %>checked<% } %> />
@@ -63,10 +63,16 @@
       </div>
       
         <div class="botones">
-          <button class="boton-borrar" type="delete" >Borrar producto</button>
-          <input class="boton-enviar" type="submit" value="Guardar cambios">
+          <button class="boton-enviar" type="submit" >Guardar cambios</button>
         </div>
       </form> 
+      <br>
+      <form action="/producto/editProduct/<%= product.id %>?_method=DELETE" method="POST">
+        <div class="botones">
+          <input type="hidden" name="_method" value="DELETE">
+            <button class="boton-borrar" type="submit">Borrar producto</button>
+        </div>
+      </form>
     </main>
     <footer><%- include("../partials/footer") %></footer>
   </body>
