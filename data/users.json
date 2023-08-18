@@ -2,7 +2,7 @@
   {
     "id": 1,
     "userName": "guzman",
-    "email": "chassen0@independent.co.uk",
+    "email": "prueba@gmail.com",
     "password": "cV8*dh*aB?S\"}",
     "type": "Admin"
   },
@@ -207,6 +207,20 @@
     "userName": "pellentesque volutpat",
     "email": "gkuhndelt@berkeley.edu",
     "password": "eH4+r5AY",
+    "type": "Customer"
+  },
+  {
+    "id": "bc5e49f7-bb01-4814-84ff-58a1bb7b71dd",
+    "email": "lucas@gmail.com",
+    "password": "$2a$12$r3Iw7s1FeI23bulLGE2u5OH4Ibb3KN3LnyHOHujMxz93NXyZ24VtS",
+    "username": "preuba",
+    "type": "Customer"
+  },
+  {
+    "id": "586cc440-2a9e-4ded-8cc7-1aeaa7abecc7",
+    "email": "hola@gmail.com",
+    "password": "$2a$12$goYxsqY/9lxFiwbC77RQeeOm2yUyT3uKmlmCO.5uk2i3bg56UvlWK",
+    "username": "hola",
     "type": "Customer"
   }
 ]

@@ -6,7 +6,7 @@
       <div class="contenedor-fuera">
         <a href="/"><button class="botonX">X</button></a>
         <div class="contenedor">
-          <form class="login-form">
+          <form action = "/user/login" method="POST" class="login-form" enctype="multipart/form-data">
             <div class="header">
               <div class="signup-login-box">
                 <div class="login">
@@ -31,10 +31,10 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required />
               </div>
-              <div class="input-group" style="display: flex">
+             <!--  <div class="input-group" style="display: flex">
                 <label for="keep-session">Mantener sesión</label>
                 <input type="checkbox" id="keep-session" name="keep-session" />
-              </div>
+              </div> -->
               <p class="olvidar-password">
                 <a href="#">Olvidé mi contraseña</a>
               </p>

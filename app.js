@@ -6,7 +6,7 @@ const productRoutes = require("./routes/productRoutes");
 const mainRoutes = require("./routes/mainRoutes");
 const methodOverride = require('method-override');
 const session = require('express-session');
-
+const cookieParser = require('cookie-parser');
 
 // Configuración del motor de vistas y archivos estáticos
 app.use(express.static("public"));
