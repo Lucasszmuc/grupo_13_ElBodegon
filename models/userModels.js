@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const uuid = require('uuid');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 
 const userModel = {
@@ -10,7 +10,7 @@ const userModel = {
 
     create: (userData) => {
         // ejecutamos el método findByEmail para que busque un usuario en el JSON que tenga el mail que nos llega desde userData
-        const emailInUse = model.findByEmail(userData.email);
+        const emailInUse = userModel.findByEmail(userData.email);
 
         if (emailInUse) {
             return ({
@@ -18,7 +18,7 @@ const userModel = {
             });
         }
 
-        let users = JSON.parse(fs.readFileSync(model.fileRoute, 'utf-8'));
+        let users = JSON.parse(fs.readFileSync(userModel.fileRoute, 'utf-8'));
 
         const newUser = {
             id: uuid.v4(),
@@ -31,22 +31,30 @@ const userModel = {
 
         const usersJson = JSON.stringify(users);
 
-        fs.writeFileSync(model.fileRoute, usersJson, 'utf-8');
+        fs.writeFileSync(userModel.fileRoute, usersJson, 'utf-8');
 
         return newUser;
     },
-
-    findByEmail: (email) => {
-        const users = JSON.parse(fs.readFileSync(model.fileRoute, 'utf-8'));
-
-        const coincidence = users.find(usuarioActual => usuarioActual.email === email);
-
-        return coincidence || null;
-    },
-
     findAll: () => {
+        // Buscamos el contenido del archivo JSON
+        const jsonData = fs.readFileSync(userModel.fileRoute, "utf-8");
+        // Convertimos el JSON en Javascript
+        const users = JSON.parse(jsonData);
+        return users;
+    },
+    
+    findByEmail: (email) => {
+        const users = userModel.findAll();
+    
+    console.log("Email being searched:", email);
+    console.log("All users:", users);
 
+    const coincidence = users.find(usuarioActual => usuarioActual.email === email);
+    console.log("Coincidence:", coincidence);
+
+    return coincidence || null;
     }
+
 }
 
 module.exports = userModel;
