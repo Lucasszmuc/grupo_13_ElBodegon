@@ -4,6 +4,7 @@ const path = require("path");
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 const mainRoutes = require("./routes/mainRoutes");
+const authCookie = require('./middlewares/authenticateUserWithCookie')
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
@@ -23,10 +24,13 @@ app.use(session({secret: 'ElBodegonDigitalHouse2023', resave: false, saveUniniti
 //Configuracion de Cookie Parser
 app.use(cookieParser())
 
+//Configuracion de Auth Cookie
+app.use(authCookie.authenticateUserWithCookie);
+
 
 // Rutas
 app.use("/", mainRoutes);
-app.use("/users", userRoutes);
+app.use("/user", userRoutes);
 app.use("/producto", productRoutes);
 
 // Error 404

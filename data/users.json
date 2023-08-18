@@ -7,10 +7,10 @@
     "type": "Admin"
   },
   {
-    "id": 2,
-    "userName": "Juan",
-    "email": "pgullen1@eventbrite.com",
-    "password": "sL2>nMD{9<",
+    "id": "bf434f94-df2d-4835-8d73-5c18dfbd5538",
+    "email": "juanmoralesp19@gmail.com",
+    "password": "$2a$12$IFtM3UMlb0j5J9g9WBnY6.xp1MBMy3yLT2P3za8oWSR3WW5ENm.bO",
+    "username": "juanmorales",
     "type": "Admin"
   },
   {

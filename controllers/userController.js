@@ -5,12 +5,10 @@ const bcrypt = require('bcryptjs');
 
 const userController = {
   login: (req, res) => {
-    console.log(req.body)
 
     const userInJson = userModel.findByEmail(req.body.email);
 
     // Caso en que el mail no pertenece a ningún usuario
-    console.log(userInJson);
     if (!userInJson) {
       return res.redirect(
         "/users/login?error=El mail o la contraseña son incorrectos"
@@ -23,16 +21,13 @@ const userController = {
     // Si la contraseña es válida
     if (validPw) {
       // Si se quiere mantener sesión iniciada
-
-
-      /* if (req.body.keep-session === "on") {
+      if (req.body["keep-session"]=== "on") {
         // Creamos la cookie userId, guardamos el id del usuario y hacemos que expire en un dia
         res.cookie("email", userInJson.email, {
           maxAge: 1000 * 60 * 60 * 24,
         });
       }
-
-      req.session.user = userInJson; */
+      req.session.username = userInJson.username; 
 
       res.redirect("/");
     } else {
