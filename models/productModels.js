@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const modelo = {
+const productModel = {
   fileRoute: path.join(__dirname, "../data/products.json"),
   findAll: () => {
     // Buscamos el contenido del archivo JSON
@@ -68,4 +68,4 @@ const modelo = {
   },
 };
 
-module.exports = modelo;
+module.exports = productModel;
