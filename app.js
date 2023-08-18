@@ -26,7 +26,7 @@ app.use(cookieParser())
 
 // Rutas
 app.use("/", mainRoutes);
-app.use("/user", userRoutes);
+app.use("/users", userRoutes);
 app.use("/producto", productRoutes);
 
 // Error 404

@@ -4,14 +4,16 @@ const userModel = require("../models/userModels");
 const bcrypt = require('bcryptjs');
 
 const userController = {
-    login: (req, res) => {
-        const userInJson = userModel.findByEmail(req.body.email);
-        
-        // Caso en que el mail no pertenece a ningún usuario
-        console.log(userInJson);
-        if (!userInJson) {
-            return res.redirect(
-                "/users/login?error=El mail o la contraseña son incorrectos"
+  login: (req, res) => {
+    console.log(req.body)
+
+    const userInJson = userModel.findByEmail(req.body.email);
+
+    // Caso en que el mail no pertenece a ningún usuario
+    console.log(userInJson);
+    if (!userInJson) {
+      return res.redirect(
+        "/users/login?error=El mail o la contraseña son incorrectos"
       );
     }
 
@@ -34,7 +36,7 @@ const userController = {
 
       res.redirect("/");
     } else {
-        res.redirect(
+      res.redirect(
         "/users/login?error=El mail o la contraseña son incorrectos"
       );
     }

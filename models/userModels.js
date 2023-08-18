@@ -46,8 +46,8 @@ const userModel = {
     findByEmail: (email) => {
         const users = userModel.findAll();
     
-    console.log("Email being searched:", email);
-    console.log("All users:", users);
+    // console.log("Email being searched:", email);
+    // console.log("All users:", users);
 
     const coincidence = users.find(usuarioActual => usuarioActual.email === email);
     console.log("Coincidence:", coincidence);
