@@ -5,6 +5,8 @@ const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 const mainRoutes = require("./routes/mainRoutes");
 const methodOverride = require('method-override');
+const session = require('express-session');
+
 
 // Configuración del motor de vistas y archivos estáticos
 app.use(express.static("public"));
@@ -14,6 +16,13 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+
+//Configuracion de Session
+app.use(session({secret: 'ElBodegonDigitalHouse2023', resave: false, saveUninitialized: true}));
+
+//Configuracion de Cookie Parser
+app.use(cookieParser())
+
 
 // Rutas
 app.use("/", mainRoutes);
