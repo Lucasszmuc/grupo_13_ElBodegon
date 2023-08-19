@@ -10,13 +10,18 @@
         <li><a href="/producto/recetas">Recetas</a></li>
         <li><a href="/nosotros">Nosotros</a></li>
         <li>
-          <a href="/producto/carrito"
+          <% if (locals.user) { %>
+            <a href="/producto/carrito"
             ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i
           ></a>
+          <% } else { %>
+            <a href="/user/login"
+            ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i>
+          <% }%>
         </li>
         <% if (locals.user) { %>
           <li><%= user.username %></li>
-        <% } else { %>
+        <% } else {  console.log(locals) %>
           <li><a href="/user/login">Login</a></li>
         <% }%>
       </ul>
