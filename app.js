@@ -1,37 +1,42 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const ruta = path.resolve(__dirname, "./public");
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
-const adminRoutes = require("./routes/adminRoutes");
 const mainRoutes = require("./routes/mainRoutes");
+const authCookie = require('./middlewares/authenticateUserWithCookie')
 const methodOverride = require('method-override');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
-
-//Rutas
-app.use("/user", userRoutes);
-app.use("/producto", productRoutes);
-app.use("/admin", adminRoutes);
-app.use("/", mainRoutes);
-
-
-//seteamos para que procese el PUT y el DELETE
-app.use(methodOverride('_method'))
-
-//seteamos para que use Json
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-//seteamos en ejs
-app.use(express.static(ruta));
+// Configuración del motor de vistas y archivos estáticos
+app.use(express.static("public"));
 app.set("view engine", "ejs");
 
+// Configuración de middlewares en el orden correcto
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(methodOverride('_method'));
+
+//Configuracion de Session
+app.use(session({secret: 'ElBodegonDigitalHouse2023', resave: false, saveUninitialized: true}));
+
+//Configuracion de Cookie Parser
+app.use(cookieParser())
+
+//Configuracion de Auth Cookie
+app.use(authCookie.authenticateUserWithCookie);
+
+
+// Rutas
+app.use("/", mainRoutes);
+app.use("/user", userRoutes);
+app.use("/producto", productRoutes);
+
 // Error 404
-// app.use((req,res,next) =>{
-// res.status(404).render('notFound')});
+app.use((req,res,next) =>{
+res.status(404).render(path.join(__dirname,'./views/users/notFound'))});
 
 app.listen(3003, () => {
   console.log("Servidor funcionando en el puerto 3003");
 });
-

@@ -5,20 +5,15 @@
     <header><%- include("../partials/navbar") %></header>
     <main>
       <h1 class="title">Crear Producto</h1>
-      <form
-        action="/admin/createProduct"
-        class="formulario-editar"
-        method="POST"
-        enctype="multipart/form-data"
-      >
+      <form action="/admin/createProduct" class="formulario-editar" method="POST" enctype="multipart/form-data">
         <div class="section-container">
           <div class="form-group">
             <label for="productName">Nombre del Producto:</label>
-            <input type="text" id="productName" name="name" required />
+            <input type="text" id="productName" name="name"  />
           </div>
           <div class="form-group">
-            <label for="comida">Categoria:</label>
-            <select id="comida" name="category" required>
+            <label for="category">Categoria:</label>
+            <select id="comida" name="category" >
               <option value="">Seleccione una opción</option>
               <option value="Bebidas">Bebidas</option>
               <option value="Carnes">Carnes</option>
@@ -32,11 +27,11 @@
         <div class="section-container">
           <div class="form-group">
             <label for="productPrice">Precio:</label>
-            <input type="text" id="productPrice" name="price" required />
+            <input type="text" id="productPrice" name="price" />
           </div>
           <div class="form-group">
-            <label for="imagen">Cargar imagen:</label>
-            <input type="file" id="imagen" name="image" required />
+            <label for="image">Cargar imagen:</label>
+            <input type="file" id="imagen" name="image" />
           </div>
         </div>
         <div class="section-container des">
@@ -46,7 +41,7 @@
               class="Descripcion"
               id="productDescription"
               name="description"
-              required
+           
             ></textarea>
           </div>
           <div class="form-group">
@@ -58,22 +53,19 @@
                 <div class="cual-descuento">
                   <input
                     type="text"
-                    id="cual-si"
-                    name="cual-descuento"
                     placeholder="Escriba su código aquí"
-                    required
                   />
                 </div>
               </div>
               <div class="no">
                 <label for="no">No</label>
-                <input type="radio" id="no" name="discount" value="no" />
+                <input type="radio"  name="discount" value="no" />
               </div>
             </div>
           </div>
         </div>
         <div class="botones">
-          <input class="boton-enviar" type="submit" value="Crear Producto" />
+          <input class="boton-enviar" type="submit" value="Crear Producto"></input>
         </div>
       </form>
     </main>
