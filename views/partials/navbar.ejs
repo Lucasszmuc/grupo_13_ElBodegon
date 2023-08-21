@@ -15,14 +15,14 @@
             ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i
           ></a>
           <% } else { %>
-            <a href="/user/login"
+            <a href="/users/login"
             ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i>
           <% }%>
         </li>
         <% if (locals.user) { %>
-          <li><%= user.username %></li>
-        <% } else {  console.log(locals) %>
-          <li><a href="/user/login">Login</a></li>
+          <li><a href="/users/profile"><%= user.username %></a></li>
+        <% } else { %>
+          <li><a href="/users/login">Login</a></li>
         <% }%>
       </ul>
     </div>

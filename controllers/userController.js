@@ -11,7 +11,7 @@ const userController = {
     // Caso en que el mail no pertenece a ningún usuario
     if (!userInJson) {
       return res.redirect(
-        "/users/login?error=El mail o la contraseña son incorrectos"
+        "/users/login?error=El mail o la contraseña son incorrectos n"
       );
     }
 
@@ -42,7 +42,8 @@ const userController = {
       email: req.body.email,
       password: req.body.password,
       username: req.body.username,
-      type: "Customer"
+      type: "Customer",
+      avatar: req.file.filename
     };
 
     const user = userModel.create(newUser);
@@ -64,6 +65,11 @@ const userController = {
     const cssIndex = pageCssMapping[currentPage];
     res.render("./users/register", { cssFiles, cssIndex });
   },
+  getProfile:(req,res)=>{
+    const currentPage = "profile";
+    const cssIndex = pageCssMapping[currentPage];
+    res.render('./users/profile',  { cssFiles, cssIndex , user: req.session.user})
+  }
 };
 
 module.exports = userController;

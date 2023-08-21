@@ -6,6 +6,7 @@ const avatar = require('../middlewares/processAvatar');
 // Routes GET
 router.get("/login", userController.getLogin);
 router.get("/register", userController.getRegister);
+router.get('/profile', userController.getProfile)
 
 // Routes POST
 router.post('/login',userController.login);

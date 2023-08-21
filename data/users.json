@@ -11,7 +11,8 @@
     "email": "juanmoralesp19@gmail.com",
     "password": "$2a$12$IFtM3UMlb0j5J9g9WBnY6.xp1MBMy3yLT2P3za8oWSR3WW5ENm.bO",
     "username": "juanmorales",
-    "type": "Admin"
+    "type": "Admin",
+    "avatar": "user-1692336703757.jpg"
   },
   {
     "id": 3,
@@ -222,5 +223,13 @@
     "password": "$2a$12$goYxsqY/9lxFiwbC77RQeeOm2yUyT3uKmlmCO.5uk2i3bg56UvlWK",
     "username": "hola",
     "type": "Customer"
+  },
+  {
+    "id": "b9dbe92f-d76a-4d3c-800c-39c937fbced7",
+    "email": "juanmoralespa19@gmail.com",
+    "password": "$2a$12$/6tZkwF2gpwLiFRkne7v.ONAOpMvQHtKrgmSJlTYBggSKn2gxpjtm",
+    "username": "JuanMorales19",
+    "type": "Customer",
+    "avatar": "user-1692660851194.jpg"
   }
 ]

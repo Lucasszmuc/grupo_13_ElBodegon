@@ -11,7 +11,7 @@ const mainController = {
   showAboutUs: (req, res) => {
     const currentPage = 'nosotros'; 
     const cssIndex = pageCssMapping[currentPage];
-    res.render('./main/nosotros', {cssFiles, cssIndex});
+    res.render('./main/nosotros', {cssFiles, cssIndex, user: req.session.user });
 },
 };
 

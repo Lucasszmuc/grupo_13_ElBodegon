@@ -8,7 +8,8 @@ const pageCssMapping = {
     carrito: 3,
     nosotros:6,
     createProduct: 2,
-    editProduct: 2    
+    editProduct: 2 ,
+    profile: 10   
 };
 
 
