@@ -11,5 +11,6 @@ router.get('/profile', userController.getProfile)
 // Routes POST
 router.post('/login',userController.login);
 router.post("/register", avatar.single("avatar"), userController.register);
+router.post('/logOut', userController.logOut)  
 
 module.exports = router;

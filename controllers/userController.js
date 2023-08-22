@@ -21,19 +21,33 @@ const userController = {
     // Si la contraseña es válida
     if (validPw) {
       // Si se quiere mantener sesión iniciada
-      if (req.body["keep-session"]=== "on") {
+      if (req.body["keep-session"] === "on") {
         // Creamos la cookie userId, guardamos el id del usuario y hacemos que expire en un dia
         res.cookie("email", userInJson.email, {
           maxAge: 1000 * 60 * 60 * 24,
         });
       }
-      req.session.username = userInJson.username; 
+      req.session.username = userInJson.username;
 
       res.redirect("/");
     } else {
       res.redirect(
         "/users/login?error=El mail o la contraseña son incorrectos"
       );
+    }
+  },
+
+  logOut: (req, res) => {
+      // Elimina la propiedad 'user' de la sesión
+      delete req.session.user 
+      
+    if (req.cookies.email) {
+      // Elimina la cookie 'email'
+      res.clearCookie('email');
+      
+      res.redirect('/'); // Redirige a la página principal u otra ubicación
+    } else {
+      res.redirect('/'); // Redirige a la página principal si no hay cookie
     }
   },
 
@@ -65,10 +79,10 @@ const userController = {
     const cssIndex = pageCssMapping[currentPage];
     res.render("./users/register", { cssFiles, cssIndex });
   },
-  getProfile:(req,res)=>{
+  getProfile: (req, res) => {
     const currentPage = "profile";
     const cssIndex = pageCssMapping[currentPage];
-    res.render('./users/profile',  { cssFiles, cssIndex , user: req.session.user})
+    res.render('./users/profile', { cssFiles, cssIndex, user: req.session.user })
   }
 };
 

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const productController = require("../controllers/productController");
+const userValidate = require('../middlewares/validateRoutes')
 const multer = require("multer");
 const path = require("path");
 
@@ -40,9 +41,9 @@ router.put(
 router.delete("/editProduct/:id", productController.deleteProduct);
 
 router.get("/menu", productController.showMenu);
-router.get("/recetas", productController.showRecetas);
-router.get("/carrito", productController.showCarrito);
-router.get("/:id", productController.getProductDetail);
+router.get("/recetas", userValidate.validate ,productController.showRecetas);
+router.get("/carrito", userValidate.validate ,productController.showCarrito);
+router.get("/:id", userValidate.validate ,productController.getProductDetail);
 
 router.get("/search", (req, res) => {
   const productModel = {
