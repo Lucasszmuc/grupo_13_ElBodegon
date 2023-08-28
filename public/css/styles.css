@@ -6,10 +6,6 @@
   font-family: "Montserrat", sans-serif;
 }
 
-/* body {
-  background-color: #d9cdb7fe;
-} */
-
 /*Nav Bar*/
 
 header a {
@@ -17,6 +13,9 @@ header a {
   color: rgb(180, 178, 178);
 }
 
+.li-nav{
+  margin-top: 10px;
+}
 .lista {
   width: 70%;
   display: flex;
@@ -45,17 +44,67 @@ h1 {
   align-items: center;
   text-transform: uppercase;
 }
-.nav-var li {
-  list-style: none;
-  display: inline;
-  margin-left: 40px;
-}
 
 .burger-menu {
   display: none;
   color: #ffffff;
   border-radius: 8px;
   font-size: 40px;
+}
+
+.lista-nav{
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.container-user{
+  display: flex;
+  flex-direction: row;
+}
+
+.top{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top img{
+  border-radius: 50%;
+}
+
+.top p{
+  margin-top: 5px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.bottom{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 35px;
+}
+
+.logout{
+  height: 70%;
+  width: 100%;
+  color: black;
+  background-color: #ffffff44;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.loog {
+  margin-top: 10px;
 }
 
 /*Footer*/
@@ -145,9 +194,7 @@ input {
     margin-right: 20px;
   }
 
-  .nav-var li {
-    margin-left: 15px;
-  }
+  
 }
 
 @media (max-width: 830px) {

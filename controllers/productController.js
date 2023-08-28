@@ -16,17 +16,17 @@ const productController = {
     const cssIndex = pageCssMapping[currentPage];
     const products = productModel.findAll();
 
-    res.render("./products/menu", { cssFiles, cssIndex, products : products});
+    res.render("./products/menu", { cssFiles, cssIndex, products : products, user: req.session.user });
   },
   showRecetas: (req, res) => {
     const currentPage = "recetas";
     const cssIndex = pageCssMapping[currentPage];
-    res.render("./products/recetas", { cssFiles, cssIndex });
+    res.render("./products/recetas", { cssFiles, cssIndex , user: req.session.user });
   },
   showCarrito: (req, res) => {
     const currentPage = "carrito";
     const cssIndex = pageCssMapping[currentPage];
-    res.render("./products/carrito", { cssFiles, cssIndex });
+    res.render("./products/carrito", { cssFiles, cssIndex , user: req.session.user });
   },
   getEditProduct: (req, res) => {
     const currentPage = "editProduct";
@@ -38,12 +38,13 @@ const productController = {
       cssFiles,
       cssIndex,
       product: selectedProduct,
+      user: req.session.user
     });
   },
   getCreateProduct: (req, res) => {
     const currentPage = "createProduct";
     const cssIndex = pageCssMapping[currentPage];
-    res.render("./products/createProduct", { cssFiles, cssIndex });
+    res.render("./products/createProduct", { cssFiles, cssIndex , user: req.session.user});
   },
   createProduct: (req, res) => {
 
@@ -58,7 +59,7 @@ const productController = {
 
     const createdProduct = productModel.createProduct(newProduct);
    
-    res.redirect("/producto/" + createdProduct.id);
+    res.redirect("/producto/" + createdProduct.id, {user: req.session.user});
   },
 
   editProduct: (req, res) => {

@@ -68,7 +68,7 @@ h2 {
   margin-bottom: 40px;
 }
 
-img {
+main img {
   width: 60%;
   border-radius: 5px;
   height: 80%;
@@ -143,7 +143,7 @@ img {
     margin-right: 20px;
   }
 
-  img {
+  main img {
     width: 100%; /* Ajusta el tamaño de las imágenes al ancho de la pantalla */
     height: auto; /* Permite que la altura de las imágenes se ajuste proporcionalmente */
   }
@@ -176,7 +176,7 @@ img {
   }
 
   /* Ajusta el tamaño de las imágenes para que se vean bien en tabletas */
-  img {
+   main img {
     width: 100%;
     height: auto;
   }
@@ -185,7 +185,7 @@ img {
 /* Media Query para pantallas más grandes (escritorios) */
 @media screen and (min-width: 1024px) {
   /* Ajusta el tamaño de las imágenes para que se vean bien en pantallas más grandes */
-  img {
+  main img {
     width: 90%;
     height: 95%;
   }

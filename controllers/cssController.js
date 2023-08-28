@@ -8,7 +8,8 @@ const cssFiles = [
     '/css/nosotros.css',//Indice :6
     '/css/productoDetail.css',//Indice : 7
     '/css/recetas.css',//Indice : 8
-    '/css/carrousel.css'//Indice : 9
+    '/css/carrousel.css',//Indice : 9
+    '/css/profile.css' //Indice 10
 ];
 
 module.exports = cssFiles;

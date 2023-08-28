@@ -46,7 +46,12 @@
                                 <div class="precio-boton">
                                   <p id="precio">$<%= producto.price %>
                                   </p>
-                                  <button class="agregar-al-carrito">Agregar al carrito</button>
+                                  <% if (user)  { %>
+                                    <button class="agregar-al-carrito">Agregar al carrito</button>
+                                    <% } else  { %>
+                                      <button class="agregar-al-carrito"><a href="/user/login">Agregar al carrito</a></button>
+                                  <% }%>
+                                  
                                 </div>
                               </div>
                             </article>

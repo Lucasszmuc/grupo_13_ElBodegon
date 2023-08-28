@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head") %>
+
+    <body>
+        <header>
+            <%- include("../partials/navbar") %>
+        </header>
+        <main>
+            <div class="container">
+                <div class="left box-primary">
+                    <img class="image" src="../img/avatar/<%= user.avatar %>" alt="" width="100px" />
+                    <h3 class="username text-center">
+                        <%= user.username %>
+                    </h3>
+                    <a href="#" class="btn btn-primary btn-block"><b>Editar foto</b></a>
+                </div>
+                <div class="right tab-content">
+                    <form class="form-horizontal">
+                        <div>
+                            <label for="inputName" class="col-sm-2 control-label">Name:</label>
+                            <div>
+                                <input type="email" id="inputName" placeholder="Nombre">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="inputEmail">Email</label>
+                            <div>
+                                <input type="email" id="inputEmail" placeholder="Email" value="<%= user.email %>">
+                            </div>
+                        </div>
+                </div>
+                <div>
+                    <div>
+                        <button type="submit" class="btn btn-danger">Edit User</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+            </div>
+        </main>
+        <footer>
+            <%- include("../partials/footer") %>
+        </footer>
+    </body>
+
+</html>
