@@ -8,19 +8,22 @@
         </header>
         <main>
             <div class="container">
-                <div class="left box-primary">
-                    <img class="image" src="../img/avatar/<%= user.avatar %>" alt="" width="100px" />
-                    <h3 class="username text-center">
-                        <%= user.username %>
-                    </h3>
+                <div class="prueba">
+                <h3 class="username text-center">
+                    <%= user.username %>
+                </h3>
+                <div class="left-box-primary">
+                    <img class="image" src="../img/avatar/<%= user.avatar %>" alt="" width="25px" height="25px" />
+                    
                     <a href="#" class="btn btn-primary btn-block"><b>Editar foto</b></a>
+                </div>
                 </div>
                 <div class="right tab-content">
                     <form class="form-horizontal">
                         <div>
                             <label for="inputName" class="col-sm-2 control-label">Name:</label>
                             <div>
-                                <input type="email" id="inputName" placeholder="Nombre">
+                                <input type="text" id="inputName" placeholder="Nombre" value="<%= user.username%>">
                             </div>
                         </div>
                         <div>
@@ -30,10 +33,8 @@
                             </div>
                         </div>
                 </div>
-                <div>
-                    <div>
-                        <button type="submit" class="btn btn-danger">Edit User</button>
-                    </div>
+                <div>                    
+                        <button type="submit" class="btn btn-danger">Edit User</button>                    
                 </div>
                 </form>
             </div>
