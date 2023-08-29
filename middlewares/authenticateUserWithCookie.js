@@ -12,6 +12,17 @@ const authenticateUserWithCookie = {
 }
   
   next(); // Continúa con el siguiente middleware o ruta
+  },
+  authenticateUser :(req,res,next)=>{
+
+    const user = userModel.findByEmail(req.body.email);
+    
+    if (user) {
+      req.session.user = user;
+      next()
+    } else{
+      res.redirect("/users/login?error=El mail o la contraseña son incorrectos")
+    }
   }
 }
 
