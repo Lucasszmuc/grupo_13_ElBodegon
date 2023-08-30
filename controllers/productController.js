@@ -59,7 +59,7 @@ const productController = {
 
     const createdProduct = productModel.createProduct(newProduct);
    
-    res.redirect("/producto/" + createdProduct.id, {user: req.session.user});
+    res.redirect("/producto/" + createdProduct.id);
   },
 
   editProduct: (req, res) => {

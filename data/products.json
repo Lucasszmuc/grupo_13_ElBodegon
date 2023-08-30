@@ -2,11 +2,11 @@
   {
     "id": 1,
     "image": "toma.jpg",
-    "name": "Tomahawk",
+    "name": "Tomahawk ",
     "category": "Carnes",
     "price": "2",
     "description": "interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio",
-    "code": "h8`"
+    "discount": ""
   },
   {
     "id": 2,

@@ -15,13 +15,13 @@ const userController = {
       );
     }
 
+    if(req.body.password === req.body.password2){
+
     // Comparesync retorna un booleano
     const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
 
     // Si la contraseña es válida
     if (validPw) {
-      
-      console.log(req.session.username)
       // Si se quiere mantener sesión iniciada
       if (req.body["keep-session"] === "on") {
         // Creamos la cookie userId, guardamos el id del usuario y hacemos que expire en un dia
@@ -30,13 +30,20 @@ const userController = {
         });
       }
       req.session.username = userInJson.username;
-      res.redirect("/")
+
+      res.redirect("/");
     } else {
       res.redirect(
         "/users/login?error=El mail o la contraseña son incorrectos"
       );
     }
+  } else {
+    res.redirect(
+      "/users/login?error=El mail o la contraseña son incorrectos"
+    );
+  }
   },
+
   logOut: (req, res) => {
       // Elimina la propiedad 'user' de la sesión
       delete req.session.user 
