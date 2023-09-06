@@ -14,27 +14,31 @@
                 </h2>
                     <div class="left-box-primary">
                         <img class="image" src="../img/avatar/<%= user.avatar %>" alt="" width="175px" height="175px" />
-                        
-                        <a href="#" class="btn btn-primary btn-block"><b>Editar foto</b></a>
                     </div>
                 </div>
                 <div class="right tab-content">
-                    <form class="form-horizontal" method="POST" action="/">
+                    <form class="form-horizontal" method="POST" action="/users/profile?_method=PUT" enctype="multipart/form-data">
                         <div>
-                            <label for="inputName" class="col-sm-2 control-label">Name:</label>
+                            <label for="">Cambiar Avatar:</label>
+                            <input type="file" name="avatar">
+                        </div>
+                        <div>
+                            <label for="inputName" class="col-sm-2 control-label">UserName:</label>
                             <div>
-                                <input type="text" id="inputName" placeholder="Nombre" value="<%= user.username%>">
+                                <input type="text" id="inputName" placeholder="Nombre" value="<%= user.username%>" name="username">
                             </div>
                         </div>
                         <div>
                             <label for="inputEmail">Email</label>
                             <div>
-                                <input type="email" id="inputEmail" placeholder="Email" value="<%= user.email %>">
+                                <input type="email" id="inputEmail" placeholder="Email" value="<%= user.email %>" name="email">
                             </div>
                         </div>
+                        <input type="text" value="<%= user.id %>" name="id" style="display: none;">
                     <div class="boton-editar">                    
                         <button type="submit" class="btn btn-danger">Edit User</button>                    
                     </div>
+
                 </form>
             </div>
             </div>

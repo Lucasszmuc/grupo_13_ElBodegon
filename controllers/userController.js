@@ -80,13 +80,38 @@ const userController = {
   },
   editProfile : async (req,res) =>{
     try {
-      
+
      const updatedProfile = {
         ...req.body,
       };
+
+      
+      if (req.file) {
+        updatedProfile.avatar = req.file.filename;
+      }
+
+      if (updatedProfile.avatar === '') {
+        let imagen = await User.findOne({
+          where: {
+            id: updatedProfile.id
+          }
+        });
+
+        updatedProfile.avatar = imagen.avatar;
+      }
+
+  
+
+      await User.update(updatedProfile,{
+        where:{
+          id: updatedProfile.id
+        }
+      })
+
+      res.redirect('/users/profile')
       
     } catch (error) {
-      
+      console.log(error)
     }
 
   },
@@ -100,7 +125,7 @@ const userController = {
     const cssIndex = pageCssMapping[currentPage];
     res.render("./users/register", { cssFiles, cssIndex });
   },
-  getProfile: (req, res) => {
+  getProfile:  (req, res) => {
     const currentPage = "profile";
     const cssIndex = pageCssMapping[currentPage];
     res.render('./users/profile', { cssFiles, cssIndex, user: req.session.user })

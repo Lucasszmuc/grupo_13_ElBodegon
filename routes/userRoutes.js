@@ -7,14 +7,14 @@ const avatar = require('../middlewares/processAvatar');
 // Routes GET
 router.get("/login", userController.getLogin);
 router.get("/register", userController.getRegister);
-router.get('/profile', userController.getProfile)
+router.get('/profile',userController.getProfile)
 
 // Routes POST
 router.post('/login', authCookie.authenticateUser ,userController.login);
 router.post("/register", avatar.single("avatar"), userController.register);
-router.post('/logOut', userController.logOut)  
+router.post('/logOut', avatar.single("avatar"),userController.logOut)  
 
 //Routes Put
-router.put('/profile', userController.editProfile)
+router.put('/profile', avatar.single('avatar') , userController.editProfile)
 
 module.exports = router;
