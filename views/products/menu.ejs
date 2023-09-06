@@ -36,9 +36,9 @@
                           </h2>
                           <% productsByCategory[category].forEach(producto=> { %>
                             <article class="productos">
-                              <img src="/img/<%= producto.image %>" alt="imagen-del-producto" />
+                              <img src="/img/products/<%= producto.image %>" alt="imagen-del-producto" />
                               <div class="info-produ">
-                                <a href="/producto/<%= producto.id %>">
+                                <a href="/product/<%= producto.id %>">
                                   <h5>
                                     <%= producto.name %>
                                   </h5>

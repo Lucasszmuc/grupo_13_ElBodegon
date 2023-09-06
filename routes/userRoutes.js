@@ -14,4 +14,7 @@ router.post('/login', authCookie.authenticateUser ,userController.login);
 router.post("/register", avatar.single("avatar"), userController.register);
 router.post('/logOut', userController.logOut)  
 
+//Routes Put
+router.put('/profile', userController.editProfile)
+
 module.exports = router;

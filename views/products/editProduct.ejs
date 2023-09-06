@@ -5,7 +5,7 @@
     <header><%- include("../partials/navbar") %></header>
     <main>
       <h1 class="title">Editar Producto</h1>
-      <form action="/producto/editProduct/<%= product.id %>?_method=PUT" class="formulario-editar"  method="POST"  enctype="multipart/form-data">
+      <form action="/product/editProduct/<%= product.id %>?_method=PUT" class="formulario-editar"  method="POST"  enctype="multipart/form-data">
         <div class="section-container">
         <div class="form-group">
            <label for="">Nombre del Producto:</label>
@@ -67,7 +67,7 @@
         </div>
       </form> 
       <br>
-      <form action="/producto/editProduct/<%= product.id %>?_method=DELETE" method="POST">
+      <form action="/product/editProduct/<%= product.id %>?_method=DELETE" method="POST">
         <div class="botones">
           <input type="hidden" name="_method" value="DELETE">
             <button class="boton-borrar" type="submit">Borrar producto</button>

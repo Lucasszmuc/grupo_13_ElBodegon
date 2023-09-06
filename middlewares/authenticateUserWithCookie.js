@@ -1,4 +1,4 @@
-const userModel = require("../models/userModels");
+
 const { User } = require('../database/models')
 
 const authenticateUserWithCookie = {
@@ -15,18 +15,16 @@ const authenticateUserWithCookie = {
     
         if (user) {
           req.session.user = user;
-          next()
         } 
     
        } catch (error) {
-        res.redirect("/users/login?error=El mail o la contraseña son incorrectos")
+        return res.redirect("/users/login?error=El mail o la contraseña son incorrectos")
        }
 
 }
   next(); // Continúa con el siguiente middleware o ruta
   },
   authenticateUser : async (req,res,next)=>{
-
    try {
     var user = await User.findOne({
       where : {
@@ -40,9 +38,8 @@ const authenticateUserWithCookie = {
     } 
 
    } catch (error) {
-    res.redirect("/users/login?error="+ error)
+     return res.redirect("/users/login?error="+ error)
    }
-    
 
   }
 }

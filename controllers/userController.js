@@ -1,6 +1,5 @@
 const cssFiles = require("./cssController");
 const pageCssMapping = require("./pageCssMapping");
-const userModel = require("../models/userModels");
 const { User } = require('../database/models');
 const uuid = require('uuid');
 const bcrypt = require('bcryptjs');
@@ -16,7 +15,7 @@ const userController = {
       });
 
       if (!user) {
-        return res.redirect(
+        res.redirect(
           "/users/login?error=El mail o la contraseña son incorrectos n"
         );
       }
@@ -35,7 +34,7 @@ const userController = {
             res.redirect("/");
           } 
         } catch (error) {
-          return res.redirect(
+          res.redirect(
             "/users/login?error=Las contraseñas no coinciden "
           );
         }
@@ -46,45 +45,8 @@ const userController = {
         );
       }
     } catch (error) {
-      res.redirect("/users/login");
+     res.redirect("/users/login");
     }
-
-    //   const userInJson = userModel.findByEmail(req.body.email);
-
-    //   // Caso en que el mail no pertenece a ningún usuario
-    // if (!userInJson) {
-    //   return res.redirect(
-    //     "/users/login?error=El mail o la contraseña son incorrectos n"
-    //   );
-    // }
-
-    // if (req.body.password === req.body.password2) {
-
-    //   // Comparesync retorna un booleano
-    //   const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
-
-    //   // Si la contraseña es válida
-    //   if (validPw) {
-    //     // Si se quiere mantener sesión iniciada
-    // if (req.body["keep-session"] === "on") {
-    //   // Creamos la cookie userId, guardamos el id del usuario y hacemos que expire en un dia
-    //   res.cookie("email", userInJson.email, {
-    //     maxAge: 1000 * 60 * 60 * 24,
-    //   });
-    // }
-    //     req.session.username = userInJson.username;
-
-    //     res.redirect("/");
-    //   } else {
-    //     res.redirect(
-    //       "/users/login?error=El mail o la contraseña son incorrectos"
-    //     );
-    //   }
-    // } else {
-    //   res.redirect(
-    //     "/users/login?error=El mail o la contraseña son incorrectos"
-    //   );
-    // }
   },
 
   logOut: (req, res) => {
@@ -103,7 +65,7 @@ const userController = {
 
   register: async (req, res) => {
     try {
-      const respuesta = User.create({
+      const respuesta = await User.create({
         id: uuid.v4(),
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
@@ -115,16 +77,19 @@ const userController = {
       res.redirect("/users/register?error=" + error);
     }
     res.redirect('/')
-
-    // const user = userModel.create(newUser);
-
-    // if (user.error) {
-    //   res.redirect("/users/register?error=" + user.error);
-    // } else {
-    //   res.redirect("/");
-    // }
   },
+  editProfile : async (req,res) =>{
+    try {
+      
+     const updatedProfile = {
+        ...req.body,
+      };
+      
+    } catch (error) {
+      
+    }
 
+  },
   getLogin: (req, res) => {
     const currentPage = "login";
     const cssIndex = pageCssMapping[currentPage];

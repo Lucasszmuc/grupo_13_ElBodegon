@@ -4,7 +4,7 @@ const validateRoutes = {
     if (req.session.user) {
         next();
     } else {
-        res.redirect("/users/login")
+      return res.redirect("/users/login")
     }
   }
 }

@@ -41,9 +41,9 @@ router.put(
 router.delete("/editProduct/:id", productController.deleteProduct);
 
 router.get("/menu", productController.showMenu);
-router.get("/recetas", userValidate.validate ,productController.showRecetas);
-router.get("/carrito", userValidate.validate ,productController.showCarrito);
-router.get("/:id", userValidate.validate ,productController.getProductDetail);
+router.get("/recetas", userValidate.validate, productController.showRecetas);
+router.get("/carrito", userValidate.validate, productController.showCarrito);
+router.get("/:id", userValidate.validate, productController.getProductDetail);
 
 router.get("/search", (req, res) => {
   const productModel = {

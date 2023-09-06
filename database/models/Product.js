@@ -1,37 +1,43 @@
 module.exports = (sequelize, DataTypes) => {
     try {
-        var User = sequelize.define("User",
+        var Product = sequelize.define("Product",
         {   
             id : {
-                type:{
-                    type: DataTypes.UUID,
-                    defaultValue: DataTypes.UUIDV4 
-                  },
+                type:DataTypes.INTEGER,
                 primaryKey: true ,
+                autoIncrement:true
             },
-            username: {
+            name: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            email: {
+            price: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
+            image: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            password: {
+            category: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            type: {
+            description: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            avatar: {
+            discount: {
                 type: DataTypes.STRING,
                 allowNull: false
+            },
+            code: {
+                type: DataTypes.STRING,
+                allowNull: true
             }
           },
             {
-                tableName: 'user',
+                tableName: 'product',
                 timestamps: false,
             });
 
@@ -39,5 +45,7 @@ module.exports = (sequelize, DataTypes) => {
         console.log(error)
     }
 
-    return User;
+    return Product;
 }
+
+
