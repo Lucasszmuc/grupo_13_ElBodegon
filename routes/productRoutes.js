@@ -22,6 +22,10 @@ const upload = multer({ storage });
 //GET
 router.get("/editProduct/:id", productController.getEditProduct);
 router.get("/createProduct", productController.getCreateProduct);
+router.get("/menu", productController.showMenu);
+router.get("/recetas", userValidate.validate, productController.showRecetas);
+router.get("/carrito", userValidate.validate, productController.showCart);
+router.get("/:id", userValidate.validate, productController.getProductDetail);
 
 //POST
 router.post(
@@ -29,6 +33,7 @@ router.post(
   upload.single("image"),
   productController.createProduct
 );
+router.post('/carrito',productController.insertProduct)
 
 //PUT
 router.put(
@@ -39,11 +44,8 @@ router.put(
 
 //DELETE
 router.delete("/editProduct/:id", productController.deleteProduct);
+router.delete("/carrito/:id", productController.deleteProductCart);
 
-router.get("/menu", productController.showMenu);
-router.get("/recetas", userValidate.validate, productController.showRecetas);
-router.get("/carrito", userValidate.validate, productController.showCarrito);
-router.get("/:id", userValidate.validate, productController.getProductDetail);
 
 router.get("/search", (req, res) => {
   const productModel = {
