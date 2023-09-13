@@ -1,0 +1,43 @@
+<nav class="nav-var">
+    <div class="logo">
+      <a href="/"
+        ><img src="/img/logo_elbodegon.png" alt="lgo" width="10%" id="logo"
+      /></a>
+    </div>
+    <div class="lista">
+      <ul class="lista-nav">
+        <li class="li-nav"><a href="/product/menu">Menu</a></li>
+        <li class="li-nav"><a href="/product/recetas">Recetas</a></li>
+        <li class="li-nav"><a href="/nosotros">Nosotros</a></li>
+        <li>
+          <% if (locals.user) { %>
+            <a href="/product/carrito"
+            ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i
+          ></a>
+          <% } else { %>
+            <a href="/users/login"
+            ><i class="fa-solid fa-cart-shopping " style="color: #ffffff"></i>
+            </a>
+          <% }%>
+        </li>
+        <% if (locals.user) { %>
+          <div class="container-user">
+            <div class="top">
+                <img src="../img/avatar/<%= user.avatar %>" alt="" width="35px" height="35px">
+                <p><a href="../users/profile"><%= user.username %></a></p>
+            </div>
+            <div class="bottom">
+                <form action="/users/logOut" method="POST">
+                    <input class="logout" type="submit" value="Log Out">
+                </form>
+            </div>
+        </div>
+        <% } else { %>
+          <li class="loog"><a href="/users/login">Login</a></li>
+        <% }%>
+      </ul>
+    </div>
+    <a href="#" class="burger-menu">
+      <i class="fas fa-bars"></i>
+    </a>
+  </nav>
