@@ -1,6 +1,6 @@
 const cssFiles = require("../controllers/cssController");
 const pageCssMapping = require("./pageCssMapping");
-const { Product } = require('../database/models')
+const { Product, Cart } = require('../database/models')
 
 const productController = {
   getProductDetail: async (req, res) => {
@@ -36,10 +36,21 @@ const productController = {
     const cssIndex = pageCssMapping[currentPage];
     res.render("./products/recetas", { cssFiles, cssIndex, user: req.session.user });
   },
-  showCarrito: (req, res) => {
+  showCart: async (req, res) => {
     const currentPage = "carrito";
     const cssIndex = pageCssMapping[currentPage];
-    res.render("./products/carrito", { cssFiles, cssIndex, user: req.session.user });
+    try {
+      const products = await Cart.findAll({
+        where:{
+          user_id : req.session.user.id
+        },
+        raw: true ,
+        nest: true
+      });
+      res.render("./products/carrito", { cssFiles, cssIndex,  product : products , user: req.session.user });   
+    } catch (error) {
+      console.log(error)
+    }
   },
   getEditProduct: async (req, res) => {
     const currentPage = "editProduct";
@@ -139,6 +150,35 @@ const productController = {
       console.log(error)
     }
   },
+  insertProduct: async (req,res)=>{
+    try {
+      const product = await Cart.create ({
+          user_id: req.session.user.id,
+          product_id: req.body.productId,
+          product_name:req.body.productName,
+          price:req.body.productPrice
+      }) 
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  deleteProductCart: async (req,res) =>{
+    const currentPage = "carrito";
+    const cssIndex = pageCssMapping[currentPage];
+  try {
+    const answer = await Cart.destroy({
+      where : {
+        id: req.params.id
+      }
+    });
+
+    res.redirect('/product/carrito');
+
+  } catch (error) {
+    console.log(error)
+  }
+  }
+
 };
 
 module.exports = productController;

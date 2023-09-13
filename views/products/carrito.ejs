@@ -13,56 +13,25 @@
         <h3 class="titulares">Precio</h3>
         <h3 class="titulares">Cantidad</h3>
       </section>
-      <section class="productos">
-        <article class="productoUno">
-          <img class="foto" src="/img/corte-carne.jpg" alt="" width="200" />
-          <p class="nombre-producto">producto 1</p>
-        </article>
-        <article class="productoUno">
-          <p class="texto-precio">$400</p>
-        </article>
-        <article class="productoUno">
-          <form class="formulario-cantidad" action="">
-            <label class="texto-cantidad" cantidad="1"></label>
-            <input type="number" min="1" name="cantidad" />
-            <input type="reset" class="delete-button" value="X" />
-          </form>
-        </article>
-      </section>
 
+    <% product.forEach(product => { %>
       <section class="productos">
         <article class="productoUno">
-          <img class="foto" src="/img/corte-carne.jpg" alt="" width="200" />
-          <p class="nombre-producto">producto 1</p>
+          <img class="foto" src="/img/products/<%= product.image %>" alt="" width="200" />
+          <p class="nombre-producto"><%= product.product_name %></p>
         </article>
         <article class="productoUno">
-          <p class="texto-precio">$400</p>
+          <p class="texto-precio"><%= product.price %></p>
         </article>
         <article class="productoUno">
-          <form class="formulario-cantidad" action="">
-            <label class="texto-cantidad" cantidad="1"></label>
-            <input type="number" min="1" name="cantidad" />
-            <input type="reset" class="delete-button" value="X" />
+          <form class="formulario-cantidad" action="/product/carrito/<%= product.id %>?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="delete-button" type="submit">X</button>
           </form>
         </article>
       </section>
+   <% }) %>
 
-      <section class="productos">
-        <article class="productoUno">
-          <img class="foto" src="/img/corte-carne.jpg" alt="" width="200" />
-          <p class="nombre-producto">producto 1</p>
-        </article>
-        <article class="productoUno">
-          <p class="texto-precio">$400</p>
-        </article>
-        <article class="productoUno">
-          <form class="formulario-cantidad" action="">
-            <label class="texto-cantidad" cantidad="1"></label>
-            <input type="number" min="1" name="cantidad" />
-            <input type="reset" class="delete-button" value="X" />
-          </form>
-        </article>
-      </section>
       <div class="but">
         <button class="submit-button">Comprar</button>
       </div>

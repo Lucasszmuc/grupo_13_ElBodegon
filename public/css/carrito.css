@@ -6,13 +6,16 @@ body {
 html{
   background-image: url("../img/fondoCarrito.jpg");
   background-size: cover; 
-  background-position: center center;
   background-repeat: no-repeat; 
 }
 
 main {
   margin-top: 40px;
   padding: 80px 2em 2em 40px;
+}
+
+footer{
+  position: fixed;
 }
 
 .titulo {
