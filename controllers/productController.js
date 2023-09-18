@@ -9,7 +9,7 @@ const productController = {
     const productId = req.params.id;
     try {
       const selectedProduct = await Product.findByPk(productId, { raw: true });
-      res.render("./products/productDetail", { cssFiles, cssIndex, product: selectedProduct });
+      res.render("./products/productDetail", { cssFiles, cssIndex, product: selectedProduct, user: req.session.user });
     } catch (error) {
       console.log(error);
       return res.status(500).send("Error interno del servidor");
@@ -158,6 +158,7 @@ const productController = {
           product_name:req.body.productName,
           price:req.body.productPrice
       }) 
+      console.log(req.body)
     } catch (error) {
       console.log(error)
     }

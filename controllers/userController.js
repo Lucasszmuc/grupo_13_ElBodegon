@@ -3,11 +3,21 @@ const pageCssMapping = require("./pageCssMapping");
 const { User } = require('../database/models');
 const uuid = require('uuid');
 const bcrypt = require('bcryptjs');
+const { validationResult } = require("express-validator");
 
 const userController = {
   login: async (req, res) => {
+    const currentPage = "login";
+    const cssIndex = pageCssMapping[currentPage];
 
+    var errors = validationResult(req)
+    
     try {
+      if (!errors.isEmpty()) {
+        return res.render('users/login', {
+            errors: errors.array(),
+            old: req.body
+        })};
       var user = await User.findOne({
         where: {
           email: req.body.email
@@ -15,7 +25,8 @@ const userController = {
       });
 
       if (!user) {
-        res.redirect(
+        console.log(errors)
+        return res.render(
           "/users/login?error=El mail o la contraseña son incorrectos n"
         );
       }
@@ -64,20 +75,45 @@ const userController = {
   },
 
   register: async (req, res) => {
+    const currentPage = "index";
+    const cssIndex = pageCssMapping[currentPage];
+  
+    const errors = validationResult(req);
+  
     try {
-      const respuesta = await User.create({
+      if (!errors.isEmpty()) {
+        return res.render('users/register', {
+          errors: errors.array(),
+          old: req.body,
+          cssFiles,
+          cssIndex
+        });
+      }
+  
+      let avatar = 'defaultAvatar.jpg'; // Valor predeterminado para avatar
+  
+      if (req.file && req.file.filename) {
+        // Si se proporciona un archivo, usa su nombre
+        avatar = req.file.filename;
+      }
+  
+      const user = await User.create({
         id: uuid.v4(),
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         username: req.body.username,
         type: "Customer",
-        avatar: req.file.filename
+        avatar: avatar // Asigna el valor predeterminado o el nombre de archivo
       });
+  
+      req.session.user = user;
+      return res.render('./main/index', { user: req.session.user, cssFiles, cssIndex });
     } catch (error) {
-      res.redirect("/users/register?error=" + error);
+      console.log(error);
+      return res.redirect("/users/register?error=" + error);
     }
-    res.redirect('/')
-  },
+  }
+  ,
   editProfile : async (req,res) =>{
     try {
 

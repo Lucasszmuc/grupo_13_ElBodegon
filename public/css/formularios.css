@@ -64,6 +64,11 @@ html{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.error-messages{
+  margin-bottom: 20px;
+  color: red;
+}
+
 .login-form {
   max-width: 90%;
   width: 85vw;

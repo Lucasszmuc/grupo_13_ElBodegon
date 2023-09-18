@@ -21,19 +21,47 @@
             <div class="form-contenido">
               <div class="input-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" />
+                <input type="text" id="username" name="username" value="<%= locals.old && locals.old.username ? locals.old.username : '' %>"/>
+                <% if (locals.errors) { %>   
+                  <% errors.forEach(error => {  console.log(error)%>
+                      <% if (error.path === 'username') { %>
+                        <p class="error-messages"><%= error.msg %></p>
+                    <% } %>
+                  <% }); %>
+          <% } %>
               </div>
               <div class="input-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" />
+                <input type="email" id="email" name="email" value="<%= locals.old && locals.old.email ? locals.old.email : '' %>" />
+                <% if (locals.errors) { %>   
+                  <% errors.forEach(error => {  console.log(error)%>
+                      <% if (error.path === 'email') { %>
+                        <p class="error-messages"><%= error.msg %></p>
+                    <% } %>
+                  <% }); %>
+          <% } %>
               </div>
               <div class="input-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" />
+                <input type="password" id="password" name="password" value="<%= locals.old && locals.old.password ? locals.old.password : '' %>"/>
+                <% if (locals.errors) { %>   
+                  <% errors.forEach(error => {  console.log(error)%>
+                      <% if (error.path === 'password') { %>
+                        <p class="error-messages"><%= error.msg %></p>
+                    <% } %>
+                  <% }); %>
+          <% } %>
               </div>
               <div class="input-group">
                 <label for="password"> Repeat Password:</label>
                 <input type="password" id="password" name="password2" />
+                <% if (locals.errors) { %>   
+                  <% errors.forEach(error => {  console.log(error)%>
+                      <% if (error.path === 'password2') { %>
+                        <p class="error-messages"><%= error.msg %></p>
+                    <% } %>
+                  <% }); %>
+          <% } %>
               </div>
               <div class="input-group" style="display: flex">
                 <label for="keep-session">Keep session</label>

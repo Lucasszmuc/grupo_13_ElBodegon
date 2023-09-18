@@ -66,53 +66,55 @@
     </header>
     <main>
       <!-- ------------------Nuestras Especialidades--------------------------- -->
-      <div class="sec-produ">
-        <h2>Nuestras Especialidades</h2>
-        <section>
-          <article class="productos">
-            <img src="/img/toma.jpg" alt="imagen-del-producto" />
-            <div class="info-produ">
-              <a href="/producto/1"><h5>Tomahawk</h5></a>
-              <div class="precio-boton">
-                <p id="precio">$2.000</p>
-                <button class="agregar-al-carrito">Agregar al carrito</button>
-              </div>
+      <h2>Especialidades</h2>
+      <section>
+        <article class="productos">
+          <img src="/img/picana.jpg" alt="imagen-del-producto" />
+          <div class="info-produ">
+            <a href="/producto/5"><h5>Picaña</h5></a>
+            <div class="precio-boton">
+              <p id="precio">$1.700</p>
+              <button class="agregar-al-carrito">Agregar al carrito</button>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="productos">
-            <img src="/img/bola-de.jpg" alt="imagen-del-producto" />
-            <div class="info-produ">
-              <a href="/producto/2"><h5>Bola de Lomo</h5></a>
-              <div class="precio-boton">
-                <p id="precio">$1.500</p>
-                <button class="agregar-al-carrito">Agregar al carrito</button>
-              </div>
+        <article class="productos">
+          <img src="/img/churrasco.jpg" alt="imagen-del-producto" />
+          <div class="info-produ">
+            <a href="/producto/6"><h5>Churrasco</h5></a>
+            <div class="precio-boton">
+              <p id="precio">$1.800</p>
+              <button class="agregar-al-carrito">Agregar al carrito</button>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="productos">
-            <img src="/img/new-york.jpg" alt="imagen-del-producto" />
-            <div class="info-produ">
-              <a href="/producto/3"><h5>New York Steak</h5></a>
-              <div class="precio-boton">
-                <p id="precio">$2.300</p>
-                <button class="agregar-al-carrito">Agregar al carrito</button>
-              </div>
+        <article class="productos">
+          <img src="/img/entrana.jpg" alt="imagen-del-producto" />
+          <div class="info-produ">
+            <a href="/producto/7"
+              ><h5 style="font-size: 20px; margin: 20px 5px">Entraña</h5></a
+            >
+            <div class="precio-boton">
+              <p id="precio">$2.700</p>
+              <button class="agregar-al-carrito">Agregar al carrito</button>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="productos">
-            <img src="/img/rib-eye-1.jpg" alt="imagen-del-producto" />
-            <div class="info-produ">
-              <a href="/producto/4"><h5>Rib Eye</h5></a>
-              <div class="precio-boton">
-                <p id="precio">$2.100</p>
-                <button class="agregar-al-carrito">Agregar al carrito</button>
-              </div>
+        <article class="productos">
+          <img src="/img/vacio.jpg" alt="imagen-del-producto" />
+          <div class="info-produ">
+            <a href="/producto/8"><h5>Vacío</h5></a>
+            <div class="precio-boton">
+              <p id="precio">$2.800</p>
+              <button class="agregar-al-carrito">Agregar al carrito</button>
             </div>
-          </article>
-        </section>
+          </div>
+        </article>
+      </section>
+      
         <!-- --------------------------Comidas----------------------- -->
         <h2>Comidas</h2>
         <section>
@@ -162,7 +164,6 @@
             </div>
           </article>
         </section>
-      </div>
       <!-- ------------------------pedi aca------------------------------ -->
       <div id="pedi-aca">
         <h2 id="pedi-h2">El Bodegon</h2>
@@ -195,20 +196,6 @@
         </div>
       </div>
     </main>
-    <footer>
-      <p>El Bodegon, Argentina</p>
-      <p class="copy">Copyright © 2023 Todos los derechos reservados.</p>
-      <div class="redes">
-        <a href="https://www.instagram.com/" class="insta"
-          ><i class="fab fa-instagram instagram"></i
-        ></a>
-        <a href="https://www.facebook.com/" class="face"
-          ><i class="fab fa-facebook facebook"></i
-        ></a>
-        <a href="https://twitter.com/" class="twi"
-          ><i class="fab fa-twitter twitter"></i
-        ></a>
-      </div>
-    </footer>
+    <%- include("../partials/footer") %>
   </body>
 </html>
