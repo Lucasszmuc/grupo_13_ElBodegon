@@ -4,6 +4,7 @@ const path = require("path");
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 const mainRoutes = require("./routes/mainRoutes");
+const apiRoutes = require('./routes/api/apiRoutes')
 const authCookie = require('./middlewares/authenticateUserWithCookie')
 const methodOverride = require('method-override');
 const session = require('express-session');
@@ -32,6 +33,7 @@ app.use(authCookie.authenticateUserWithCookie);
 app.use("/", mainRoutes);
 app.use("/product", productRoutes);
 app.use("/users", userRoutes);
+app.use('/api', apiRoutes)
 
 // Error 404
 // app.use((req,res,next) =>{
