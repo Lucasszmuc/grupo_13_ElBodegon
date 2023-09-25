@@ -12,11 +12,13 @@ const userController = {
 
     var errors = validationResult(req)
     
-    try {
+    try {   
       if (!errors.isEmpty()) {
         return res.render('users/login', {
             errors: errors.array(),
-            old: req.body
+            old: req.body,
+            cssFiles,
+            cssIndex
         })};
       var user = await User.findOne({
         where: {

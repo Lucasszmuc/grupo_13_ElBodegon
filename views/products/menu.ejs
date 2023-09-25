@@ -4,8 +4,8 @@
 
   <% const productsByCategory={}; %>
 
-<% products.forEach(producto=> { %>
-<% const category=producto.category; %>
+<% products.forEach(producto=> {  %>
+<% const category = producto.category.name; %>
 <% if (!productsByCategory[category]) { %>
 <% productsByCategory[category]=[]; %>
 <% } %>

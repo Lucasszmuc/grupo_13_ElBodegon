@@ -1,6 +1,6 @@
 const cssFiles = require("../controllers/cssController");
 const pageCssMapping = require("./pageCssMapping");
-const { Product, Cart } = require('../database/models')
+const { Product, Cart, Category } = require('../database/models')
 
 const productController = {
   getProductDetail: async (req, res) => {
@@ -19,13 +19,27 @@ const productController = {
     const currentPage = "menu";
     const cssIndex = pageCssMapping[currentPage];
     try {
-      const products = await Product.findAll({ raw: true });
+      const products = await Product.findAll({
+        raw: true,
+        include: [
+          {
+            model: Category, 
+            as: 'category', 
+            attributes: ['name'], 
+          },
+        ],
+        nest: true
+      });
+      
+      console.log(products);
+      
       return res.render("./products/menu", {
         cssFiles,
         cssIndex,
         products: products,
-        user: req.session.user
+        user: req.session.user,
       });
+      
     } catch (error) {
       console.log(error);
       return res.status(500).send("Error interno del servidor");
@@ -71,13 +85,42 @@ const productController = {
     res.render("./products/createProduct", { cssFiles, cssIndex, user: req.session.user });
   },
   createProduct: async (req, res) => {
+
+    switch (req.body.category) {
+      case 'Carnes':
+        var category = req.body.category
+        category = 1;
+      break;
+      case 'Bebidas':
+        var category = req.body.category
+        category = 2;
+      break;
+      case 'Ensaladas':
+        var category = req.body.category
+        category = 3;
+      break;
+      case 'Milanesas':
+        var category = req.body.category
+        category = 4;
+      break;
+      case 'Pescados':
+        var category = req.body.category
+        category = 5;
+      break;
+      case 'Postres':
+        var category = req.body.category
+        category = 6;
+      break;
+      default:
+        break;
+    }
     try {
 
       const newProduct = await Product.create({
         name: req.body.name,
         price: req.body.price,
         image: req.file.filename,
-        category: req.body.category,
+        category_id: category,
         description: req.body.description || "",
         discount: req.body.discount,
         code: req.body.code || ""

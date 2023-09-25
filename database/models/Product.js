@@ -18,9 +18,13 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        category: {
-            type: DataTypes.STRING,
-            allowNull: false
+        category_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'category',
+                key: 'id'
+            }
         },
         description: {
             type: DataTypes.STRING,
@@ -51,6 +55,12 @@ module.exports = (sequelize, DataTypes) => {
             otherKey: 'user_id',
             timestamps: false
         })
+
+        Product.belongsTo(models.Category, {
+            as: 'category',
+            foreignKey: 'category_id', 
+            timestamps: false
+        })        
 
     }
 
