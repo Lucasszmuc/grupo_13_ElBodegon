@@ -1,8 +1,7 @@
-html{
-  background-image: url("../img/aboutUs.jpg");
-  background-size: cover; 
+html {
+  background-size: cover;
   background-position: center center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 
 section {
@@ -12,7 +11,10 @@ section {
   align-items: center;
   margin-top: 50px;
   margin-bottom: 59px;
-  margin-left: 30px;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 main {
@@ -31,27 +33,27 @@ main {
 
 .us-right {
   width: 60%;
-    background-color: white;
-    opacity: 0.6;
-    border-radius: 10px;
-    margin-right: 31px;
+  background-color: white;
+  opacity: 0.6;
+  border-radius: 10px;
+  margin-right: 31px;
 }
 
 .us-right p {
   color: black;
   text-align: center;
   font-size: 17px;
- margin: 32px;
+  margin: 32px;
 }
 
 .us-left h2 {
   margin-right: 50px;
-    margin-top: 65px;
-    background-color: black;
-    color: white;
-    opacity: 0.6;
-    padding: 15px;
-    border-radius: 10px;
+  margin-top: 65px;
+  background-color: black;
+  color: white;
+  opacity: 0.6;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .try-right h2 {
@@ -96,7 +98,7 @@ main img {
   color: black;
   text-align: center;
   font-size: 20px;
- margin: 10px;
+  margin: 10px;
   padding: 20px;
 }
 
@@ -111,12 +113,10 @@ main img {
   .try-left,
   .try-right {
     width: 90%;
-    padding: 20px;
-    margin: 10px 0px;
   }
 
   .us-left {
-    margin-top: 50px;
+    margin-top: 5px;
   }
 
   .us-right p {
@@ -176,7 +176,7 @@ main img {
   }
 
   /* Ajusta el tamaño de las imágenes para que se vean bien en tabletas */
-   main img {
+  main img {
     width: 100%;
     height: auto;
   }
