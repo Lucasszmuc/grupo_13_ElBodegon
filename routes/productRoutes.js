@@ -28,11 +28,7 @@ router.get("/carrito", userValidate.validate, productController.showCart);
 router.get("/:id", userValidate.validate, productController.getProductDetail);
 
 //POST
-router.post(
-  "/createProduct",
-  upload.single("image"),
-  productController.createProduct
-);
+router.post("/createProduct",upload.single("image"),productController.createProduct);
 router.post('/carrito',productController.insertProduct)
 
 //PUT
