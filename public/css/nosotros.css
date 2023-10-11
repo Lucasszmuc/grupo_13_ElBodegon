@@ -1,7 +1,11 @@
 html {
+  background-image: url("../img/aboutUs.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+}
+.nav-var {
+  z-index: 1000;
 }
 
 section {
@@ -27,20 +31,21 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 300px;
+  height: 150px;
   padding: 10px;
 }
 
 .us-right {
+  margin: 15px 31px 15px 15px;
   width: 60%;
   background-color: white;
-  opacity: 0.6;
+  opacity: 0.9;
   border-radius: 10px;
-  margin-right: 31px;
 }
 
 .us-right p {
   color: black;
+  background-color: white;
   text-align: center;
   font-size: 17px;
   margin: 32px;
@@ -48,11 +53,10 @@ main {
 
 .us-left h2 {
   margin-right: 50px;
-  margin-top: 65px;
   background-color: black;
   color: white;
-  opacity: 0.6;
-  padding: 15px;
+  opacity: 0.9;
+  padding: 10px;
   border-radius: 10px;
 }
 
@@ -60,14 +64,13 @@ main {
   margin-left: 50px;
   background-color: black;
   color: white;
-  opacity: 0.6;
+  opacity: 0.9;
   padding: 15px;
   border-radius: 10px;
 }
 
 h2 {
   font-size: 35px;
-  margin-bottom: 40px;
 }
 
 main img {
@@ -90,8 +93,9 @@ main img {
 .try-left {
   width: 60%;
   background-color: white;
-  opacity: 0.6;
+  opacity: 0.9;
   border-radius: 10px;
+  margin: 15px 31px 15px 15px;
 }
 
 .try-left p {
@@ -127,19 +131,28 @@ main img {
     margin-right: 20px;
   }
 
+  .us-right {
+    margin-right: 0px;
+  }
+
   .try-right {
     order: -1;
   }
 
+  .try-right h2 {
+    margin: 0;
+  }
+
   .try-left {
     order: 0;
+    margin: 0;
+    margin-bottom: 15px;
   }
 
   .try-left p {
     text-align: center;
     font-size: 15px;
     margin-left: 20px;
-    margin-top: 43px;
     margin-right: 20px;
   }
 
