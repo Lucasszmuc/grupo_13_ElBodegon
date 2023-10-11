@@ -1,8 +1,11 @@
-html{
+html {
   background-image: url("../img/aboutUs.jpg");
-  background-size: cover; 
+  background-size: cover;
   background-position: center center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
+}
+.nav-var {
+  z-index: 1000;
 }
 
 section {
@@ -12,7 +15,10 @@ section {
   align-items: center;
   margin-top: 50px;
   margin-bottom: 59px;
-  margin-left: 30px;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 main {
@@ -25,47 +31,46 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 300px;
+  height: 150px;
   padding: 10px;
 }
 
 .us-right {
+  margin: 15px 31px 15px 15px;
   width: 60%;
-    background-color: white;
-    opacity: 0.6;
-    border-radius: 10px;
-    margin-right: 31px;
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 10px;
 }
 
 .us-right p {
   color: black;
+  background-color: white;
   text-align: center;
   font-size: 17px;
- margin: 32px;
+  margin: 32px;
 }
 
 .us-left h2 {
   margin-right: 50px;
-    margin-top: 65px;
-    background-color: black;
-    color: white;
-    opacity: 0.6;
-    padding: 15px;
-    border-radius: 10px;
+  background-color: black;
+  color: white;
+  opacity: 0.9;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .try-right h2 {
   margin-left: 50px;
   background-color: black;
   color: white;
-  opacity: 0.6;
+  opacity: 0.9;
   padding: 15px;
   border-radius: 10px;
 }
 
 h2 {
   font-size: 35px;
-  margin-bottom: 40px;
 }
 
 main img {
@@ -88,15 +93,16 @@ main img {
 .try-left {
   width: 60%;
   background-color: white;
-  opacity: 0.6;
+  opacity: 0.9;
   border-radius: 10px;
+  margin: 15px 31px 15px 15px;
 }
 
 .try-left p {
   color: black;
   text-align: center;
   font-size: 20px;
- margin: 10px;
+  margin: 10px;
   padding: 20px;
 }
 
@@ -111,12 +117,10 @@ main img {
   .try-left,
   .try-right {
     width: 90%;
-    padding: 20px;
-    margin: 10px 0px;
   }
 
   .us-left {
-    margin-top: 50px;
+    margin-top: 5px;
   }
 
   .us-right p {
@@ -127,19 +131,28 @@ main img {
     margin-right: 20px;
   }
 
+  .us-right {
+    margin-right: 0px;
+  }
+
   .try-right {
     order: -1;
   }
 
+  .try-right h2 {
+    margin: 0;
+  }
+
   .try-left {
     order: 0;
+    margin: 0;
+    margin-bottom: 15px;
   }
 
   .try-left p {
     text-align: center;
     font-size: 15px;
     margin-left: 20px;
-    margin-top: 43px;
     margin-right: 20px;
   }
 
@@ -176,7 +189,7 @@ main img {
   }
 
   /* Ajusta el tamaño de las imágenes para que se vean bien en tabletas */
-   main img {
+  main img {
     width: 100%;
     height: auto;
   }

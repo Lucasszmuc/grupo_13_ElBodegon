@@ -10,6 +10,16 @@ div h2 {
   margin-left: 50px;
   margin-top: 35px;
 }
+.tituloIndex {
+  font-size: 36px;
+  color: #333;
+  padding: 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 section {
   padding: 22px 80px;
   display: flex;
