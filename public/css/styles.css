@@ -178,6 +178,10 @@ footer {
   width: 20px;
 }
 
+.error-messages{
+  color: red;
+}
+
 p,
 button,
 input {

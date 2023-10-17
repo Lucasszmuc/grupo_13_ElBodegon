@@ -1,78 +1,92 @@
 <!DOCTYPE html>
 <html>
-<%- include("../partials/head")  %>
-<body>
-  <main>
-    <div class="contenedor-fuera">
-      <a href="/"><button class="botonX">X</button></a>
-      <div class="contenedor">
-        <form action = "/users/register"  method="POST"   class="login-form" enctype="multipart/form-data">
-          <div class="header">
-            <div class="signup-login-box">
-              <div class="login">
-                <a href="/users/login">
-                  <h2>Login</h2>
-                </a>
+<%- include("../partials/head") %>
+
+  <body>
+    <main>
+      <div class="contenedor-fuera">
+        <a href="/"><button class="botonX">X</button></a>
+        <div class="contenedor">
+          <form action="/users/register" method="POST" class="login-form" enctype="multipart/form-data">
+            <div class="header">
+              <div class="signup-login-box">
+                <div class="login">
+                  <a href="/users/login">
+                    <h2>Login</h2>
+                  </a>
+                </div>
+                <div class="signup">
+                  <a href="/users/register">
+                    <h2>Sign Up</h2>
+                  </a>
+                </div>
               </div>
-              <div class="signup">
-                <a href="/users/register">
-                  <h2>Sign Up</h2>
-                </a>
+              <a href="/">
+                <h3 class="bodegon">El Bodegon</h3>
+              </a>
+            </div>
+            <div class="form-contenido">
+              <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"
+                  value="<%= locals.old && locals.old.username ? locals.old.username : '' %>" />
+                <% if (locals.errors) { %>
+                  <% errors.forEach(error=> {%>
+                    <% if (error.path==='username' ) { %>
+                      <p class="error-messages">
+                        <%= error.msg %>
+                      </p>
+                      <% } %>
+                        <% }); %>
+                          <% } %>
               </div>
+              <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"
+                  value="<%= locals.old && locals.old.email ? locals.old.email : '' %>" />
+                <% if (locals.errors) { %>
+                  <% errors.forEach(error=> { %>
+                    <% if (error.path==='email' ) { %>
+                      <p class="error-messages">
+                        <%= error.msg %>
+                      </p>
+                      <% } %>
+                        <% }); %>
+                          <% } %>
+                            <% if (locals.errorEmail) { %>
+                              <p class="error-messages">
+                                <%= locals.errorEmail.msg %>
+                              </p>
+                              <% } %>
+              </div>
+                <div class="input-group">
+                  <label for="file">Select profile image:</label>
+                  <input type="file" id="image" name="avatar" accept=".jpg, .jpeg, .png, .gif" />
+                </div>
+                <div class="input-group">
+                  <label for="password">Create Password:</label>
+                  <input type="password" id="password" name="password" />
+                  <% if (locals.errors) { %>
+                    <% errors.forEach(error=> { %>
+                      <% if (error.path==='password' ) { %>
+                        <p class="error-messages">
+                          <%= error.msg %>
+                        </p>
+                        <% } %>
+                          <% }); %>
+                            <% } %>
+                </div>
+                <p class="olvidar-password">
+                  <a href="#">Olvidé mi contraseña</a>
+                </p>
+                <div class="buttons">
+                  <input type="submit" value="Registrarse" id="inciar-sesion" />
+                </div>
             </div>
-            <a href="/">
-              <h3 class="bodegon">El Bodegon</h3>
-            </a>
-          </div>
-    <div class="form-contenido">
-      <div class="input-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" value="<%= locals.old && locals.old.username ? locals.old.username : '' %>"/>
-        <% if (locals.errors) { %>   
-          <% errors.forEach(error => {  console.log(error)%>
-              <% if (error.path === 'username') { %>
-                <p class="error-messages"><%= error.msg %></p>
-            <% } %>
-          <% }); %>
-  <% } %>
+          </form>
+        </div>
       </div>
-      <div class="input-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="<%= locals.old && locals.old.email ? locals.old.email : '' %>"/>
-        <% if (locals.errors) { %>   
-          <% errors.forEach(error => { %>
-              <% if (error.path === 'email') { %>
-                <p class="error-messages"><%= error.msg %></p>
-            <% } %>
-          <% }); %>
-  <% } %>
-      </div>
-      <div class="input-group">
-        <label for="file">Select profile image:</label>
-        <input type="file" id="file" name="avatar" />
-      </div>
-      <div class="input-group">
-        <label for="password">Create Password:</label>
-        <input type="password" id="password" name="password" />
-        <% if (locals.errors) { %>   
-          <% errors.forEach(error => { %>
-              <% if (error.path === 'password') { %>
-                <p class="error-messages"><%= error.msg %></p>
-            <% } %>
-          <% }); %>
-  <% } %>
-      </div>
-            <p class="olvidar-password">
-              <a href="#">Olvidé mi contraseña</a>
-            </p>
-            <div class="buttons">
-              <input type="submit" value="Registrarse" id="inciar-sesion" />
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
 
 </html>

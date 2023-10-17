@@ -1,6 +1,7 @@
 const cssFiles = require("../controllers/cssController");
 const pageCssMapping = require("./pageCssMapping");
 const { Product, Cart, Category } = require('../database/models')
+const { validationResult } = require("express-validator");
 
 const productController = {
   getProductDetail: async (req, res) => {
@@ -84,68 +85,81 @@ const productController = {
     res.render("./products/createProduct", { cssFiles, cssIndex, user: req.session.user });
   },
   createProduct: async (req, res) => {
+    const currentPage = "createProduct";
+    const cssIndex = pageCssMapping[currentPage];
+    try {
+      
+      const errors = validationResult(req);
+
+      if (!errors.isEmpty()) {
+        return res.render('products/createProduct',{ 
+          errors: errors.array(),
+          old: req.body,
+          cssFiles,
+          cssIndex
+        });
+      }
+
+     
+      const { name, price, image, description, discount, code } = req.body;
+
+      let category = 0;
 
     switch (req.body.category) {
       case 'Carnes':
-        var category = req.body.category
         category = 1;
-      break;
+        break;
       case 'Bebidas':
-        var category = req.body.category
         category = 2;
-      break;
+        break;
       case 'Ensaladas':
-        var category = req.body.category
         category = 3;
-      break;
+        break;
       case 'Milanesas':
-        var category = req.body.category
         category = 4;
-      break;
+        break;
       case 'Pescados':
-        var category = req.body.category
         category = 5;
-      break;
+        break;
       case 'Postres':
-        var category = req.body.category
         category = 6;
-      break;
+        break;
       default:
         break;
     }
-    try {
 
       const newProduct = await Product.create({
         name: req.body.name,
         price: req.body.price,
         image: req.file.filename,
         category_id: category,
-        description: req.body.description || "",
-        discount: req.body.discount,
-        code: req.body.code || ""
+        description,
+        discount,
+        code,
       });
 
-
-      return res.redirect("/product/" + newProduct.dataValues.id);
-
+      return res.redirect('/product/' + newProduct.dataValues.id);
     } catch (error) {
-      console.log(error)
-      return res.redirect("/error?"+error)
+      console.log(error);
+      return res.redirect('/error?' + error);
     }
   },
 
   editProduct: async (req, res) => {
     try {
-      var updatedProduct = {
-        id: Number(req.params.id),
-        image: ''
+      // Validar los campos
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+      }
 
+      // Procesar la edición del producto
+      const { id } = req.params;
+      const updatedProduct = {
+        id: Number(id),
+        image: '',
+        // Resto de campos a actualizar
       };
-      updatedProduct = {
-        ...updatedProduct,
-        ...req.body,
-      };
-
 
       if (req.file) {
         updatedProduct.image = req.file.filename;
@@ -154,27 +168,22 @@ const productController = {
       if (updatedProduct.image === '') {
         let imagen = await Product.findOne({
           where: {
-            id: Number(req.params.id)
-          }
+            id: Number(id),
+          },
         });
 
         updatedProduct.image = imagen.image;
       }
 
-      console.log(updatedProduct)
-
       await Product.update(updatedProduct, {
         where: {
-          id: Number(req.params.id)
-        }
-      })
+          id: Number(id),
+        },
+      });
 
-      return res.redirect("/product/" + updatedProduct.id);
-
+      return res.redirect('/product/' + updatedProduct.id);
     } catch (error) {
-
-      return res.redirect('/product/' + updatedProduct.id + '/error?=' + error)
-
+      return res.redirect('/product/' + updatedProduct.id + '/error?' + error);
     }
   },
   deleteProduct: async (req, res) => {

@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const productController = require("../controllers/productController");
-const userValidate = require('../middlewares/validateRoutes')
+const userValidate = require('../middlewares/validateRoutes');
+const productValidation = require('../middlewares/productValidation')
 const multer = require("multer");
 const path = require("path");
 
@@ -28,13 +29,14 @@ router.get("/carrito", userValidate.validate, productController.showCart);
 router.get("/:id", userValidate.validate, productController.getProductDetail);
 
 //POST
-router.post("/createProduct",upload.single("image"),productController.createProduct);
+router.post("/createProduct",upload.single("image"),productValidation ,productController.createProduct);
 router.post('/carrito',productController.insertProduct)
 
 //PUT
 router.put(
   "/editProduct/:id",
   upload.single("image"),
+  productValidation,
   productController.editProduct
 );
 

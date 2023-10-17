@@ -5,7 +5,7 @@ const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 const mainRoutes = require("./routes/mainRoutes");
 const apiRoutes = require('./routes/api/apiRoutes')
-const authCookie = require('./middlewares/authenticateUserWithCookie')
+const authCookie = require('./middlewares/authenticateUser')
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
@@ -26,7 +26,7 @@ app.use(session({secret: 'ElBodegonDigitalHouse2023', resave: false, saveUniniti
 app.use(cookieParser())
 
 //Configuracion de Auth Cookie
-app.use(authCookie.authenticateUserWithCookie);
+app.use(authCookie);
 
 
 // Rutas
