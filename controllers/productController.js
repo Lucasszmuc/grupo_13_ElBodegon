@@ -30,8 +30,7 @@ const productController = {
         ],
         nest: true
       });
-      
-      console.log(products);
+    
       
       return res.render("./products/menu", {
         cssFiles,
