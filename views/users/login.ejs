@@ -6,7 +6,7 @@
       <div class="contenedor-fuera">
         <a href="/"><button class="botonX">X</button></a>
         <div class="contenedor">
-          <form  class='login-form' action="/users/login" method="POST" >
+          <form  class='login-form' id="form" action="/users/login" method="POST" >
             <div class="header">
               <div class="signup-login-box">
                 <div class="login">
@@ -44,7 +44,11 @@
               <div class="input-group">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" value="<%= locals.old && locals.old.password ? locals.old.password : '' %>"/>
+               <div class="see-password2">
                 <input type="checkbox" name="" id="see-password"/>
+                <p>See Password</p>
+               </div>
+               <p id="messageElement"></p>
                 <% if (locals.errors) { %>   
                   <% errors.forEach(error => {  %>
                       <% if (error.path === 'password') { %>
@@ -55,7 +59,7 @@
               </div>
               <div class="input-group">
                 <label for="password"> Repeat Password:</label>
-                <input type="password" id="rpassword" name="password2" />
+                <input type="password" id="password" name="password2" class="rpassword" />
                 <% if (locals.errors) { %>   
                   <% errors.forEach(error => {  %>
                       <% if (error.path === 'password2') { %>
@@ -76,11 +80,11 @@
                 <button class="google-button">Google</button>
                 <button class="facebook-button">Facebook</button>
               </div>
+            </div>
           </form>
         </div>
         </div>
-      </div>
     </main>
+   <script src="/js/validator.js"></script>
   </body>
-  <script src="../../public/js/script.js"> </script>
 </html>

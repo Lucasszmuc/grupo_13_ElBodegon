@@ -148,6 +148,11 @@ html{
   margin: 0 4px;
   width: auto;
 }
+.see-password2{
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+}
 
 .login-form #username,
 .login-form #email,

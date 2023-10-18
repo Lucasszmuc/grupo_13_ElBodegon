@@ -11,7 +11,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
 // Configuración del motor de vistas y archivos estáticos
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 app.set("view engine", "ejs");
 
 // Configuración de middlewares en el orden correcto
