@@ -54,7 +54,7 @@
               </div>
               <div class="input-group">
                 <label for="password"> Repeat Password:</label>
-                <input type="password" id="password" name="password2" />
+                <input type="password" id="rpassword" name="password2" />
                 <% if (locals.errors) { %>   
                   <% errors.forEach(error => {  %>
                       <% if (error.path === 'password2') { %>
