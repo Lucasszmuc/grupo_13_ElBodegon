@@ -44,6 +44,7 @@
               <div class="input-group">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" value="<%= locals.old && locals.old.password ? locals.old.password : '' %>"/>
+                <input type="checkbox" name="" id="see-password"/>
                 <% if (locals.errors) { %>   
                   <% errors.forEach(error => {  %>
                       <% if (error.path === 'password') { %>
@@ -81,4 +82,5 @@
       </div>
     </main>
   </body>
+  <script src="../../public/js/script.js"> </script>
 </html>
