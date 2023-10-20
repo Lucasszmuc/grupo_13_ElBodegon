@@ -16,6 +16,7 @@ app.set("view engine", "ejs");
 
 // Configuración de middlewares en el orden correcto
 app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
 app.use(methodOverride("_method"));
 
