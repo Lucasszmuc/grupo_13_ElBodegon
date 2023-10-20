@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <%- include("../partials/head")  %>
+  <%- include("../partials/head") %>
   <body>
     <main>
       <div class="contenedor-fuera">
         <a href="/"><button class="botonX">X</button></a>
         <div class="contenedor">
-          <form  class='login-form' action="/users/login" method="POST" >
+          <form
+            class="login-form"
+            id="form"
+            action="/users/login"
+            method="POST"
+          >
             <div class="header">
               <div class="signup-login-box">
                 <div class="login">
@@ -21,53 +26,65 @@
             <div class="form-contenido">
               <div class="input-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" value="<%= locals.old && locals.old.username ? locals.old.username : '' %>"/>
-                <% if (locals.errors) { %>   
-                  <% errors.forEach(error => {  console.log(error)%>
-                      <% if (error.path === 'username') { %>
-                        <p class="error-messages"><%= error.msg %></p>
-                    <% } %>
-                  <% }); %>
-          <% } %>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  value="<%= locals.old && locals.old.username ? locals.old.username : '' %>"
+                />
+                <% if (locals.errors) { %> <% errors.forEach(error => { %> <% if
+                (error.path === 'username') { %>
+                <p class="error-messages"><%= error.msg %></p>
+                <% } %> <% }); %> <% } %>
               </div>
               <div class="input-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="<%= locals.old && locals.old.email ? locals.old.email : '' %>" />
-                <% if (locals.errors) { %>   
-                  <% errors.forEach(error => {  console.log(error)%>
-                      <% if (error.path === 'email') { %>
-                        <p class="error-messages"><%= error.msg %></p>
-                    <% } %>
-                  <% }); %>
-          <% } %>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value="<%= locals.old && locals.old.email ? locals.old.email : '' %>"
+                />
+                <% if (locals.errors) { %> <% errors.forEach(error => { %> <% if
+                (error.path === 'email') { %>
+                <p class="error-messages"><%= error.msg %></p>
+                <% } %> <% }); %> <% } %>
               </div>
               <div class="input-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" value="<%= locals.old && locals.old.password ? locals.old.password : '' %>"/>
-                <input type="checkbox" name="" id="see-password"/>
-                <% if (locals.errors) { %>   
-                  <% errors.forEach(error => {  console.log(error)%>
-                      <% if (error.path === 'password') { %>
-                        <p class="error-messages"><%= error.msg %></p>
-                    <% } %>
-                  <% }); %>
-          <% } %>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value="<%= locals.old && locals.old.password ? locals.old.password : '' %>"
+                />
+                <div class="see-password2">
+                  <input type="checkbox" name="" id="see-password" />
+                  <p>See Password</p>
+                </div>
+                <p id="messageElement"></p>
+                <% if (locals.errors) { %> <% errors.forEach(error => { %> <% if
+                (error.path === 'password') { %>
+                <p class="error-messages"><%= error.msg %></p>
+                <% } %> <% }); %> <% } %>
               </div>
               <div class="input-group">
                 <label for="password"> Repeat Password:</label>
-                <input type="password" id="rpassword" name="password2" />
-                <% if (locals.errors) { %>   
-                  <% errors.forEach(error => {  console.log(error)%>
-                      <% if (error.path === 'password2') { %>
-                        <p class="error-messages"><%= error.msg %></p>
-                    <% } %>
-                  <% }); %>
-          <% } %>
+                <input
+                  type="password"
+                  id="password"
+                  name="password2"
+                  class="rpassword"
+                />
+                <% if (locals.errors) { %> <% errors.forEach(error => { %> <% if
+                (error.path === 'password2') { %>
+                <p class="error-messages"><%= error.msg %></p>
+                <% } %> <% }); %> <% } %>
               </div>
               <div class="input-group" style="display: flex">
                 <label for="keep-session">Keep session</label>
                 <input type="checkbox" id="keep-session" name="keep-session" />
-              </div> 
+              </div>
               <p class="olvidar-password">
                 <a href="#">Olvidé mi contraseña</a>
               </p>
@@ -76,11 +93,11 @@
                 <button class="google-button">Google</button>
                 <button class="facebook-button">Facebook</button>
               </div>
+            </div>
           </form>
-        </div>
         </div>
       </div>
     </main>
+    <script src="/js/validator.js"></script>
   </body>
-  <script src="../../public/js/script.js"> </script>
 </html>
