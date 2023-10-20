@@ -17,11 +17,11 @@ body {
   font-family: Arial, sans-serif;
 }
 
-html{
+html {
   background-image: url("../img/formBack.jpg");
-  background-size: cover; 
+  background-size: cover;
   background-position: center center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 .contenedor-fuera {
   display: flex;
@@ -64,7 +64,7 @@ html{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.error-messages{
+.error-messages {
   margin-bottom: 20px;
   color: red;
 }
@@ -147,6 +147,11 @@ html{
   font-weight: 700;
   margin: 0 4px;
   width: auto;
+}
+.see-password2 {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
 }
 
 .login-form #username,
