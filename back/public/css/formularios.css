@@ -157,7 +157,7 @@ html{
 .login-form #username,
 .login-form #email,
 .login-form #password,
-.login-form #confirm-password {
+.login-form #Rpassword {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -283,7 +283,8 @@ html{
 
   .login-form #username,
   .login-form #email,
-  .login-form #password {
+  .login-form #password
+  .login-form #Rpassword {
     padding: 8px;
     margin-bottom: 10px;
   }

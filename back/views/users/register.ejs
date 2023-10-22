@@ -7,7 +7,7 @@
       <div class="contenedor-fuera">
         <a href="/"><button class="botonX">X</button></a>
         <div class="contenedor">
-          <form action="/users/register" method="POST" class="login-form" enctype="multipart/form-data">
+          <form action="/users/register" method="POST" id ="form_register"class="login-form" enctype="multipart/form-data">
             <div class="header">
               <div class="signup-login-box">
                 <div class="login">
@@ -39,6 +39,7 @@
                       <% } %>
                         <% }); %>
                           <% } %>
+                  <!-- <p id="alertaUsername"></p> -->
               </div>
               <div class="input-group">
                 <label for="email">Email:</label>
@@ -87,6 +88,7 @@
         </div>
       </div>
     </main>
+    <script src="/js/validator.js"></script>
   </body>
 
 </html>

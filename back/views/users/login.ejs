@@ -6,7 +6,7 @@
       <div class="contenedor-fuera">
         <a href="/"><button class="botonX">X</button></a>
         <div class="contenedor">
-          <form  class='login-form' id="form" action="/users/login" method="POST" >
+          <form  class='login-form' id="form_login" action="/users/login" method="POST" >
             <div class="header">
               <div class="signup-login-box">
                 <div class="login">
@@ -59,7 +59,7 @@
               </div>
               <div class="input-group">
                 <label for="password"> Repeat Password:</label>
-                <input type="password" id="password" name="password2" class="rpassword" />
+                <input type="password" id="Rpassword" name="password2" class="rpassword" />
                 <% if (locals.errors) { %>   
                   <% errors.forEach(error => {  %>
                       <% if (error.path === 'password2') { %>
