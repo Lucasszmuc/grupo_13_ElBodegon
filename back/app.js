@@ -4,7 +4,6 @@ const path = require("path");
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 const mainRoutes = require("./routes/mainRoutes");
-<<<<<<<< HEAD:backend/app.js
 const apiRoutes = require("./routes/api/apiRoutes");
 const authCookie = require("./middlewares/authenticateUser");
 const methodOverride = require("method-override");
@@ -12,17 +11,10 @@ const session = require("express-session");
 const cookieParser = require("cookie-parser");
 
 // Configuración del motor de vistas y archivos estáticos
-app.use(express.static(path.join(dirname, "public")));
-========
-const apiRoutes = require('./routes/api/apiRoutes')
-const authCookie = require('./middlewares/authenticateUser')
-const methodOverride = require('method-override');
-const session = require('express-session');
-const cookieParser = require('cookie-parser');
+app.use(express.static(path.join(__dirname, "public")));
 
 // Configuración del motor de vistas y archivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
->>>>>>>> a55700da865715206b120d649a961f3c2392ea88:back/app.js
+app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 
 // Configuración de middlewares en el orden correcto
@@ -45,10 +37,6 @@ app.use(cookieParser());
 
 //Configuracion de Auth Cookie
 app.use(authCookie);
-<<<<<<<< HEAD:backend/app.js
-========
-
->>>>>>>> a55700da865715206b120d649a961f3c2392ea88:back/app.js
 
 // Rutas
 app.use("/", mainRoutes);
