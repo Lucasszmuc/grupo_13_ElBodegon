@@ -1,13 +1,30 @@
 window.addEventListener('load', () => {
     const password = document.querySelector("#password");
-    const registerForm = document.querySelector('#form');
+    const loginForm = document.querySelector('#form_login');
+    const registerForm = document.querySelector('#form_register');
     const checkbox = document.querySelector("#see-password");
     const rpasswor = document.querySelector('.rpassword')
     const messageElement = document.querySelector('#messageElement'); 
-
+    const username = document.querySelector('#username');
+    
     let clickeado = false;
-
-
+    
+    
+    
+    registerForm.addEventListener("submit", (e) => {
+    
+      e.preventDefault(); 
+    
+      const usernameValue = username.value;
+      const longitud = usernameValue.length;
+      const mensaje = "El username ";
+    
+      if (usernameValue.trim() === "") {          
+          alert(mensaje + "no puede ser vacia")
+      } else if (longitud < 2) {
+          alert(mensaje + "tiene que tener al menos 2 caracteres.");            
+      }    
+    });
 
     password.addEventListener("input", (e) => {
         const contraseña = e.target.value;
@@ -16,7 +33,7 @@ window.addEventListener('load', () => {
         const regexMayuscula = /[A-Z]/;
         const regexMinuscula = /[a-z]/;
         const regexCaracterEspecial = /[@$!%*?&]/;
-    
+        
         if (longitud < 4) {
             seguridad = "débil";
         } else if (longitud <= 7) {
@@ -55,7 +72,7 @@ window.addEventListener('load', () => {
         }
     });
 
-    registerForm.addEventListener("submit", (e) => {
+    loginForm.addEventListener("submit", (e) => {
         // si el valor del input del mail es menor a 10
         // O si el valor del input de la pw es menor a 8
         if (
@@ -68,5 +85,8 @@ window.addEventListener('load', () => {
         }
       });
 
+
+    
+    
 
 });
