@@ -16,8 +16,10 @@ window.addEventListener("load", () => {
 
     if (usernameValue.trim() === "") {
       alert(mensaje + "no puede estar vacio.");
+     return;
     } else if (longitud < 2) {
       alert(mensaje + "tiene que tener al menos 2 caracteres.");
+      return;
     }
 
     const emailValue = email.value;
@@ -27,8 +29,10 @@ window.addEventListener("load", () => {
 
     if (emailValue.trim() === "") {
       alert(mensajeEmail + "no puede estar vacio.");
+      return;
     } else if (!emailFormat.test(emailValue)) {
       alert(mensajeEmail + "tiene que ser valido.");
+      return;
     }
 
     const formatosValidos = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
@@ -38,6 +42,7 @@ window.addEventListener("load", () => {
       alert(
         "El archivo de imagen debe tener una extensión válida (JPG, JPEG, PNG o GIF)."
       );
+      return;
     }
 
     const passwordValue = password.value;

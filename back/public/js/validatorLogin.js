@@ -15,8 +15,10 @@ window.addEventListener("load", () => {
 
     if (emailValue.trim() === "") {
       alert(mensajeEmail + "no puede estar vacio.");
+      return;
     } else if (!emailFormat.test(emailValue)) {
       alert(mensajeEmail + "tiene que ser valido.");
+      return;
     }
 
     const passwordValue = password.value;
