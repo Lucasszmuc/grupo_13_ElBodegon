@@ -18,6 +18,7 @@
             <input
               type="text"
               id="productName"
+              class="productName"
               name="name"
               value="<%= locals.old && locals.old.name ? locals.old.name : '' %>"
             />
@@ -28,7 +29,7 @@
           </div>
           <div class="form-group">
             <label for="category">Categoria:</label>
-            <select id="comida" name="category">
+            <select id="comida" class= "productCategory" name="category">
               <option value="">Seleccione una opción</option>
               <option value="Bebidas">Bebidas</option>
               <option value="Carnes">Carnes</option>
@@ -45,13 +46,14 @@
             <input
               type="text"
               id="productPrice"
+              class ="productPrice"
               name="price"
               value="<%= locals.old && locals.old.price ? locals.old.price : '' %>"
             />
           </div>
           <div class="form-group">
             <label for="image">Cargar imagen:</label>
-            <input type="file" id="imagen" name="image" />
+            <input type="file" class="image" id="imagen" name="image" />
             <% if (locals.errors) { %> <% errors.forEach(error=> {%> <% if
             (error.path==='image' ) { %>
             <p class="error-messages"><%= error.msg %></p>
