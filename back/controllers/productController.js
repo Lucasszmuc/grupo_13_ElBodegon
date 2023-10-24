@@ -146,19 +146,32 @@ const productController = {
   },
 
   editProduct: async (req, res) => {
-    try {
-      // Validar los campos
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-      }
+    const currentPage = "editProduct";
+  const cssIndex = pageCssMapping[currentPage];
+  const productId = req.params.id;
+  try {
+    // Validar los campos
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const selectedProduct = await Product.findByPk(productId, { raw: true });
+      return res.render("products/editProduct", { 
+        errors: errors.array(),
+        product: selectedProduct, // Agrega el producto aquí
+        cssFiles,
+        cssIndex
+      });
+    }
+        
 
       // Procesar la edición del producto
       const { id } = req.params;
+      const{description , category_id, name, price} = req.body
       const updatedProduct = {
         id: Number(id),
         image: '',
-        // Resto de campos a actualizar
+        name: name,
+        description: description,
+        price: price
       };
 
       if (req.file) {
@@ -175,6 +188,8 @@ const productController = {
         updatedProduct.image = imagen.image;
       }
 
+      console.log(updatedProduct)
+
       await Product.update(updatedProduct, {
         where: {
           id: Number(id),
@@ -183,7 +198,7 @@ const productController = {
 
       return res.redirect('/product/' + updatedProduct.id);
     } catch (error) {
-      return res.redirect('/product/' + updatedProduct.id + '/error?' + error);
+      return res.redirect('/product/' + productId + '/error?' + error);
     }
   },
   deleteProduct: async (req, res) => {
