@@ -21,16 +21,16 @@ window.addEventListener("load", () => {
       password.type = "password";
     }
   });
-  loginForm.addEventListener("submit", (e) => {
+ /*  loginForm.addEventListener("submit", (e) => {
     // si el valor del input del mail es menor a 10
     // O si el valor del input de la pw es menor a 8
-    // if (
-    //   e.target.email.value.length < 10 ||
-    //   e.target.password.value.length < 8
-    // ) {
+     if (
+      e.target.email.value.length < 10 ||
+     e.target.password.value.length < 8
+     ) {
       // Se previene el comportamiento por defecto del form
       // (ejecutar el post a /users/register)
-    //   e.preventDefault();
-    // }
-  });
+      e.preventDefault();
+     }
+  }); */
 });
