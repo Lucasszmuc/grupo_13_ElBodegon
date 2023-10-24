@@ -1,6 +1,5 @@
 # grupo_13_ElBodegon
 
-Guzman Soler : 37 años - Rioplatense explorando nuevos desafíos
 Lucas Szmuc : 21 años - Soy de river
 Santiago Dzikovski : 21 años - Me gusta jugar al futbol
 Juan Morales : 20 años - Me gusta entrenar
