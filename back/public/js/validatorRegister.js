@@ -3,13 +3,8 @@ window.addEventListener("load", () => {
   const registerForm = document.querySelector("#form_register");
   const username = document.querySelector("#username");
   const email = document.querySelector("#email");
-  const passwordValue = password.value;
-  const longitudPassword = passwordValue.length;
-  const regexMayuscula = /[A-Z]/;
-  const regexMinuscula = /[a-z]/;
-  const regexCaracterEspecial = /[@$!%*?&]/;
-  const regexNumero = /^[0-9]+$/;
-  const clickeado = false;
+  const image = document.querySelector("#image");
+  let clickeado = false;
   const checkbox = document.querySelector("#see-password");
 
   registerForm.addEventListener("submit", (e) => {
@@ -36,29 +31,32 @@ window.addEventListener("load", () => {
       alert(mensajeEmail + "tiene que ser valido.");
     }
 
+    const formatosValidos = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    const imageValue = image.value;
+
+    if (imageValue && !formatosValidos.test(imageValue)) {
+      alert(
+        "El archivo de imagen debe tener una extensión válida (JPG, JPEG, PNG o GIF)."
+      );
+    }
+
     const passwordValue = password.value;
     const longitudPassword = passwordValue.length;
     const mensajePassword = "La Contraseña ";
-    const regexMayuscula = /[A-Z]/;
-    const regexMinuscula = /[a-z]/;
-    const regexCaracterEspecial = /[@$!%*?&]/;
-    const regexNumero = /^[0-9]+$/;
+    const regexPassword =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
 
     if (passwordValue.trim() === "") {
       alert(mensajePassword + "no puede estar vacia.");
     } else if (longitudPassword < 8) {
       alert(mensajePassword + "tiene que tener al menos 8 caracteres.");
-    } else if (
-      !regexCaracterEspecial.test(passwordValue) ||
-      !regexMayuscula.test(passwordValue) ||
-      !regexMinuscula.test(passwordValue) ||
-      !regexNumero.test(passwordValue)
-    ) {
+    } else if (!regexPassword.test(passwordValue)) {
       alert(
         mensajePassword +
           "deberá tener letras mayúsculas, minúsculas, un número y un carácter especial."
       );
     }
+    
   });
 
   checkbox.addEventListener("click", (e) => {
