@@ -16,10 +16,10 @@
   "name": "grupo_13_elbodegon",
   "description": "Lucas Szmuc : 21 años - Soy de river\r Santiago Dzikovski : 21 años - Me gusta jugar al futbol\r Juan Morales : 20 años - Me gusta entrenar",
   "version": "1.0.0",
-  "main": "back/app.js",
+  "main": "app.js",
   "scripts": {
-    "test": "npx nodemon app.js",
-    "start": "node app.js"
+    "dev": "npx nodemon back/app.js",
+    "start": "node back/app.js"
   },
   "repository": {
     "type": "git",
