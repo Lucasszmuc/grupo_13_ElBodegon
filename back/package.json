@@ -14,12 +14,12 @@
     "uuid": "^9.0.0"
   },
   "name": "grupo_13_elbodegon",
-  "description": "Guzman Soler : 37 años - Rioplatense explorando nuevos desafíos\r Lucas Szmuc : 21 años - Soy de river\r Santiago Dzikovski : 21 años - Me gusta jugar al futbol\r Juan Morales : 20 años - Me gusta entrenar",
+  "description": "Lucas Szmuc : 21 años - Soy de river\r Santiago Dzikovski : 21 años - Me gusta jugar al futbol\r Juan Morales : 20 años - Me gusta entrenar",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "dev": "npx nodemon app",
-    "start": "node app"
+    "dev": "npx nodemon back/app.js",
+    "start": "node back/app.js"
   },
   "repository": {
     "type": "git",
