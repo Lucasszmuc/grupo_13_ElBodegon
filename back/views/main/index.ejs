@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head") %>
+  <link rel="stylesheet" href="<%= cssFiles[9] %>%>" />
+  <body>
+    <header>
+      <!--carrusel-->
+      <div class="slide">
+        <div class="slide-inner">
+          <input
+            class="slide-open"
+            type="radio"
+            id="slide-1"
+            name="slide"
+            aria-hidden="true"
+            hidden=""
+            checked="checked"
+          />
+          <div class="slide-item">
+            <img src="/img/parrilla3.jpg" alt="Slide 1" />
+          </div>
+          <input
+            class="slide-open"
+            type="radio"
+            id="slide-2"
+            name="slide"
+            aria-hidden="true"
+            hidden=""
+          />
+          <div class="slide-item">
+            <img src="/img/carrouselsisi.jpg" alt="Slide 2" />
+          </div>
+          <input
+            class="slide-open"
+            type="radio"
+            id="slide-3"
+            name="slide"
+            aria-hidden="true"
+            hidden=""
+          />
+          <div class="slide-item">
+            <img src="/img/corte1.jpeg" alt="Slide 3" />
+          </div>
+          <label for="slide-3" class="slide-control prev control-1">‹</label>
+          <label for="slide-2" class="slide-control next control-1">›</label>
+          <label for="slide-1" class="slide-control prev control-2">‹</label>
+          <label for="slide-3" class="slide-control next control-2">›</label>
+          <label for="slide-2" class="slide-control prev control-3">‹</label>
+          <label for="slide-1" class="slide-control next control-3">›</label>
+          <ol class="slide-indicator">
+            <li>
+              <label for="slide-1" class="slide-circle">•</label>
+            </li>
+            <li>
+              <label for="slide-2" class="slide-circle">•</label>
+            </li>
+            <li>
+              <label for="slide-3" class="slide-circle">•</label>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <!-- ------------------------------------fin carrusel-------------------------------------- -->
+
+      <%- include("../partials/navbar") %>
+    </header>
+    <main>
+      <!-- ------------------Nuestras Especialidades--------------------------- -->
+      <h2 class="tituloIndex">Especialidades</h2>
+      <section>
+        <article class="productos">
+          <img src="/img/picana.jpg" alt="imagen-del-producto" />
+          <div class="info-produ">
+            <a href="/producto/5"><h5>Picaña</h5></a>
+            <div class="precio-boton">
+              <p id="precio">$1.700</p>
+              <button class="agregar-al-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="productos">
+          <img src="/img/churrasco.jpg" alt="imagen-del-producto" />
+          <div class="info-produ">
+            <a href="/producto/6"><h5>Churrasco</h5></a>
+            <div class="precio-boton">
+              <p id="precio">$1.800</p>
+              <button class="agregar-al-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="productos">
+          <img src="/img/entrana.jpg" alt="imagen-del-producto" />
+          <div class="info-produ">
+            <a href="/producto/7"
+              ><h5 style="font-size: 20px; margin: 20px 5px">Entraña</h5></a
+            >
+            <div class="precio-boton">
+              <p id="precio">$2.700</p>
+              <button class="agregar-al-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="productos">
+          <img src="/img/vacio.jpg" alt="imagen-del-producto" />
+          <div class="info-produ">
+            <a href="/producto/8"><h5>Vacío</h5></a>
+            <div class="precio-boton">
+              <p id="precio">$2.800</p>
+              <button class="agregar-al-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- --------------------------Comidas----------------------- -->
+      <h2 class="tituloIndex">Comidas</h2>
+      <section>
+        <article class="productos">
+          <img src="/img/picana.jpg" alt="imagen-del-producto" />
+          <div class="info-produ">
+            <a href="/producto/5"><h5>Picaña</h5></a>
+            <div class="precio-boton">
+              <p id="precio">$1.700</p>
+              <button class="agregar-al-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="productos">
+          <img src="/img/churrasco.jpg" alt="imagen-del-producto" />
+          <div class="info-produ">
+            <a href="/producto/6"><h5>Churrasco</h5></a>
+            <div class="precio-boton">
+              <p id="precio">$1.800</p>
+              <button class="agregar-al-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="productos">
+          <img src="/img/entrana.jpg" alt="imagen-del-producto" />
+          <div class="info-produ">
+            <a href="/producto/7"
+              ><h5 style="font-size: 20px; margin: 20px 5px">Entraña</h5></a
+            >
+            <div class="precio-boton">
+              <p id="precio">$2.700</p>
+              <button class="agregar-al-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="productos">
+          <img src="/img/vacio.jpg" alt="imagen-del-producto" />
+          <div class="info-produ">
+            <a href="/producto/8"><h5>Vacío</h5></a>
+            <div class="precio-boton">
+              <p id="precio">$2.800</p>
+              <button class="agregar-al-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!-- ------------------------pedi aca------------------------------ -->
+      <div id="pedi-aca">
+        <h2 id="pedi-h2">El Bodegon</h2>
+        <a href="/product/menu" style="text-decoration: none">
+          <button id="boton-pedi">Pedi aca</button>
+        </a>
+      </div>
+      <!-- ------------------------contacto------------------------------ -->
+      <div class="contacto-container">
+        <div class="contact-left">
+          <h3>Abierto Todos Los Dias</h3>
+          <p>11:30 - 16:00 hs. | 19:00 - 1:00 hs.</p>
+        </div>
+        <div class="contact-right">
+          <div class="direccion">
+            <h4>Dirección:</h4>
+            <i class="fa-solid fa-location-dot" style="color: #000000"></i>
+            <p>Palermo, Buenos Aires. Argentina</p>
+          </div>
+          <div class="telefono">
+            <h4>Teléfono:</h4>
+            <i class="fa-solid fa-phone" style="color: #000000"></i>
+            <p>(+54) 2667823502</p>
+          </div>
+          <div class="email">
+            <h4>Email:</h4>
+            <i class="fa-solid fa-envelope" style="color: #000000"></i>
+            <p>elbodegon@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include("../partials/footer") %>
+  </body>
+</html>
