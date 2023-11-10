@@ -1,50 +1,61 @@
-import React from 'react';
-import SmallCard from './SmallCard';
+import React, { useEffect, useState } from "react";
+import SmallCard from "./SmallCard";
 
 /*  Cada set de datos es un objeto literal */
 
 /* <!-- Movies in DB --> */
 
-let moviesInDB = {
-    title: 'Movies in Data Base',
-    color: 'primary', 
-    cuantity: 21,
-    icon: 'fa-clipboard-list'
-}
+let productsInDB = {
+  title: "Productos en la base de datos",
+  color: "primary",
+  cuantity: 5,
+  icon: "fa-clipboard-list",
+};
 
 /* <!-- Total awards --> */
 
-let totalAwards = {
-    title:' Total awards', 
-    color:'success', 
-    cuantity: '79',
-    icon:'fa-award'
-}
+let totalUsers = {
+  title: " Usuarios totales",
+  color: "success",
+  cuantity: "79",
+  icon: "fa-award",
+};
 
 /* <!-- Actors quantity --> */
 
-let actorsQuantity = {
-    title:'Actors quantity' ,
-    color:'warning',
-    cuantity:'49',
-    icon:'fa-user-check'
-}
+let totalsUsers = {
+  title: "Total de categorias",
+  color: "warning",
+  cuantity: "49",
+  icon: "fa-user-check",
+};
 
-let cartProps = [moviesInDB, totalAwards, actorsQuantity];
+let cartProps = [productsInDB, totalUsers, totalsUsers];
 
-function ContentRowMovies(){
-    return (
-    
-        <div className="row">
-            
-            {cartProps.map( (movie, i) => {
+function ContentRowMovies() {
+  const [data, setData] = useState(null);
 
-                return <SmallCard {...movie} key={i}/>
-            
-            })}
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://localhost3003/api/products");
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-        </div>
-    )
+    fetchData();
+  }, []);
+
+  return (
+    <div className="row">
+      {cartProps.map((movie, i) => {
+        return <SmallCard {...movie} key={i} />;
+      })}
+    </div>
+  );
 }
 
 export default ContentRowMovies;

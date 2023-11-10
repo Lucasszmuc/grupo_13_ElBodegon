@@ -2,7 +2,7 @@ import React from "react";
 import SideBar from "./components/SideBar";
 import ContentWrapper from "./components/ContentWrapper";
 /* import { Switch, Route } from "react-router-dom"; */
-import "./app.css";
+import "./App.css";
 /* import Users from "./components/Users"; */
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <React.Fragment>
       <div id="wrapper">
         <SideBar />
-        {/* <Switch>
+        {/*         <Switch>
           <Route path="/Users" exact={true} component={Users} />
         </Switch> */}
         <ContentWrapper />
