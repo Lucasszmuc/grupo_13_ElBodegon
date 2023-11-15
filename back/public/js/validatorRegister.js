@@ -77,6 +77,8 @@ window.addEventListener("load", () => {
     } else {
       password.type = "password";
     }
+
+    registerForm.submit();
   });
 
   /*password.addEventListener("input", (e) => {

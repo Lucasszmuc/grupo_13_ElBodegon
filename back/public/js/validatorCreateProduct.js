@@ -55,5 +55,6 @@ window.addEventListener("load", () => {
       alert(mensajeDescription + "tiene que tener al menos 20 caracteres.");
       return;
     }
+    createForm.submit();
   });
 });
