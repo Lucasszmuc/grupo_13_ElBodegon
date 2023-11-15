@@ -25,6 +25,7 @@ const apiProductController = {
               id: product.id,
               name: product.name,
               description: product.description,
+              image: `/public/img/products/${product.image}`,
               categories: [
                 {
                   name: product.category.name,
