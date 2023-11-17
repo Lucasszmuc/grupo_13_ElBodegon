@@ -47,12 +47,18 @@ function LastMovieInDb() {
                   <img
                     className="img-fluid"
                     src={`http://localhost:3003/public/img/products/${lastProduct.image}`}
+                    alt=""
                   />
                 )}
 
                 <p>Nombre del producto: {lastProduct.name || "N/A"}</p>
                 <p>Descripción: {lastProduct.description || "N/A"}</p>
-                <p>Categoría: {lastProduct.categories && lastProduct.categories.length > 0 ? lastProduct.categories[0].name : "N/A"}</p>
+                <p>
+                  Categoría:{" "}
+                  {lastProduct.categories && lastProduct.categories.length > 0
+                    ? lastProduct.categories[0].name
+                    : "N/A"}
+                </p>
               </div>
             </>
           )}
