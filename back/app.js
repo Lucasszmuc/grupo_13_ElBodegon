@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+var cors = require('cors')
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 const mainRoutes = require("./routes/mainRoutes");
@@ -15,6 +16,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set("view engine", "ejs");
 
 // Configuración de middlewares en el orden correcto
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+  })
+);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
