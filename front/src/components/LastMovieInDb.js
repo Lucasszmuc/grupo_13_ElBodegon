@@ -15,7 +15,8 @@ function LastMovieInDb() {
         const { products } = result;
 
         if (products && products.length > 0) {
-          setLastProduct(products[0]);
+          const lastProductLoaded = products[products.length - 1];
+          setLastProduct(lastProductLoaded);
         }
 
         setLoading(false);
@@ -42,23 +43,16 @@ function LastMovieInDb() {
           ) : (
             <>
               <div>
-                <p>Nombre del producto: {lastProduct.name || 'N/A'}</p>
-                <p>Descripción: {lastProduct.description || 'N/A'}</p>
-                <p>Categoría: {lastProduct.category?.name || 'N/A'}</p>
-                {/* Agrega un elemento de imagen si tienes la URL de la imagen */}
-                {lastProduct.imageUrl && (
+                {lastProduct.image && (
                   <img
                     className="img-fluid"
-                    src={lastProduct.imageUrl}
-                    alt={lastProduct.name}
+                    src={`http://localhost:3003/public/img/products/${lastProduct.image}`}
                   />
                 )}
-                <p>
-                  Detalle:{" "}
-                  <a href={lastProduct.detail} target="_blank" rel="nofollow">
-                    Ver detalle del producto
-                  </a>
-                </p>
+
+                <p>Nombre del producto: {lastProduct.name || "N/A"}</p>
+                <p>Descripción: {lastProduct.description || "N/A"}</p>
+                <p>Categoría: {lastProduct.categories && lastProduct.categories.length > 0 ? lastProduct.categories[0].name : "N/A"}</p>
               </div>
             </>
           )}
