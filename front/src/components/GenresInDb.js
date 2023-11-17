@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function LastMovieInDb() {
+function GenresInDb() {
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3003/api/products");
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        const { countByCategory } = result;
+
+        if (countByCategory) {
+          const categoriesList = Object.keys(countByCategory); // Obtiene todas las claves (categorías) del objeto countByCategory
+          setCategories(categoriesList);
+        }
+
+        setLoading(false);
+      } catch (error) {
+        console.error("Error al realizar la solicitud:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="col-lg-6 mb-4">
       <div className="card shadow mb-4">
@@ -9,11 +37,17 @@ function LastMovieInDb() {
         </div>
         <div className="card-body">
           <div className="row">
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Acción</div>
-              </div>
-            </div>
+            {loading ? (
+              <p>Loading...</p>
+            ) : (
+              categories.map((category, index) => (
+                <div className="col-lg-6 mb-4" key={index}>
+                  <div className="card bg-dark text-white shadow">
+                    <div className="card-body">{category}</div>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>
@@ -21,4 +55,4 @@ function LastMovieInDb() {
   );
 }
 
-export default LastMovieInDb;
+export default GenresInDb;
