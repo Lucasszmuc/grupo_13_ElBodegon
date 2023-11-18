@@ -24,8 +24,8 @@
       </section>
       <div class="men">
         <% for (const category in productsByCategory) { %>
-        <section>
-          <h2><%= category %></h2>
+          <section id="<%= category.toLowerCase() %>">
+          <h2 > <%= category %></h2>
           <div class="contenedor-productos">
             <% productsByCategory[category].forEach(producto => { %>
             <article class="productos">
