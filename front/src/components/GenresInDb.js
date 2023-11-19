@@ -13,8 +13,7 @@ function GenresInDb() {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const result = await response.json();
-
-        const { countByCategory} = result;
+        const { countByCategory } = result;
 
         if (countByCategory) {
           setCategories(Object.keys(countByCategory));
