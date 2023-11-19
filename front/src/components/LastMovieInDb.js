@@ -46,11 +46,11 @@ function LastMovieInDb() {
                 {lastProduct.image && (
                   <img
                     className="img-fluid"
-                    src={`http://localhost:3003/public/img/products/${lastProduct.image}`}
+                    src={`http://localhost:3003${lastProduct.image}`}
                     alt=""
                   />
                 )}
-
+                {console.log(lastProduct.image, "image")}
                 <p>Nombre del producto: {lastProduct.name || "N/A"}</p>
                 <p>Descripción: {lastProduct.description || "N/A"}</p>
                 <p>
