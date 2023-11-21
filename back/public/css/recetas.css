@@ -60,7 +60,7 @@ div img {
   cursor: pointer;
 }
 
-/* Estilos adicionales (ajusta según sea necesario) */
+
 .recipe {
   display: flex;
   flex-direction: row;
@@ -71,6 +71,7 @@ div img {
 .title-wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 
 .recipe-title {
@@ -128,7 +129,7 @@ h2 {
   }
 }
 
-/* Media query para dispositivos con ancho máximo de 760px */
+
 @media screen and (max-width: 760px) {
   .text-container {
     display: block;

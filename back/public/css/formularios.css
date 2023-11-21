@@ -266,6 +266,10 @@ html {
 }
 
 @media (max-width: 600px) {
+
+  .botonX{
+    right: 271px;
+  }
   .contenedor {
     padding: 10px;
   }

@@ -17,7 +17,8 @@
     <% product.forEach(product => { %>
       <section class="productos">
         <article class="productoUno">
-          <img class="foto" src="/img/products/<%= product.image %>" alt="" width="200" />
+          <img class="foto" src="/img/products/<%= product.product_image %>" alt="<%= product.product_name %>" width="200" />
+
           <p class="nombre-producto"><%= product.product_name %></p>
         </article>
         <article class="productoUno">
@@ -37,5 +38,6 @@
       </div>
     </main>
     <%- include("../partials/footer")  %>
+    <%- include('../partials/script') %>
   </body>
 </html>

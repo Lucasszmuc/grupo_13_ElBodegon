@@ -236,8 +236,8 @@ const productController = {
         product_id: req.body.productId,
         product_name: req.body.productName,
         price: req.body.productPrice,
+        product_image: req.body.productImage
       });
-      console.log(req.body);
     } catch (error) {
       console.log(error);
     }

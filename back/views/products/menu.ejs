@@ -56,6 +56,11 @@
                       name="productPrice"
                       value="<%= producto.price %>"
                     />
+                    <input
+                    type="hidden"
+                    name="productImage"
+                    value="<%=producto.image%>"
+                    />
                     <button class="agregar-al-carrito" type="submit">
                       Agregar al carrito
                     </button>
@@ -75,5 +80,6 @@
       </div>
     </main>
     <%- include("../partials/footer") %>
+    <%- include('../partials/script') %>
   </body>
 </html>

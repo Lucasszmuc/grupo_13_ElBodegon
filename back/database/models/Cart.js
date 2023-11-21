@@ -3,18 +3,14 @@ module.exports = (sequelize, DataTypes) => {
         var Cart = sequelize.define("Cart",
             {
                 user_id: {
-                    type: {
-                        type: DataTypes.INTEGER
-                    },
+                    type: DataTypes.INTEGER,
                     references: {
                         model: 'user',
                         key: 'id'
                     }
                 },
                 product_id: {
-                    type: {
-                        type: DataTypes.INTEGER
-                    },
+                    type:DataTypes.INTEGER,
                     references: {
                         model: 'product',
                         key: 'id'
@@ -26,6 +22,14 @@ module.exports = (sequelize, DataTypes) => {
                     references: {
                         model: 'product',
                         key: 'name'
+                    }
+                },
+                product_image: {
+                    type: DataTypes.STRING,
+                    allowNull: false,
+                    references: {
+                        model: 'product',
+                        key: 'image'
                     }
                 },
                 price: {

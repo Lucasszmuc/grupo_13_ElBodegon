@@ -10,9 +10,7 @@ function App() {
     <React.Fragment>
       <div id="wrapper">
         <SideBar />
-        {/*         <Switch>
-          <Route path="/Users" exact={true} component={Users} />
-        </Switch> */}
+
         <ContentWrapper />
       </div>
     </React.Fragment>
