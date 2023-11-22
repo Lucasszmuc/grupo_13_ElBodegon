@@ -60,7 +60,6 @@ div img {
   cursor: pointer;
 }
 
-
 .recipe {
   display: flex;
   flex-direction: row;
@@ -128,7 +127,6 @@ h2 {
     font-size: 20px;
   }
 }
-
 
 @media screen and (max-width: 760px) {
   .text-container {
