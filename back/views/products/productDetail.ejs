@@ -22,7 +22,7 @@
               <button class="agregar-al-carrito" type="submit">Agregar al Carrito</button>
               </form>
             <% } else { %>
-              <a href="/user/login"><button>Agregar al Carrito</button></a>
+              <a href="/users/login"><button>Agregar al Carrito</button></a>
             <% } %>
             <% if (user && user.type === 'Admin') { %>
               <form action="/product/editProduct/<%= product.id %>" method="GET"> 

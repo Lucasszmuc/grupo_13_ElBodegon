@@ -27,11 +27,11 @@ router.get("/createProduct", userValidate.validate, isAdmin, productController.g
 router.get("/menu", productController.showMenu);
 router.get("/recetas", userValidate.validate, productController.showRecetas);
 router.get("/carrito", userValidate.validate, productController.showCart);
-router.get("/:id", userValidate.validate, productController.getProductDetail);
+router.get("/:id", productController.getProductDetail);
 
 //POST
 router.post("/createProduct", userValidate.validate, isAdmin, upload.single("image"), productValidation, productController.createProduct);
-router.post('/carrito',productController.insertProduct)
+router.post('/carrito', productController.insertProduct)
 
 //PUT
 router.put(
