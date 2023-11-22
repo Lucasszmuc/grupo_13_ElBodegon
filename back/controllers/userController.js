@@ -23,8 +23,10 @@ const userController = {
 
       const user = req.session.user;
 
+      console.log(user)
+
       if (!user) {
-        return res.render('/users/login?error=El mail o la contraseña son incorrectos');
+        return res.redirect('/users/login?error=El mail o la contraseña son incorrectos');
       }
 
       if (req.body.password === req.body.password2) {
@@ -106,7 +108,10 @@ const userController = {
         });
   
         req.session.user = user;
-        return res.render('./main/index', { user: req.session.user, cssFiles, cssIndex });
+
+        const currentPagei = 'index'; 
+        const cssIndexi = pageCssMapping[currentPagei];
+        return res.render('./main/index', { user: req.session.user, cssFiles, cssIndex: cssIndexi });
       } catch (error) {
         console.log(error);
         return res.redirect('/users/register?error=' + error);

@@ -9,7 +9,6 @@ function App() {
   return (
     <React.Fragment>
       <div id="wrapper">
-
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/users" component={Users} />

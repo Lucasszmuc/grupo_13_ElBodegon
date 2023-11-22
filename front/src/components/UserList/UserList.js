@@ -81,6 +81,7 @@ function UserList() {
       {users.map(user => (
         <div key={user.id} className="user-item">
           <span className="user-name">{user.name}</span>
+          <span className="user-name">{user.email}</span>
           <select className="user-role-select" value={selectedType[user.id]} onChange={(e) => handleRoleChange(user.id, e.target.value)}>
             <option value="Customer">Customer</option>
             <option value="Admin">Admin</option>
