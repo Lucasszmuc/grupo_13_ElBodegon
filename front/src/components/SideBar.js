@@ -11,24 +11,24 @@ function SideBar() {
         id="accordionSidebar"
       >
         {/*<!-- Sidebar - Brand -->*/}
-        <a
+        <Link
           className="sidebar-brand d-flex align-items-center justify-content-center"
-          href="/"
+          to="/"
         >
           <div className="sidebar-brand-icon">
             <img className="w-100" src={image} alt="Digital House" />
           </div>
-        </a>
+        </Link>
 
         {/*<!-- Divider -->*/}
         <hr className="sidebar-divider my-0" />
 
         {/*<!-- Nav Item - Dashboard -->*/}
         <li className="nav-item active">
-          <a className="nav-link" href="/">
+          <Link className="nav-link" to="/">
             <i className="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard - El Bodegon</span>
-          </a>
+          </Link>
         </li>
 
         {/*<!-- Divider -->*/}
@@ -39,18 +39,18 @@ function SideBar() {
 
         {/*<!-- Nav Item - Pages -->*/}
         <li className="nav-item">
-          <a className="nav-link collapsed" href="/">
+          <Link className="nav-link collapsed" to="/users">
             <i className="fas fa-fw fa-folder"></i>
             <span>Usuarios</span>
-          </a>
+          </Link>
         </li>
 
         {/*<!-- Nav Item - Charts -->*/}
         <li className="nav-item">
-          <a className="nav-link" href="/">
+          <Link className="nav-link" to="/products">
             <i className="fas fa-fw fa-chart-area"></i>
             <span>Productos</span>
-          </a>
+          </Link>
         </li>
 
         {/*<!-- Nav Item - Tables -->*/}

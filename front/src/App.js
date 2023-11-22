@@ -1,17 +1,20 @@
 import React from "react";
-import SideBar from "./components/SideBar";
-import ContentWrapper from "./components/ContentWrapper";
-/* import { Switch, Route } from "react-router-dom"; */
+ import { Switch, Route } from "react-router-dom"; 
 import "./App.css";
-/* import Users from "./components/Users"; */
+import Home from "./views/Home";
+import Users from "./views/Users"; 
+import Products from "./views/Products";
 
 function App() {
   return (
     <React.Fragment>
       <div id="wrapper">
-        <SideBar />
 
-        <ContentWrapper />
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/users" component={Users} />
+          <Route exact path='/products' component={Products} />
+        </Switch>
       </div>
     </React.Fragment>
   );
