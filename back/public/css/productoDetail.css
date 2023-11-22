@@ -50,6 +50,10 @@ section.card .text-content button {
   border-radius: 12px;
   transition: 400ms all;
 }
+.botones-producto {
+  display: flex;
+  gap: 10px; 
+}
 section.card .text-content button:hover {
   background: #614529;
   color: white;

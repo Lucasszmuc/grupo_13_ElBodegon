@@ -28,6 +28,25 @@ ul {
   flex-wrap: wrap;
 }
 
+.crear-producto {
+  margin: 0 16px;
+  background-color: #94774c;
+  color: #fff;
+  border: 1px solid black;
+  border-radius: 4px;
+  text-decoration: none; 
+  display: inline-block; 
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.8s ease;
+}
+
+.crear-producto:hover,
+.crear-producto:active { 
+    background-color: #ffffff;
+    color: #94774c;
+    text-decoration: none; 
+}
 section {
   display: flex;
   flex-direction: column;
