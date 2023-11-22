@@ -1,45 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("../partials/head") %> <% const productsByCategory={}; %> <%
-  products.forEach(producto=> { %><% }) %>
-
+<%- include("../partials/head") %>
   <link rel="stylesheet" href="<%= cssFiles[9] %>%>" />
+
   <body>
     <header>
       <!--carrusel-->
       <div class="slide">
         <div class="slide-inner">
-          <input
-            class="slide-open"
-            type="radio"
-            id="slide-1"
-            name="slide"
-            aria-hidden="true"
-            hidden=""
-            checked="checked"
-          />
+          <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden=""
+            checked="checked" />
           <div class="slide-item">
             <img src="/img/parrilla3.jpg" alt="Slide 1" />
           </div>
-          <input
-            class="slide-open"
-            type="radio"
-            id="slide-2"
-            name="slide"
-            aria-hidden="true"
-            hidden=""
-          />
+          <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="" />
           <div class="slide-item">
             <img src="/img/carrouselsisi.jpg" alt="Slide 2" />
           </div>
-          <input
-            class="slide-open"
-            type="radio"
-            id="slide-3"
-            name="slide"
-            aria-hidden="true"
-            hidden=""
-          />
+          <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="" />
           <div class="slide-item">
             <img src="/img/corte1.jpeg" alt="Slide 3" />
           </div>
@@ -70,147 +48,59 @@
       <!-- ------------------Nuestras Especialidades--------------------------- -->
       <h2 class="tituloIndex">Especialidades</h2>
       <section>
-        <article class="productos">
-          <img src="/img/picana.jpg" alt="imagen-del-producto" />
-          <div class="info-produ">
-            <a href="/product/5"><h5>Picaña</h5></a>
-            <div class="precio-boton">
-              <p id="precio">$1.700</p>
-              <% if (user) { %>
-              <form action="/product/carrito" method="POST">
-                <input
-                  type="hidden"
-                  name="productId"
-                  value="<%= producto.id %>"
-                />
-                <input
-                  type="hidden"
-                  name="productName"
-                  value="<%= producto.name %>"
-                />
-                <input
-                  type="hidden"
-                  name="productPrice"
-                  value="<%= producto.price %>"
-                />
-                <input
-                  type="hidden"
-                  name="productImage"
-                  value="<%=producto.image%>"
-                />
-                <button class="agregar-al-carrito" type="submit">
-                  Agregar al carrito
-                </button>
-              </form>
-              <% } else { %>
-              <form action="/users/login" method="GET">
-                <button class="agregar-al-carrito" type="submit">
-                  Agregar al Carrito
-                </button>
-              </form>
-              <% } %>
+        <% for (let i=0; i < 4; i++) { %>
+          <article class="productos">
+            <img src="/img/products/<%= products[i].image %>" alt="imagen-del-producto" />
+            <div class="info-produ">
+              <a href="/product/<%= products[i].id %>">
+                <h5>
+                  <%= products[i].name %>
+                </h5>
+              </a>
+              <div class="precio-boton">
+                <p id="precio">$<%= products[i].price %>
+                </p>
+                <% if (user) { %>
+                  <form action="/product/carrito" method="POST">
+                    <input type="hidden" name="productId" value="<%= products[i].id %>">
+                    <input type="hidden" name="productName" value="<%= products[i].name %>">
+                    <input type="hidden" name="productPrice" value="<%= products[i].price %>">
+                    <input type="hidden" name="productImage" value="<%= products[i].image %>">
+                    <button class="agregar-al-carrito" type="submit">Agregar al carrito</button>
+                  </form>
+                  <% } else { %>
+                    <form action="/users/login" method="GET">
+                      <button class="agregar-al-carrito" type="submit">Agregar al Carrito</button>
+                    </form>
+                    <% } %>
+              </div>
             </div>
-          </div>
-        </article>
-
-        <article class="productos">
-          <img src="/img/churrasco.jpg" alt="imagen-del-producto" />
-          <div class="info-produ">
-            <a href="/product/6"><h5>Churrasco</h5></a>
-            <div class="precio-boton">
-              <p id="precio">$1.800</p>
-              <form action="/users/login" method="GET">
-                <button class="agregar-al-carrito">Agregar al carrito</button>
-              </form>
-            </div>
-          </div>
-        </article>
-
-        <article class="productos">
-          <img src="/img/entrana.jpg" alt="imagen-del-producto" />
-          <div class="info-produ">
-            <a href="/product/7"
-              ><h5 style="font-size: 20px; margin: 20px 5px">Entraña</h5></a
-            >
-            <div class="precio-boton">
-              <p id="precio">$2.700</p>
-              <form action="/users/login" method="GET">
-                <button class="agregar-al-carrito">Agregar al carrito</button>
-              </form>
-            </div>
-          </div>
-        </article>
-
-        <article class="productos">
-          <img src="/img/vacio.jpg" alt="imagen-del-producto" />
-          <div class="info-produ">
-            <a href="/product/8"><h5>Vacío</h5></a>
-            <div class="precio-boton">
-              <p id="precio">$2.800</p>
-              <form action="/users/login" method="GET">
-                <button class="agregar-al-carrito">Agregar al carrito</button>
-              </form>
-            </div>
-          </div>
-        </article>
+          </article>
+          <% } %>
       </section>
 
       <!-- --------------------------Comidas----------------------- -->
       <h2 class="tituloIndex">Comidas</h2>
       <section>
-        <article class="productos">
-          <img src="/img/picana.jpg" alt="imagen-del-producto" />
-          <div class="info-produ">
-            <a href="/product/5"><h5>Picaña</h5></a>
-            <div class="precio-boton">
-              <p id="precio">$1.700</p>
-              <form action="/users/login" method="GET">
-                <button class="agregar-al-carrito">Agregar al carrito</button>
-              </form>
+        <% for (let i=4; i < 8; i++) { %>
+          <article class="productos">
+            <img src="/img/products/<%= products[i].image %>" alt="imagen-del-producto" />
+            <div class="info-produ">
+              <a href="/product/<%= products[i].id %>">
+                <h5>
+                  <%= products[i].name %>
+                </h5>
+              </a>
+              <div class="precio-boton">
+                <p id="precio">$<%= products[i].price %>
+                </p>
+                <form action="/users/login" method="GET">
+                  <button class="agregar-al-carrito">Agregar al carrito</button>
+                </form>
+              </div>
             </div>
-          </div>
-        </article>
-
-        <article class="productos">
-          <img src="/img/churrasco.jpg" alt="imagen-del-producto" />
-          <div class="info-produ">
-            <a href="/product/6"><h5>Churrasco</h5></a>
-            <div class="precio-boton">
-              <p id="precio">$1.800</p>
-              <form action="/users/login" method="GET">
-                <button class="agregar-al-carrito">Agregar al carrito</button>
-              </form>
-            </div>
-          </div>
-        </article>
-
-        <article class="productos">
-          <img src="/img/entrana.jpg" alt="imagen-del-producto" />
-          <div class="info-produ">
-            <a href="/product/7"
-              ><h5 style="font-size: 20px; margin: 20px 5px">Entraña</h5></a
-            >
-            <div class="precio-boton">
-              <p id="precio">$2.700</p>
-              <form action="/users/login" method="GET">
-                <button class="agregar-al-carrito">Agregar al carrito</button>
-              </form>
-            </div>
-          </div>
-        </article>
-
-        <article class="productos">
-          <img src="/img/vacio.jpg" alt="imagen-del-producto" />
-          <div class="info-produ">
-            <a href="/product/8"><h5>Vacío</h5></a>
-            <div class="precio-boton">
-              <p id="precio">$2.800</p>
-              <form action="/users/login" method="GET">
-                <button class="agregar-al-carrito">Agregar al carrito</button>
-              </form>
-            </div>
-          </div>
-        </article>
+          </article>
+          <% } %>
       </section>
       <!-- ------------------------pedi aca------------------------------ -->
       <div id="pedi-aca">
@@ -246,4 +136,5 @@
     </main>
     <%- include("../partials/footer") %> <%- include('../partials/script') %>
   </body>
+
 </html>

@@ -47,8 +47,13 @@
                         <div class="boton-editar">
                             <button type="submit" class="btn btn-danger">Edit User</button>
                         </div>
-
                     </form>
+                    <form action="/users/deleteUser/<%= user.id %>?_method=DELETE" method="POST">
+                        <div class="botones">
+                          <input type="hidden" name="_method" value="DELETE">
+                            <button class="boton-borrar" type="submit">Borrar Perfil</button>
+                        </div>
+                      </form>
                 </div>
             </div>
         </main>

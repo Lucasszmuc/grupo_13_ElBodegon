@@ -10,7 +10,9 @@ const mainController = {
       const products = await Product.findAll({
         raw: true,
         nest: true,
+        limit: 8
       });
+      
       res.render("./main/index", {
         cssFiles,
         cssIndex,

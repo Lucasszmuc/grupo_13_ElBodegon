@@ -34,6 +34,11 @@ app.use(
     secret: "ElBodegonDigitalHouse2023",
     resave: false,
     saveUninitialized: true,
+    cookie: { 
+      secure: true, // Si estás usando https, establece esto en true
+      httpOnly: true, // Previene el acceso a la cookie a través de JavaScript en el navegador
+      maxAge: null // Esto hace que la cookie sea una cookie de sesión
+    }
   })
 );
 
@@ -48,6 +53,9 @@ app.use("/", mainRoutes);
 app.use("/product", productRoutes);
 app.use("/users", userRoutes);
 app.use("/api", apiRoutes);
+
+
+
 
 app.use((req, res, next) => {
   res.status(404).render(path.join(__dirname, "./views/users/notFound"));
