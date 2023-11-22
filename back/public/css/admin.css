@@ -45,7 +45,7 @@ input[type="text"],
 input[type="file"],
 textarea,
 select,
-input[type="submit"] {
+.boton-enviar {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -54,13 +54,13 @@ input[type="submit"] {
   margin-bottom: 10px;
 }
 
-input[type="submit"] {
+.boton-enviar {
   background-color: #000;
   color: #fff;
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+boton-enviar:hover {
   background-color: #333;
 }
 
