@@ -37,7 +37,7 @@ function LastMovieInDb() {
             Último producto cargado
           </h5>
         </div>
-        <div className="card-body">
+        <div className="card-body body-elem">
           {loading ? (
             <p>Cargando...</p>
           ) : (

@@ -1,0 +1,19 @@
+.logo-el{
+    width: 70px;
+}
+
+.bg-gradient-secondary{
+    background-color: #94774c !important;
+    background-image: none;
+}
+
+.titulohome{
+    margin: 30px 20px;
+}
+
+.body-elem{
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    display: flex;
+    justify-content: center;
+}

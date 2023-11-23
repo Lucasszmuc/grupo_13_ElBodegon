@@ -1,6 +1,8 @@
 import React from "react";
 import image from "../assets/images/logo-DH.png";
 import { Link } from "react-router-dom";
+import logo from "../assets/images/logo_elbodegon.png"
+import './css/logo.css'
 
 function SideBar() {
   return (
@@ -16,7 +18,8 @@ function SideBar() {
           to="/"
         >
           <div className="sidebar-brand-icon">
-            <img className="w-100" src={image} alt="Digital House" />
+          <img src={logo} alt="lgo" width="10%" id="logo" className="logo-el"
+      />
           </div>
         </Link>
 
@@ -51,14 +54,6 @@ function SideBar() {
             <i className="fas fa-fw fa-chart-area"></i>
             <span>Productos</span>
           </Link>
-        </li>
-
-        {/*<!-- Nav Item - Tables -->*/}
-        <li className="nav-item">
-          <a className="nav-link" href="/">
-            <i className="fas fa-fw fa-table"></i>
-            <span>Categorias</span>
-          </a>
         </li>
 
         {/*<!-- Divider -->*/}
