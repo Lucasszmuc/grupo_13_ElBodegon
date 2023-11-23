@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head")  %>
+  <body>
+    <header>
+      <%- include("../partials/navbar")  %>
+    </header>
+    <article>
+      <section class="card">
+        <div class="text-content">
+          <h3><%= product.name %></h3>
+          <p>
+           <%= product.description %>
+          </p>
+          <p>
+            <%= product.price %>
+          </p>
+          <div>
+            <div class="botones-producto">
+            <% if (user) { %>
+              <form action="/product/carrito" method="POST">
+              <button class="agregar-al-carrito" type="submit">Agregar al Carrito</button>
+              </form>
+            <% } else { %>
+              <a href="/users/login"><button>Agregar al Carrito</button></a>
+            <% } %>
+            <% if (user && user.type === 'Admin') { %>
+              <form action="/product/editProduct/<%= product.id %>" method="GET"> 
+                <button class="editar-producto" type="submit">Editar Producto</button>
+              </form>
+            <% } %>
+          </div>
+          </div>         
+        </div>
+        <div class="visual">
+          <img src="/img/products/<%= product.image %>" alt="" />
+        </div>
+      </section>
+    </article>
+  </body>
+  <%- include("../partials/footer")  %>
+  <%- include('../partials/script') %>
+</html>
