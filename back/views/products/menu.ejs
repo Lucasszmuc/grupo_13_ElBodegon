@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head") %> <% const productsByCategory={}; %> <%
+  products.forEach(producto=> { %> <% const category = producto.category.name;
+  %> <% if (!productsByCategory[category]) { %> <%
+  productsByCategory[category]=[]; %> <% } %> <%
+  productsByCategory[category].push(producto); %> <% }) %>
+
+  <body>
+    <header><%- include("../partials/navbar") %></header>
+    <main>
+      <section>
+        <% if (user && user.type === 'Admin') { %>
+        <section>
+          <form action="/product/createProduct" method="GET">
+            <button class="crear-producto" type="submit">Crear Producto</button>
+          </form>
+        </section>
+        <% } %>
+        <h3>Menu</h3>
+        <div class="contenedor-lista">
+          <ul class="product-list">
+            <li><a href="#milanesas">Milanesas</a></li>
+            <li><a href="#carnes">Carnes</a></li>
+            <li><a href="#pescados">Pescados</a></li>
+            <li><a href="#ensaladas">Ensaladas</a></li>
+            <li><a href="#bebidas">Bebidas</a></li>
+            <li><a href="#postres">Postres</a></li>
+          </ul>
+        </div>
+      </section>
+      <div class="men">
+        <% for (const category in productsByCategory) { %>
+        <section id="<%= category.toLowerCase() %>">
+          <h2><%= category %></h2>
+          <div class="contenedor-productos">
+            <% productsByCategory[category].forEach(producto => { %>
+            <article class="productos">
+              <img
+                src="/img/products/<%= producto.image %>"
+                alt="imagen-del-producto"
+              />
+              <div class="info-produ">
+                <a href="/product/<%= producto.id %>">
+                  <h5><%= producto.name %></h5>
+                </a>
+                <div class="precio-boton">
+                  <p id="precio">$<%= producto.price %></p>
+                  <% if (user) { %>
+                  <form action="/product/carrito" method="POST">
+                    <input
+                      type="hidden"
+                      name="productId"
+                      value="<%= producto.id %>"
+                    />
+                    <input
+                      type="hidden"
+                      name="productName"
+                      value="<%= producto.name %>"
+                    />
+                    <input
+                      type="hidden"
+                      name="productPrice"
+                      value="<%= producto.price %>"
+                    />
+                    <input
+                      type="hidden"
+                      name="productImage"
+                      value="<%=producto.image%>"
+                    />
+                    <button class="agregar-al-carrito" type="submit">
+                      Agregar al carrito
+                    </button>
+                  </form>
+                  <% } else { %>
+                  <form action="/users/login" method="GET">
+                    <button class="agregar-al-carrito" type="submit">
+                      Agregar al Carrito
+                    </button>
+                  </form>
+                  <% } %>
+                </div>
+              </div>
+            </article>
+            <% }) %>
+          </div>
+        </section>
+        <% } %>
+      </div>
+    </main>
+    <%- include("../partials/footer") %> <%- include('../partials/script') %>
+  </body>
+</html>

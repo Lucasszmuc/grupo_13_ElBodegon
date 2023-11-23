@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head")  %>
+  <body class="body">
+    <header><%- include("../partials/navbar") %></header>
+    <main>
+      <h1 class="title">Editar Producto</h1>
+      <form action="/product/editProduct/<%= product.id %>?_method=PUT" class="formulario-editar" id="editForm" method="POST"  enctype="multipart/form-data">
+        <div class="section-container">
+        <div class="form-group">
+           <label for="">Nombre del Producto:</label>
+        <input type="text" class="productName" name="name" value="<%= product.name %>">
+        <% if (locals.errors) { %>
+          <% errors.forEach(error=> {%>
+            <% if (error.path==='name' ) { %>
+              <p class="error-messages">
+                <%= error.msg %>
+              </p>
+              <% } %>
+                <% }); %>
+                  <% } %>
+        </div>
+        <div class="form-group">
+          <label for="category">Categoria:</label>
+          <select id="comida" class= "productCategory" name="category" >
+            <option value="">Seleccione una opción</option>
+            <option value="Bebidas" <% if (product.category === 'Bebidas') { %>selected<% } %>>Bebidas</option>
+            <option value="Carnes" <% if (product.category === 'Carnes') { %>selected<% } %>>Carnes</option>
+            <option value="Ensaladas" <% if (product.category === 'Ensaladas') { %>selected<% } %>>Ensaladas</option>
+            <option value="Milanesas" <% if (product.category === 'Milanesas') { %>selected<% } %>>Milanesas</option>
+            <option value="Pescados" <% if (product.category === 'Pescados') { %>selected<% } %>>Pescados</option>
+            <option value="Postre" <% if (product.category === 'Postre') { %>selected<% } %>>Postre</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="section-container">
+        <div class="form-group">
+          <label for="">Precio:</label>
+          <input type="text"  class ="productPrice" value="<%= product.price %>" name="price"  />
+        </div>
+        <div class="form-group">
+          <label for="">Cambiar imagen:</label>
+          <input type="file"  class="image" name="image" value="<%= product.image %>"  />
+        </div>
+      </div>
+      <div class="section-container des">
+        <div class="form-group">
+          <label for="">Descripcion:</label>
+          <textarea
+            class="Descripcion"
+            name="description"
+            
+          ><%= product.description %></textarea>
+          <% if (locals.errors) { %>
+            <% errors.forEach(error=> {%>
+              <% if (error.path==='description' ) { %>
+                <p class="error-messages">
+                  <%= error.msg %>
+                </p>
+                <% } %>
+                  <% }); %>
+                    <% } %>
+        </div>
+        <div class="form-group">
+          <label for="">Aplicar descuento?</label>
+          <div class="descuento">
+            <div class="si">
+              <label for="si">Sí</label>
+              <input type="radio" id="si" name="descuento" value="si" <% if (product.descuento === 'si') { %>checked<% } %> />
+              <div class="cual-descuento">
+                <input type="text" id="cual-si" name="discount" placeholder="Escriba su código aquí" value="<%= product.cual_descuento %>" />
+              </div>
+            </div>               
+            <div >
+              <label for="">No</label>
+              <input type="radio"  name="discount" value="no" <% if (product.discount === 'no') { %>checked<% } %> />
+            </div>
+          </div>
+        </div>
+      </div>
+      
+        <div class="botones">
+          <button class="boton-enviar" type="submit" >Guardar cambios</button>
+        </div>
+      </form> 
+      <br>
+      <form action="/product/editProduct/<%= product.id %>?_method=DELETE" method="POST">
+        <div class="botones">
+          <input type="hidden" name="_method" value="DELETE">
+            <button class="boton-borrar" type="submit">Borrar producto</button>
+        </div>
+      </form>
+    </main>
+    <footer><%- include("../partials/footer") %></footer>
+    <%- include('../partials/script') %>
+    <script src="/js/validatorEditProduct.js"></script>
+  </body>
+</html>

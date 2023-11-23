@@ -1,0 +1,32 @@
+.user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 5%;
+  }
+
+  .user-title{
+    margin: 30px 20px;
+  }
+  
+  .user-name {
+    flex-grow: 1;
+  }
+  
+  .user-role-select {
+    margin: 0 10px;
+  }
+  
+  .edit-user-button, .delete-user-button {
+    margin-left: 10px;
+  }
+  
+.envolt{
+    display: flex;
+    flex-direction: column;
+    width: 53vw;
+}

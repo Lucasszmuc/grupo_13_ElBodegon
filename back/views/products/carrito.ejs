@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head") %>
+  <body>
+    <header><%- include("../partials/navbar") %></header>
+    <main>
+      <h1 class="titulo">Carrito de Compras</h1>
+      <hr class="linea" />
+      <section class="padre-titulares">
+        <h3 class="titulares">Producto</h3>
+        <h3 class="titulares">Precio</h3>
+        <h3 class="titulares">Cancelar</h3>
+      </section>
+
+      <% product.forEach(product => { %>
+      <section class="productos">
+        <article class="productoUno">
+          <img
+            class="foto"
+            src="/img/products/<%= product.product_image %>"
+            alt="<%= product.product_name %>"
+            width="200"
+          />
+
+          <p class="nombre-producto"><%= product.product_name %></p>
+        </article>
+        <article class="productoUno">
+          <p class="texto-precio"><%= product.price %></p>
+        </article>
+        <article class="productoUno">
+          <form
+            class="formulario-cantidad"
+            action="/product/carrito/<%= product.id %>?_method=DELETE"
+            method="POST"
+          >
+            <input type="hidden" name="_method" value="DELETE" />
+            <button class="delete-button" type="submit">X</button>
+          </form>
+        </article>
+      </section>
+      <% }) %>
+
+      <div class="but">
+        <button class="submit-button">Comprar</button>
+      </div>
+    </main>
+    <%- include("../partials/footer") %> <%- include('../partials/script') %>
+  </body>
+</html>

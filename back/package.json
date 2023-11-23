@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.6.0",
+    "sequelize": "^6.32.1",
+    "uuid": "^9.0.0"
+  },
+  "name": "grupo_13_elbodegon",
+  "description": "Lucas Szmuc : 21 años - Soy de river\r Santiago Dzikovski : 21 años - Me gusta jugar al futbol\r Juan Morales : 20 años - Me gusta entrenar",
+  "version": "1.0.0",
+  "main": "back/app.js",
+  "scripts": {
+    "test": "npx nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucasszmuc/grupo_13_ElBodegon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucasszmuc/grupo_13_ElBodegon/issues"
+  },
+  "homepage": "https://github.com/Lucasszmuc/grupo_13_ElBodegon#readme"
+}
