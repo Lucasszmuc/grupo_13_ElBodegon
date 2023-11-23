@@ -79,17 +79,27 @@ const productController = {
     }
   },
   getEditProduct: async (req, res) => {
-    const currentPage = "editProduct";
-    const cssIndex = pageCssMapping[currentPage];
-    const productId = req.params.id;
-    const selectedProduct = await Product.findByPk(productId, { raw: true });
-
-    res.render("./products/editProduct", {
-      cssFiles,
-      cssIndex,
-      product: selectedProduct,
-      user: req.session.user,
-    });
+    try {
+      const currentPage = "editProduct";
+      const cssIndex = pageCssMapping[currentPage];
+      const productId = req.params.id;
+  
+  
+      const selectedProduct = await Product.findByPk(productId, { raw: true });
+  
+      const category = await Category.findByPk(selectedProduct.category_id, { raw: true });
+  
+      res.render("./products/editProduct", {
+        cssFiles,
+        cssIndex,
+        product: selectedProduct,
+        categoryName: category ? category.name : '',
+        user: req.session.user,
+      });
+    } catch (error) {
+      console.error(error);
+      // Manejo de errores, como renderizar una página de error
+    }
   },
   getCreateProduct: (req, res) => {
     const currentPage = "createProduct";
@@ -231,8 +241,6 @@ const productController = {
   },
   insertProduct: async (req, res) => {
     try {
-
-      
       const product = await Cart.create({
         user_id: req.session.user.id,
         product_id: req.body.productId,

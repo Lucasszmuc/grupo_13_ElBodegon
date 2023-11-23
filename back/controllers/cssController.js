@@ -10,6 +10,7 @@ const cssFiles = [
   "/css/recetas.css", //Indice : 8
   "/css/carrousel.css", //Indice : 9
   "/css/profile.css", //Indice 10
+  
 ];
 
 module.exports = cssFiles;

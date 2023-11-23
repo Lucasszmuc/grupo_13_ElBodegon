@@ -24,12 +24,12 @@
           <label for="category">Categoria:</label>
           <select id="comida" class= "productCategory" name="category" >
             <option value="">Seleccione una opción</option>
-            <option value="Bebidas" <% if (product.category === 'Bebidas') { %>selected<% } %>>Bebidas</option>
-            <option value="Carnes" <% if (product.category === 'Carnes') { %>selected<% } %>>Carnes</option>
-            <option value="Ensaladas" <% if (product.category === 'Ensaladas') { %>selected<% } %>>Ensaladas</option>
-            <option value="Milanesas" <% if (product.category === 'Milanesas') { %>selected<% } %>>Milanesas</option>
-            <option value="Pescados" <% if (product.category === 'Pescados') { %>selected<% } %>>Pescados</option>
-            <option value="Postre" <% if (product.category === 'Postre') { %>selected<% } %>>Postre</option>
+            <option value="Bebidas" <% if (categoryName === 'Bebidas') { %>selected<% } %>>Bebidas</option>
+            <option value="Carnes" <% if ( categoryName === 'Carnes') { %>selected<% } %>>Carnes</option>
+            <option value="Ensaladas" <% if (categoryName === 'Ensaladas') { %>selected<% } %>>Ensaladas</option>
+            <option value="Milanesas" <% if (categoryName === 'Milanesas') { %>selected<% } %>>Milanesas</option>
+            <option value="Pescados" <% if (categoryName=== 'Pescados') { %>selected<% } %>>Pescados</option>
+            <option value="Postre" <% if (categoryName === 'Postre') { %>selected<% } %>>Postre</option>
           </select>
         </div>
 

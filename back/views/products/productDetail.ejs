@@ -19,7 +19,7 @@
             <div class="botones-producto">
             <% if (user) { %>
               <form action="/product/carrito" method="POST">
-              <button class="agregar-al-carrito" type="submit">Agregar al Carrito</button>
+                <button type="button" class="agregar-al-carrito" onclick="agregarAlCarrito('<%= product.id %>', '<%= product.name %>', '<%= product.price %>', '<%= product.image %>')">Agregar al Carrito</button>
               </form>
             <% } else { %>
               <a href="/users/login"><button>Agregar al Carrito</button></a>
@@ -37,7 +37,8 @@
         </div>
       </section>
     </article>
+    <%- include('../partials/script') %>
+    <script src="/js/carrito.js"></script>
   </body>
   <%- include("../partials/footer")  %>
-  <%- include('../partials/script') %>
 </html>

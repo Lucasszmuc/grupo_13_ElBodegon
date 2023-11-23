@@ -2,7 +2,9 @@ const { User } = require('../database/models');
 
 async function isAdmin(req, res, next) {
     if (req.session && req.session.user) {
+
         try {
+            
             const user = await User.findOne({ where: { id: req.session.user.id } });
 
             if (user && user.type === 'Admin') {
