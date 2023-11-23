@@ -231,6 +231,8 @@ const productController = {
   },
   insertProduct: async (req, res) => {
     try {
+
+      
       const product = await Cart.create({
         user_id: req.session.user.id,
         product_id: req.body.productId,
@@ -238,25 +240,26 @@ const productController = {
         price: req.body.productPrice,
         product_image: req.body.productImage
       });
+
+      res.status(200).json({ message: "Producto añadido al carrito correctamente" });
     } catch (error) {
       console.log(error);
     }
   },
   deleteProductCart: async (req, res) => {
-    const currentPage = "carrito";
-    const cssIndex = pageCssMapping[currentPage];
     try {
       const answer = await Cart.destroy({
         where: {
           id: req.params.id,
         },
       });
-
-      res.redirect("/product/carrito");
+      res.status(200).json({ message: "Producto añadido al carrito correctamente" });
     } catch (error) {
       console.log(error);
+      res.status(500).json({ error: 'Error al eliminar el producto' });
     }
   },
+  
 };
 
 module.exports = productController;

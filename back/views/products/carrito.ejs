@@ -34,16 +34,17 @@
             method="POST"
           >
             <input type="hidden" name="_method" value="DELETE" />
-            <button class="delete-button" type="submit">X</button>
+            <button class="delete-button" type="button" onclick="confirmarEliminar('<%= product.id %>')">X</button>
           </form>
         </article>
       </section>
       <% }) %>
 
       <div class="but">
-        <button class="submit-button">Comprar</button>
+        <button class="submit-button" onclick="confirmarCompra()">Comprar</button>
       </div>
     </main>
     <%- include("../partials/footer") %> <%- include('../partials/script') %>
+    <script src="/js/carritoAcciones.js"></script>
   </body>
 </html>

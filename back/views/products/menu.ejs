@@ -68,12 +68,10 @@
                       name="productImage"
                       value="<%=producto.image%>"
                     />
-                    <button class="agregar-al-carrito" type="submit">
-                      Agregar al carrito
-                    </button>
-                  </form>
+                    <button type="button" class="agregar-al-carrito" onclick="agregarAlCarrito('<%= producto.id %>', '<%= producto.name %>', '<%= producto.price %>', '<%= producto.image %>')">Agregar al Carrito</button>
+                    </form>
                   <% } else { %>                  
-                    <form action="/user/login" method="GET">
+                    <form action="/users/login" method="GET">
                       <button class="agregar-al-carrito" type="submit">
                         Agregar al Carrito
                       </button>
@@ -89,5 +87,6 @@
       </div>
     </main>
     <%- include("../partials/footer") %> <%- include('../partials/script') %>
+    <script src="/js/carrito.js"></script>
   </body>
 </html>

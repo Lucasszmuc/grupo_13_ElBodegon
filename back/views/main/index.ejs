@@ -86,7 +86,7 @@
                  <input type="hidden" name="productName" value="<%= products[i].name %>">
                  <input type="hidden" name="productPrice" value="<%= products[i].price %>">
                  <input type="hidden" name="productImage" value="<%= products[i].image %>">
-                 <button class="agregar-al-carrito" type="submit">Agregar al carrito</button>
+                 <button type="button" class="agregar-al-carrito" onclick="agregarAlCarrito('<%= products[i].id %>', '<%= products[i].name %>', '<%= products[i].price %>', '<%= products[i].image %>')">Agregar al Carrito</button>
                </form>
                <% } else { %>
                  <form action="/users/login" method="GET">
@@ -103,23 +103,33 @@
    <h2 class="tituloIndex">Comidas</h2>
    <section>
      <% for (let i=4; i < 8; i++) { %>
-       <article class="productos">
-         <img src="/img/products/<%= products[i].image %>" alt="imagen-del-producto" />
-         <div class="info-produ">
-           <a href="/product/<%= products[i].id %>">
-             <h5>
-               <%= products[i].name %>
-             </h5>
-           </a>
-           <div class="precio-boton">
-             <p id="precio">$<%= products[i].price %>
-             </p>
-             <form action="/users/login" method="GET">
-               <button class="agregar-al-carrito">Agregar al carrito</button>
-             </form>
-           </div>
-         </div>
-       </article>
+      <article class="productos">
+        <img src="/img/products/<%= products[i].image %>" alt="imagen-del-producto" />
+        <div class="info-produ">
+          <a href="/product/<%= products[i].id %>">
+            <h5>
+              <%= products[i].name %>
+            </h5>
+          </a>
+          <div class="precio-boton">
+            <p id="precio">$<%= products[i].price %>
+            </p>
+            <% if (user) { %>
+              <form action="/product/carrito" method="POST">
+                <input type="hidden" name="productId" value="<%= products[i].id %>">
+                <input type="hidden" name="productName" value="<%= products[i].name %>">
+                <input type="hidden" name="productPrice" value="<%= products[i].price %>">
+                <input type="hidden" name="productImage" value="<%= products[i].image %>">
+                <button type="button" class="agregar-al-carrito" onclick="agregarAlCarrito('<%= products[i].id %>', '<%= products[i].name %>', '<%= products[i].price %>', '<%= products[i].image %>')">Agregar al Carrito</button>
+              </form>
+              <% } else { %>
+                <form action="/users/login" method="GET">
+                  <button class="agregar-al-carrito" type="submit">Agregar al Carrito</button>
+                </form>
+                <% } %>
+          </div>
+        </div>
+      </article>
        <% } %>
    </section>
    <!-- ------------------------pedi aca------------------------------ -->
@@ -154,6 +164,7 @@
         </div>
       </div>
     </main>
+    <script src="/js/carrito.js"></script>
     <%- include("../partials/footer") %> <%- include('../partials/script') %>
   </body>
 </html>

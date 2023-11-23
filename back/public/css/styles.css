@@ -121,8 +121,7 @@ footer {
   height: 84px;
   justify-content: space-evenly;
   align-items: center;
-  background-color: beige;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #7777738c;
 }
 .redes i {
   margin: 2px 8px;
@@ -135,7 +134,6 @@ footer {
 
 .redes a {
   color: #000;
-  background-color: #f0f0f0;
   margin: 10px;
   padding: 10px;
   border-radius: 50%;
@@ -186,6 +184,11 @@ footer {
 .error-messages{
   color: red;
 }
+.mi-alerta-texto {
+  max-width: 300px;
+  font-size: 10px; 
+}
+
 
 p,
 button,
