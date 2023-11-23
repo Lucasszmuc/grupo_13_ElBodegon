@@ -117,42 +117,51 @@ const userController = {
         return res.redirect('/users/register?error=' + error);
       }
     },
-  editProfile : async (req,res) =>{
-    try {
-
-     const updatedProfile = {
-        ...req.body,
-      };
-
-      
-      if (req.file) {
-        updatedProfile.avatar = req.file.filename;
-      }
-
-      if (updatedProfile.avatar === '') {
-        let imagen = await User.findOne({
+    editProfile: async (req, res) => {
+      try {
+        const updatedProfile = {
+          ...req.body,
+        };
+    
+        if (req.file) {
+          updatedProfile.avatar = req.file.filename;
+        }
+    
+        if (updatedProfile.avatar === '') {
+          let imagen = await User.findOne({
+            where: {
+              id: updatedProfile.id
+            }
+          });
+    
+          updatedProfile.avatar = imagen.avatar;
+        }
+    
+   
+        await User.update(updatedProfile, {
           where: {
             id: updatedProfile.id
           }
         });
+    
+     
+        const updatedUser = await User.findOne({
+          where: {
+            id: updatedProfile.id
+          }
+        });
+    
+        
+        req.session.user = updatedUser;
+    
 
-        updatedProfile.avatar = imagen.avatar;
+        res.redirect('/users/profile');
+    
+      } catch (error) {
+        console.log(error);
+   
       }
-
-
-      await User.update(updatedProfile,{
-        where:{
-          id: updatedProfile.id
-        }
-      })
-
-      res.redirect('/users/profile')
-      
-    } catch (error) {
-      console.log(error)
-    }
-
-  },
+    },    
   getLogin: (req, res) => {
     const currentPage = "login";
     const cssIndex = pageCssMapping[currentPage];
