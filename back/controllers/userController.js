@@ -1,6 +1,6 @@
 const cssFiles = require("./cssController");
 const pageCssMapping = require("./pageCssMapping");
-const { User } = require('../database/models');
+const { User , Product} = require('../database/models');
 const uuid = require('uuid');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require("express-validator");
@@ -111,7 +111,12 @@ const userController = {
 
         const currentPagei = 'index'; 
         const cssIndexi = pageCssMapping[currentPagei];
-        return res.render('./main/index', { user: req.session.user, cssFiles, cssIndex: cssIndexi });
+        const products = await Product.findAll({
+          raw: true,
+          nest: true,
+          limit: 8
+        });
+        return res.render('./main/index', { user: req.session.user, cssFiles, cssIndex: cssIndexi, products });
       } catch (error) {
         console.log(error);
         return res.redirect('/users/register?error=' + error);
@@ -161,7 +166,7 @@ const userController = {
         console.log(error);
    
       }
-    },    
+    },     
   getLogin: (req, res) => {
     const currentPage = "login";
     const cssIndex = pageCssMapping[currentPage];

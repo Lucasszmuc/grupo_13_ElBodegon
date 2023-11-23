@@ -19,4 +19,5 @@ router.post('/logOut', avatar.single("avatar"),userController.logOut)
 //Routes Put
 router.put('/profile', avatar.single('avatar') , userController.editProfile)
 
+
 module.exports = router;
