@@ -15,6 +15,7 @@ body {
   padding: 0px;
   color: #000;
   font-family: sans-serif;
+  background-color: #d6d2b5;
 }
 section.card {
   background: linear-gradient( 142deg, rgba(42, 29, 16, 1) 11%, rgba(191, 167, 138, 0.9396984924623115) 47%, rgba(89, 46, 21, 1) 89% );
@@ -49,6 +50,10 @@ section.card .text-content button {
   padding: 16px 32px;
   border-radius: 12px;
   transition: 400ms all;
+}
+.botones-producto {
+  display: flex;
+  gap: 10px; 
 }
 section.card .text-content button:hover {
   background: #614529;

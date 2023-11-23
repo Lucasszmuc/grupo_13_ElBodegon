@@ -1,8 +1,10 @@
+body {
+  background-color: #d6d2b5;
+}
 .container {
   margin-top: 150px;
 }
 footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   display: flex;
@@ -24,7 +26,6 @@ footer {
 
 .username-text-center {
   width: 42%;
-  margin-left: 50px;
   font-size: 50px;
 }
 
@@ -47,6 +48,7 @@ footer {
 
 .contenido-foto-edit {
   display: flex;
+  justify-content: center;
 }
 
 main {
@@ -96,9 +98,9 @@ button:hover {
 }
 
 @media (max-width: 565px) {
-  .username-text-center {
+  /* .username-text-center {
     display: none;
-  }
+  } */
   .container {
     align-items: center;
   }
@@ -110,5 +112,21 @@ button:hover {
   }
   .form-horizontal {
     margin-top: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenido-foto-edit {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .username-text-center {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
 }

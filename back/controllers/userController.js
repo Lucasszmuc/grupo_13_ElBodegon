@@ -1,6 +1,6 @@
 const cssFiles = require("./cssController");
 const pageCssMapping = require("./pageCssMapping");
-const { User } = require('../database/models');
+const { User , Product} = require('../database/models');
 const uuid = require('uuid');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require("express-validator");
@@ -23,8 +23,10 @@ const userController = {
 
       const user = req.session.user;
 
+      console.log(user)
+
       if (!user) {
-        return res.render('/users/login?error=El mail o la contraseña son incorrectos');
+        return res.redirect('/users/login?error=El mail o la contraseña son incorrectos');
       }
 
       if (req.body.password === req.body.password2) {
@@ -106,48 +108,65 @@ const userController = {
         });
   
         req.session.user = user;
-        return res.render('./main/index', { user: req.session.user, cssFiles, cssIndex });
+
+        const currentPagei = 'index'; 
+        const cssIndexi = pageCssMapping[currentPagei];
+        const products = await Product.findAll({
+          raw: true,
+          nest: true,
+          limit: 8
+        });
+        return res.render('./main/index', { user: req.session.user, cssFiles, cssIndex: cssIndexi, products });
       } catch (error) {
         console.log(error);
         return res.redirect('/users/register?error=' + error);
       }
     },
-  editProfile : async (req,res) =>{
-    try {
-
-     const updatedProfile = {
-        ...req.body,
-      };
-
-      
-      if (req.file) {
-        updatedProfile.avatar = req.file.filename;
-      }
-
-      if (updatedProfile.avatar === '') {
-        let imagen = await User.findOne({
+    editProfile: async (req, res) => {
+      try {
+        const updatedProfile = {
+          ...req.body,
+        };
+    
+        if (req.file) {
+          updatedProfile.avatar = req.file.filename;
+        }
+    
+        if (updatedProfile.avatar === '') {
+          let imagen = await User.findOne({
+            where: {
+              id: updatedProfile.id
+            }
+          });
+    
+          updatedProfile.avatar = imagen.avatar;
+        }
+    
+   
+        await User.update(updatedProfile, {
           where: {
             id: updatedProfile.id
           }
         });
+    
+     
+        const updatedUser = await User.findOne({
+          where: {
+            id: updatedProfile.id
+          }
+        });
+    
+        
+        req.session.user = updatedUser;
+    
 
-        updatedProfile.avatar = imagen.avatar;
+        res.redirect('/users/profile');
+    
+      } catch (error) {
+        console.log(error);
+   
       }
-
-
-      await User.update(updatedProfile,{
-        where:{
-          id: updatedProfile.id
-        }
-      })
-
-      res.redirect('/users/profile')
-      
-    } catch (error) {
-      console.log(error)
-    }
-
-  },
+    },     
   getLogin: (req, res) => {
     const currentPage = "login";
     const cssIndex = pageCssMapping[currentPage];

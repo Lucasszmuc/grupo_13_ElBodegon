@@ -3,10 +3,21 @@ const pageCssMapping = require('./pageCssMapping');
 const {Product} = require('../database/models')
 
 const mainController = {
-  index: (req, res) => {
+  index: async (req, res) => {
     const currentPage = 'index'; 
     const cssIndex = pageCssMapping[currentPage];
-    res.render("./main/index", {cssFiles , cssIndex , user: req.session.user });
+    const products = await Product.findAll({
+      raw: true,
+      nest: true,
+      limit: 8
+    });
+    
+    res.render("./main/index", {
+      cssFiles,
+      cssIndex,
+      user: req.session.user,
+      products: products,
+    });
   },
   showAboutUs: (req, res) => {
     const currentPage = 'nosotros'; 

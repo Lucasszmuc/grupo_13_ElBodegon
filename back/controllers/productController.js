@@ -1,6 +1,6 @@
 const cssFiles = require("../controllers/cssController");
 const pageCssMapping = require("./pageCssMapping");
-const { Product, Cart, Category } = require('../database/models')
+const { Product, Cart, Category } = require("../database/models");
 const { validationResult } = require("express-validator");
 
 const productController = {
@@ -10,7 +10,12 @@ const productController = {
     const productId = req.params.id;
     try {
       const selectedProduct = await Product.findByPk(productId, { raw: true });
-      res.render("./products/productDetail", { cssFiles, cssIndex, product: selectedProduct, user: req.session.user });
+      res.render("./products/productDetail", {
+        cssFiles,
+        cssIndex,
+        product: selectedProduct,
+        user: req.session.user,
+      });
     } catch (error) {
       console.log(error);
       return res.status(500).send("Error interno del servidor");
@@ -24,22 +29,20 @@ const productController = {
         raw: true,
         include: [
           {
-            model: Category, 
-            as: 'category', 
-            attributes: ['name'], 
+            model: Category,
+            as: "category",
+            attributes: ["name"],
           },
         ],
-        nest: true
+        nest: true,
       });
-    
-      
+
       return res.render("./products/menu", {
         cssFiles,
         cssIndex,
         products: products,
         user: req.session.user,
       });
-      
     } catch (error) {
       console.log(error);
       return res.status(500).send("Error interno del servidor");
@@ -48,85 +51,106 @@ const productController = {
   showRecetas: (req, res) => {
     const currentPage = "recetas";
     const cssIndex = pageCssMapping[currentPage];
-    res.render("./products/recetas", { cssFiles, cssIndex, user: req.session.user });
+    res.render("./products/recetas", {
+      cssFiles,
+      cssIndex,
+      user: req.session.user,
+    });
   },
   showCart: async (req, res) => {
     const currentPage = "carrito";
     const cssIndex = pageCssMapping[currentPage];
     try {
       const products = await Cart.findAll({
-        where:{
-          user_id : req.session.user.id
+        where: {
+          user_id: req.session.user.id,
         },
-        raw: true ,
-        nest: true
+        raw: true,
+        nest: true,
       });
-      res.render("./products/carrito", { cssFiles, cssIndex,  product : products , user: req.session.user });   
+      res.render("./products/carrito", {
+        cssFiles,
+        cssIndex,
+        product: products,
+        user: req.session.user,
+      });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   },
   getEditProduct: async (req, res) => {
-    const currentPage = "editProduct";
-    const cssIndex = pageCssMapping[currentPage];
-    const productId = req.params.id;
-    const selectedProduct = await Product.findByPk(productId, { raw: true });
-
-    res.render("./products/editProduct", {
-      cssFiles,
-      cssIndex,
-      product: selectedProduct,
-      user: req.session.user
-    });
+    try {
+      const currentPage = "editProduct";
+      const cssIndex = pageCssMapping[currentPage];
+      const productId = req.params.id;
+  
+  
+      const selectedProduct = await Product.findByPk(productId, { raw: true });
+  
+      const category = await Category.findByPk(selectedProduct.category_id, { raw: true });
+  
+      res.render("./products/editProduct", {
+        cssFiles,
+        cssIndex,
+        product: selectedProduct,
+        categoryName: category ? category.name : '',
+        user: req.session.user,
+      });
+    } catch (error) {
+      console.error(error);
+      // Manejo de errores, como renderizar una página de error
+    }
   },
   getCreateProduct: (req, res) => {
     const currentPage = "createProduct";
     const cssIndex = pageCssMapping[currentPage];
-    res.render("./products/createProduct", { cssFiles, cssIndex, user: req.session.user });
+    res.render("./products/createProduct", {
+      cssFiles,
+      cssIndex,
+      user: req.session.user,
+    });
   },
   createProduct: async (req, res) => {
     const currentPage = "createProduct";
     const cssIndex = pageCssMapping[currentPage];
     try {
-      
       const errors = validationResult(req);
 
       if (!errors.isEmpty()) {
-        return res.render('products/createProduct',{ 
+        return res.render("products/createProduct", {
           errors: errors.array(),
           old: req.body,
           cssFiles,
-          cssIndex
+          cssIndex,
         });
       }
 
-     
       const { name, price, image, description, discount, code } = req.body;
 
       let category = 0;
 
-    switch (req.body.category) {
-      case 'Carnes':
-        category = 1;
-        break;
-      case 'Bebidas':
-        category = 2;
-        break;
-      case 'Ensaladas':
-        category = 3;
-        break;
-      case 'Milanesas':
-        category = 4;
-        break;
-      case 'Pescados':
-        category = 5;
-        break;
-      case 'Postres':
-        category = 6;
-        break;
-      default:
-        break;
-    }
+      switch (req.body.category) {
+        case "Carnes":
+          category = 1;
+          break;
+        case "Bebidas":
+          category = 2;
+          break;
+        case "Ensaladas":
+          category = 3;
+          break;
+        case "Milanesas":
+          category = 4;
+          break;
+        case "Pescados":
+          category = 5;
+          break;
+        case "Postres":
+          category = 6;
+          break;
+        default:
+          break;
+      }
 
       const newProduct = await Product.create({
         name: req.body.name,
@@ -138,47 +162,48 @@ const productController = {
         code,
       });
 
-      return res.redirect('/product/' + newProduct.dataValues.id);
+      return res.redirect("/product/" + newProduct.dataValues.id);
     } catch (error) {
       console.log(error);
-      return res.redirect('/error?' + error);
+      return res.redirect("/error?" + error);
     }
   },
 
   editProduct: async (req, res) => {
     const currentPage = "editProduct";
-  const cssIndex = pageCssMapping[currentPage];
-  const productId = req.params.id;
-  try {
-    // Validar los campos
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      const selectedProduct = await Product.findByPk(productId, { raw: true });
-      return res.render("products/editProduct", { 
-        errors: errors.array(),
-        product: selectedProduct, // Agrega el producto aquí
-        cssFiles,
-        cssIndex
-      });
-    }
-        
+    const cssIndex = pageCssMapping[currentPage];
+    const productId = req.params.id;
+    try {
+      // Validar los campos
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        const selectedProduct = await Product.findByPk(productId, {
+          raw: true,
+        });
+        return res.render("products/editProduct", {
+          errors: errors.array(),
+          product: selectedProduct, // Agrega el producto aquí
+          cssFiles,
+          cssIndex,
+        });
+      }
 
       // Procesar la edición del producto
       const { id } = req.params;
-      const{description , category_id, name, price} = req.body
+      const { description, category_id, name, price } = req.body;
       const updatedProduct = {
         id: Number(id),
-        image: '',
+        image: "",
         name: name,
         description: description,
-        price: price
+        price: price,
       };
 
       if (req.file) {
         updatedProduct.image = req.file.filename;
       }
 
-      if (updatedProduct.image === '') {
+      if (updatedProduct.image === "") {
         let imagen = await Product.findOne({
           where: {
             id: Number(id),
@@ -188,7 +213,7 @@ const productController = {
         updatedProduct.image = imagen.image;
       }
 
-      console.log(updatedProduct)
+      console.log(updatedProduct);
 
       await Product.update(updatedProduct, {
         where: {
@@ -196,56 +221,55 @@ const productController = {
         },
       });
 
-      return res.redirect('/product/' + updatedProduct.id);
+      return res.redirect("/product/" + updatedProduct.id);
     } catch (error) {
-      return res.redirect('/product/' + productId + '/error?' + error);
+      return res.redirect("/product/" + productId + "/error?" + error);
     }
   },
   deleteProduct: async (req, res) => {
     try {
-
       await Product.destroy({
         where: {
-          id: req.params.id
-        }
-      })
+          id: req.params.id,
+        },
+      });
 
       res.redirect("/");
-
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   },
-  insertProduct: async (req,res)=>{
+  insertProduct: async (req, res) => {
     try {
-      const product = await Cart.create ({
-          user_id: req.session.user.id,
-          product_id: req.body.productId,
-          product_name:req.body.productName,
-          price:req.body.productPrice
-      }) 
-      console.log(req.body)
+      const product = await Cart.create({
+        user_id: req.session.user.id,
+        product_id: req.body.productId,
+        product_name: req.body.productName,
+        price: req.body.productPrice,
+        product_image: req.body.productImage
+      });
+
+      res.status(200).json({ message: "Producto añadido al carrito correctamente" });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   },
-  deleteProductCart: async (req,res) =>{
-    const currentPage = "carrito";
-    const cssIndex = pageCssMapping[currentPage];
-  try {
-    const answer = await Cart.destroy({
-      where : {
-        id: req.params.id
-      }
-    });
-
-    res.redirect('/product/carrito');
-
-  } catch (error) {
-    console.log(error)
-  }
-  }
-
+  deleteProductCart: async (req, res) => {
+    try {
+      const answer = await Cart.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.status(200).json({ message: "Producto añadido al carrito correctamente" });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ error: 'Error al eliminar el producto' });
+    }
+  },
+  
 };
 
 module.exports = productController;
+
+

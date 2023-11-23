@@ -15,13 +15,30 @@
           <p>
             <%= product.price %>
           </p>
-          <button href="">Agregar al Carrito</button>
+          <div>
+            <div class="botones-producto">
+            <% if (user) { %>
+              <form action="/product/carrito" method="POST">
+                <button type="button" class="agregar-al-carrito" onclick="agregarAlCarrito('<%= product.id %>', '<%= product.name %>', '<%= product.price %>', '<%= product.image %>')">Agregar al Carrito</button>
+              </form>
+            <% } else { %>
+              <a href="/users/login"><button>Agregar al Carrito</button></a>
+            <% } %>
+            <% if (user && user.type === 'Admin') { %>
+              <form action="/product/editProduct/<%= product.id %>" method="GET"> 
+                <button class="editar-producto" type="submit">Editar Producto</button>
+              </form>
+            <% } %>
+          </div>
+          </div>         
         </div>
         <div class="visual">
           <img src="/img/products/<%= product.image %>" alt="" />
         </div>
       </section>
     </article>
+    <%- include('../partials/script') %>
+    <script src="/js/carrito.js"></script>
   </body>
   <%- include("../partials/footer")  %>
 </html>

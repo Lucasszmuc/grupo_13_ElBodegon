@@ -3,6 +3,7 @@ const router = express.Router();
 const productController = require("../controllers/productController");
 const userValidate = require('../middlewares/validateRoutes');
 const productValidation = require('../middlewares/productValidation')
+const isAdmin = require('../middlewares/adminAuth')
 const multer = require("multer");
 const path = require("path");
 
@@ -21,27 +22,29 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 //GET
-router.get("/editProduct/:id", userValidate.validate, productController.getEditProduct);
-router.get("/createProduct", userValidate.validate, productController.getCreateProduct);
+router.get("/editProduct/:id", userValidate.validate, isAdmin, productController.getEditProduct);
+router.get("/createProduct", userValidate.validate, isAdmin, productController.getCreateProduct);
 router.get("/menu", productController.showMenu);
 router.get("/recetas", userValidate.validate, productController.showRecetas);
 router.get("/carrito", userValidate.validate, productController.showCart);
-router.get("/:id", userValidate.validate, productController.getProductDetail);
+router.get("/:id", productController.getProductDetail);
 
 //POST
-router.post("/createProduct",upload.single("image"),productValidation ,productController.createProduct);
-router.post('/carrito',productController.insertProduct)
+router.post("/createProduct", userValidate.validate, isAdmin, upload.single("image"), productValidation, productController.createProduct);
+router.post('/carrito', productController.insertProduct)
 
 //PUT
 router.put(
   "/editProduct/:id",
+  userValidate.validate,
+  isAdmin,
   upload.single("image"),
   productValidation,
   productController.editProduct
 );
 
 //DELETE
-router.delete("/editProduct/:id", productController.deleteProduct);
+router.delete("/editProduct/:id", isAdmin, productController.deleteProduct);
 router.delete("/carrito/:id", productController.deleteProductCart);
 
 

@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("../partials/head") %>
+<%- include("../partials/head") %>
+
   <body class="body">
     <header><%- include("../partials/navbar") %></header>
     <main>
       <h1 class="title">Crear Producto</h1>
-      <form
-        action="/product/createProduct"
-        id="createForm"
-        class="formulario-editar"
-        method="POST"
-        enctype="multipart/form-data"
-      >
-        <div class="section-container">
+      <form action="/product/createProduct" id="createForm" class="formulario-editar" method="POST"
+        enctype="multipart/form-data">
+          <div class="form-row">
           <div class="form-group">
             <label for="productName">Nombre del Producto:</label>
-            <input
-              type="text"
-              id="productName"
-              class="productName"
-              name="name"
-              value="<%= locals.old && locals.old.name ? locals.old.name : '' %>"
-            />
-            <% if (locals.errors) { %> <% errors.forEach(error=> {%> <% if
-            (error.path==='name' ) { %>
-            <p class="error-messages"><%= error.msg %></p>
-            <% } %> <% }); %> <% } %>
+            <input type="text" id="productName" class="productName" name="name"
+              value="<%= locals.old && locals.old.name ? locals.old.name : '' %>" />
+            <% if (locals.errors) { %>
+              <% errors.forEach(error=> {%> <% if (error.path==='name' ) { %>
+                  <p class="error-messages">
+                    <%= error.msg %>
+                  </p>
+                  <% } %>
+                    <% }); %>
+                      <% } %>
           </div>
+          
+          <div class="form-group">
+            <label for="productPrice">Precio:</label>
+            <input type="text" id="productPrice" class="productPrice" name="price"
+            value="<%= locals.old && locals.old.price ? locals.old.price : '' %>" />
+          </div>
+          
+        </div>
           <div class="form-group">
             <label for="category">Categoria:</label>
-            <select id="comida" class= "productCategory" name="category">
+            <select id="comida" class="productCategory" name="category">
               <option value="">Seleccione una opción</option>
               <option value="Bebidas">Bebidas</option>
               <option value="Carnes">Carnes</option>
@@ -39,41 +42,34 @@
               <option value="Postres">Postres</option>
             </select>
           </div>
-        </div>
-        <div class="section-container">
-          <div class="form-group">
-            <label for="productPrice">Precio:</label>
-            <input
-              type="text"
-              id="productPrice"
-              class ="productPrice"
-              name="price"
-              value="<%= locals.old && locals.old.price ? locals.old.price : '' %>"
-            />
-          </div>
           <div class="form-group">
             <label for="image">Cargar imagen:</label>
             <input type="file" class="image" id="imagen" name="image" />
-            <% if (locals.errors) { %> <% errors.forEach(error=> {%> <% if
-            (error.path==='image' ) { %>
-            <p class="error-messages"><%= error.msg %></p>
-            <% } %> <% }); %> <% } %>
+            <% if (locals.errors) { %>
+              <% errors.forEach(error=> {%> <% if (error.path==='image' ) { %>
+                  <p class="error-messages">
+                    <%= error.msg %>
+                  </p>
+                  <% } %>
+                    <% }); %>
+                      <% } %>
           </div>
         </div>
         <div class="section-container des">
           <div class="form-group">
             <label for="productDescription">Descripcion:</label>
-            <textarea
-              class="Descripcion"
-              id="productDescription"
-              name="description"
-              value="<%= locals.old && locals.old.description ? locals.old.description : '' %>"
-            ></textarea>
-            <% if (locals.errors) { %> <% errors.forEach(error=> {%> <% if
-            (error.path==='description' ) { %>
-            <p class="error-messages"><%= error.msg %></p>
-            <% } %> <% }); %> <% } %>
+            <textarea class="Descripcion" id="productDescription" name="description"
+              value="<%= locals.old && locals.old.description ? locals.old.description : '' %>"></textarea>
+            <% if (locals.errors) { %>
+              <% errors.forEach(error=> {%> <% if (error.path==='description' ) { %>
+                  <p class="error-messages">
+                    <%= error.msg %>
+                  </p>
+                  <% } %>
+                    <% }); %>
+                      <% } %>
           </div>
+          <div class="form-row">
           <div class="form-group">
             <label for="productDescuento">Aplicar descuento?</label>
             <div class="descuento">
@@ -97,6 +93,8 @@
       </form>
     </main>
     <footer><%- include("../partials/footer") %></footer>
-    <script src="/js/validatorCreateProduct.js"></script>
+    <%- include('../partials/script') %>
+    <!-- <script src="/js/validatorCreateProduct.js"></script> -->
   </body>
+
 </html>

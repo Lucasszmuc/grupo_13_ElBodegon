@@ -10,6 +10,13 @@
     <header><%- include("../partials/navbar") %></header>
     <main>
       <section>
+        <% if (user && user.type === 'Admin') { %>
+        <section>
+          <form action="/product/createProduct" method="GET">
+            <button class="crear-producto" type="submit">Crear Producto</button>
+          </form>
+        </section>
+        <% } %>
         <h3>Menu</h3>
         <div class="contenedor-lista">
           <ul class="product-list">
@@ -24,7 +31,7 @@
       </section>
       <div class="men">
         <% for (const category in productsByCategory) { %>
-        <section>
+        <section id="<%= category.toLowerCase() %>">
           <h2><%= category %></h2>
           <div class="contenedor-productos">
             <% productsByCategory[category].forEach(producto => { %>
@@ -56,14 +63,19 @@
                       name="productPrice"
                       value="<%= producto.price %>"
                     />
-                    <button class="agregar-al-carrito" type="submit">
-                      Agregar al carrito
-                    </button>
-                  </form>
-                  <% } else { %>
-                  <button class="agregar-al-carrito">
-                    <a href="/user/login">Agregar al carrito</a>
-                  </button>
+                    <input
+                      type="hidden"
+                      name="productImage"
+                      value="<%=producto.image%>"
+                    />
+                    <button type="button" class="agregar-al-carrito" onclick="agregarAlCarrito('<%= producto.id %>', '<%= producto.name %>', '<%= producto.price %>', '<%= producto.image %>')">Agregar al Carrito</button>
+                    </form>
+                  <% } else { %>                  
+                    <form action="/users/login" method="GET">
+                      <button class="agregar-al-carrito" type="submit">
+                        Agregar al Carrito
+                      </button>
+                    </form>
                   <% } %>
                 </div>
               </div>
@@ -74,6 +86,7 @@
         <% } %>
       </div>
     </main>
-    <%- include("../partials/footer") %>
+    <%- include("../partials/footer") %> <%- include('../partials/script') %>
+    <script src="/js/carrito.js"></script>
   </body>
 </html>

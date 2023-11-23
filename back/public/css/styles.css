@@ -58,7 +58,7 @@ h1 {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  width: 70%;
+  width: 80%;
 }
 
 .container-user{
@@ -107,6 +107,11 @@ h1 {
   margin-top: 10px;
 }
 
+.lista.is-active {
+  display: block; 
+}
+
+
 /*Footer*/
 
 footer {
@@ -116,8 +121,7 @@ footer {
   height: 84px;
   justify-content: space-evenly;
   align-items: center;
-  background-color: beige;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #7777738c;
 }
 .redes i {
   margin: 2px 8px;
@@ -130,7 +134,6 @@ footer {
 
 .redes a {
   color: #000;
-  background-color: #f0f0f0;
   margin: 10px;
   padding: 10px;
   border-radius: 50%;
@@ -181,6 +184,11 @@ footer {
 .error-messages{
   color: red;
 }
+.mi-alerta-texto {
+  max-width: 300px;
+  font-size: 10px; 
+}
+
 
 p,
 button,
@@ -198,13 +206,51 @@ input {
     margin-right: 20px;
   }
 
-  
+  .lista-nav{
+    width: 90%;
+  }
 }
 
 @media (max-width: 830px) {
   .lista {
     display: none;
   }
+
+  .lista.is-active .lista-nav {
+    display: flex;
+    flex-direction: column; 
+    width: 100%; 
+    position: absolute; 
+    top: 100%;
+    left: 0;
+    background: #000; 
+    z-index: 1000; 
+  }
+
+  .lista-nav li {
+    width: 100%; 
+    text-align: left; 
+  }
+
+  .container-user{
+    flex-direction: column;
+  }
+
+  .bottom{
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
+
+  .lista-nav li a {
+    display: flex;
+    justify-content: center;
+    padding: 10px; 
+  }
+
+  .lista.is-active {
+    display: block; 
+  }
+
 
   .burger-menu {
     display: flex;
